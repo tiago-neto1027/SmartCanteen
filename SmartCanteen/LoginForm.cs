@@ -16,5 +16,20 @@ namespace SmartCanteen
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCreateUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExitLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
