@@ -19,17 +19,23 @@ namespace SmartCanteen
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            this.Hide();
 
+            MainForm mainForm = new MainForm();
+            mainForm.ShowDialog();
+
+            this.Close();
         }
 
         private void btnCreateUser_Click(object sender, EventArgs e)
         {
-
+            RegistryForm registryForm = new RegistryForm();
+            registryForm.ShowDialog();
         }
 
         private void btnExitLogin_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }
