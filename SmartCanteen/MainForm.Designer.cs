@@ -71,8 +71,8 @@
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.optionsToolStripMenuItem.Text = "Options";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.optionsToolStripMenuItem.Text = "Opções";
             // 
             // userToolStripMenuItem
             // 
@@ -86,14 +86,14 @@
             // logoutChangeUserToolStripMenuItem
             // 
             this.logoutChangeUserToolStripMenuItem.Name = "logoutChangeUserToolStripMenuItem";
-            this.logoutChangeUserToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.logoutChangeUserToolStripMenuItem.Text = "Logout / Change User";
+            this.logoutChangeUserToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.logoutChangeUserToolStripMenuItem.Text = "Logout / Mudar User";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.exitToolStripMenuItem.Text = "Sair";
             // 
             // groupBox1
             // 
@@ -214,7 +214,7 @@
             this.lbDate.Name = "lbDate";
             this.lbDate.Size = new System.Drawing.Size(36, 16);
             this.lbDate.TabIndex = 1;
-            this.lbDate.Text = "Date";
+            this.lbDate.Text = "Data";
             // 
             // lbTime
             // 
@@ -222,9 +222,9 @@
             this.lbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTime.Location = new System.Drawing.Point(67, 30);
             this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(38, 16);
+            this.lbTime.Size = new System.Drawing.Size(37, 16);
             this.lbTime.TabIndex = 0;
-            this.lbTime.Text = "Time";
+            this.lbTime.Text = "Hora";
             // 
             // timer1
             // 
