@@ -28,20 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutChangeUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnReservation = new System.Windows.Forms.Button();
+            this.btnBalance = new System.Windows.Forms.Button();
+            this.btnClientAdd = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnMealRegister = new System.Windows.Forms.Button();
+            this.btnExtrasAdd = new System.Windows.Forms.Button();
+            this.btnMealAdd = new System.Windows.Forms.Button();
+            this.btnMenuAdd = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lbDate = new System.Windows.Forms.Label();
+            this.lbTime = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStripMain.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStripMain
@@ -86,84 +97,172 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.monthCalendar1);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 27);
+            this.groupBox1.Controls.Add(this.btnReservation);
+            this.groupBox1.Controls.Add(this.btnBalance);
+            this.groupBox1.Controls.Add(this.btnClientAdd);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(632, 62);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(296, 359);
+            this.groupBox1.Size = new System.Drawing.Size(170, 165);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Cliente";
+            // 
+            // btnReservation
+            // 
+            this.btnReservation.Location = new System.Drawing.Point(6, 115);
+            this.btnReservation.Name = "btnReservation";
+            this.btnReservation.Size = new System.Drawing.Size(95, 40);
+            this.btnReservation.TabIndex = 2;
+            this.btnReservation.Text = "Reserva";
+            this.btnReservation.UseVisualStyleBackColor = true;
+            this.btnReservation.Click += new System.EventHandler(this.btnReservation_Click);
+            // 
+            // btnBalance
+            // 
+            this.btnBalance.Location = new System.Drawing.Point(6, 69);
+            this.btnBalance.Name = "btnBalance";
+            this.btnBalance.Size = new System.Drawing.Size(95, 40);
+            this.btnBalance.TabIndex = 1;
+            this.btnBalance.Text = "Carregamento";
+            this.btnBalance.UseVisualStyleBackColor = true;
+            this.btnBalance.Click += new System.EventHandler(this.btnBalance_Click);
+            // 
+            // btnClientAdd
+            // 
+            this.btnClientAdd.Location = new System.Drawing.Point(6, 23);
+            this.btnClientAdd.Name = "btnClientAdd";
+            this.btnClientAdd.Size = new System.Drawing.Size(95, 40);
+            this.btnClientAdd.TabIndex = 0;
+            this.btnClientAdd.Text = "Adicionar";
+            this.btnClientAdd.UseVisualStyleBackColor = true;
+            this.btnClientAdd.Click += new System.EventHandler(this.btnClientAdd_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Location = new System.Drawing.Point(314, 27);
+            this.groupBox2.Controls.Add(this.btnMealRegister);
+            this.groupBox2.Controls.Add(this.btnExtrasAdd);
+            this.groupBox2.Controls.Add(this.btnMealAdd);
+            this.groupBox2.Controls.Add(this.btnMenuAdd);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(632, 258);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(386, 359);
+            this.groupBox2.Size = new System.Drawing.Size(170, 210);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Refeição";
+            // 
+            // btnMealRegister
+            // 
+            this.btnMealRegister.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnMealRegister.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnMealRegister.Location = new System.Drawing.Point(6, 158);
+            this.btnMealRegister.Name = "btnMealRegister";
+            this.btnMealRegister.Size = new System.Drawing.Size(158, 40);
+            this.btnMealRegister.TabIndex = 6;
+            this.btnMealRegister.Text = "Registar Refeição";
+            this.btnMealRegister.UseVisualStyleBackColor = false;
+            this.btnMealRegister.Click += new System.EventHandler(this.btnMealRegister_Click);
+            // 
+            // btnExtrasAdd
+            // 
+            this.btnExtrasAdd.Location = new System.Drawing.Point(6, 112);
+            this.btnExtrasAdd.Name = "btnExtrasAdd";
+            this.btnExtrasAdd.Size = new System.Drawing.Size(95, 40);
+            this.btnExtrasAdd.TabIndex = 5;
+            this.btnExtrasAdd.Text = "Extras";
+            this.btnExtrasAdd.UseVisualStyleBackColor = true;
+            this.btnExtrasAdd.Click += new System.EventHandler(this.btnExtrasAdd_Click);
+            // 
+            // btnMealAdd
+            // 
+            this.btnMealAdd.Location = new System.Drawing.Point(6, 66);
+            this.btnMealAdd.Name = "btnMealAdd";
+            this.btnMealAdd.Size = new System.Drawing.Size(95, 40);
+            this.btnMealAdd.TabIndex = 4;
+            this.btnMealAdd.Text = "Criar Prato";
+            this.btnMealAdd.UseVisualStyleBackColor = true;
+            this.btnMealAdd.Click += new System.EventHandler(this.btnMealAdd_Click);
+            // 
+            // btnMenuAdd
+            // 
+            this.btnMenuAdd.Location = new System.Drawing.Point(6, 20);
+            this.btnMenuAdd.Name = "btnMenuAdd";
+            this.btnMenuAdd.Size = new System.Drawing.Size(95, 40);
+            this.btnMenuAdd.TabIndex = 3;
+            this.btnMenuAdd.Text = "Criar Menu";
+            this.btnMenuAdd.UseVisualStyleBackColor = true;
+            this.btnMenuAdd.Click += new System.EventHandler(this.btnMenuAdd_Click);
             // 
             // groupBox3
             // 
-            this.groupBox3.Location = new System.Drawing.Point(12, 392);
+            this.groupBox3.Controls.Add(this.pictureBox1);
+            this.groupBox3.Controls.Add(this.lbDate);
+            this.groupBox3.Controls.Add(this.lbTime);
+            this.groupBox3.Location = new System.Drawing.Point(58, 62);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(860, 141);
+            this.groupBox3.Size = new System.Drawing.Size(510, 406);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.groupBox3.Text = "Semanal";
             // 
-            // button1
+            // lbDate
             // 
-            this.button1.Location = new System.Drawing.Point(6, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(162, 49);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.lbDate.AutoSize = true;
+            this.lbDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.Location = new System.Drawing.Point(67, 57);
+            this.lbDate.Name = "lbDate";
+            this.lbDate.Size = new System.Drawing.Size(36, 16);
+            this.lbDate.TabIndex = 1;
+            this.lbDate.Text = "Date";
             // 
-            // button2
+            // lbTime
             // 
-            this.button2.Location = new System.Drawing.Point(6, 74);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(162, 49);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.lbTime.AutoSize = true;
+            this.lbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.Location = new System.Drawing.Point(67, 30);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(38, 16);
+            this.lbTime.TabIndex = 0;
+            this.lbTime.Text = "Time";
             // 
-            // monthCalendar1
+            // timer1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(6, 135);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 2;
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
-            // listBox1
+            // pictureBox1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(707, 28);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(165, 355);
-            this.listBox1.TabIndex = 5;
+            this.pictureBox1.Image = global::SmartCanteen.Properties.Resources._603_6035882_clock_transparent_time_icon_png_png_download;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(55, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 561);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStripMain);
             this.MainMenuStrip = this.menuStripMain;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,11 +276,18 @@
         private System.Windows.Forms.ToolStripMenuItem logoutChangeUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnReservation;
+        private System.Windows.Forms.Button btnBalance;
+        private System.Windows.Forms.Button btnClientAdd;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnExtrasAdd;
+        private System.Windows.Forms.Button btnMealAdd;
+        private System.Windows.Forms.Button btnMenuAdd;
+        private System.Windows.Forms.Button btnMealRegister;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label lbTime;
+        private System.Windows.Forms.Label lbDate;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BalanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BalanceForm.Designer.cs">
+      <DependentUpon>BalanceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientAddForm.Designer.cs">
+      <DependentUpon>ClientAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExtrasAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtrasAddForm.Designer.cs">
+      <DependentUpon>ExtrasAddForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +76,24 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MealAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MealAddForm.Designer.cs">
+      <DependentUpon>MealAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MealRegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MealRegisterForm.Designer.cs">
+      <DependentUpon>MealRegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuAddForm.Designer.cs">
+      <DependentUpon>MenuAddForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistryForm.cs">
@@ -66,11 +102,35 @@
     <Compile Include="RegistryForm.Designer.cs">
       <DependentUpon>RegistryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReservationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReservationForm.Designer.cs">
+      <DependentUpon>ReservationForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BalanceForm.resx">
+      <DependentUpon>BalanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientAddForm.resx">
+      <DependentUpon>ClientAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtrasAddForm.resx">
+      <DependentUpon>ExtrasAddForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MealAddForm.resx">
+      <DependentUpon>MealAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MealRegisterForm.resx">
+      <DependentUpon>MealRegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuAddForm.resx">
+      <DependentUpon>MenuAddForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -80,9 +140,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RegistryForm.resx">
       <DependentUpon>RegistryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReservationForm.resx">
+      <DependentUpon>ReservationForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -96,6 +160,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\603-6035882_clock-transparent-time-icon-png-png-download.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
