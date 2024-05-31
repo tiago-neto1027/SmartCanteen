@@ -28,59 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.monthCalendarReservation = new System.Windows.Forms.MonthCalendar();
+            this.btnReservationLeave = new System.Windows.Forms.Button();
+            this.btnReservationRegister = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioReservationMenuMeat = new System.Windows.Forms.RadioButton();
+            this.radioReservationMenuVeggie = new System.Windows.Forms.RadioButton();
+            this.radioReservationMenuFish = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnReservationSearch = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tBoxReservationNif = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelReservationResultMenu = new System.Windows.Forms.Label();
+            this.labelReservationResultId = new System.Windows.Forms.Label();
+            this.labelReservationResultDate = new System.Windows.Forms.Label();
+            this.labelReservationResultNif = new System.Windows.Forms.Label();
+            this.labelReservationResultName = new System.Windows.Forms.Label();
+            this.btnReservationPrint = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // monthCalendar1
+            // monthCalendarReservation
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(37, 98);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 0;
+            this.monthCalendarReservation.Location = new System.Drawing.Point(37, 98);
+            this.monthCalendarReservation.Name = "monthCalendarReservation";
+            this.monthCalendarReservation.TabIndex = 0;
             // 
-            // button2
+            // btnReservationLeave
             // 
-            this.button2.Location = new System.Drawing.Point(506, 408);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(66, 32);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "sair";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnReservationLeave.Location = new System.Drawing.Point(506, 408);
+            this.btnReservationLeave.Name = "btnReservationLeave";
+            this.btnReservationLeave.Size = new System.Drawing.Size(66, 32);
+            this.btnReservationLeave.TabIndex = 13;
+            this.btnReservationLeave.Text = "sair";
+            this.btnReservationLeave.UseVisualStyleBackColor = true;
+            this.btnReservationLeave.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // btnReservationRegister
             // 
-            this.button1.Location = new System.Drawing.Point(198, 408);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 32);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Registar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnReservationRegister.Location = new System.Drawing.Point(198, 408);
+            this.btnReservationRegister.Name = "btnReservationRegister";
+            this.btnReservationRegister.Size = new System.Drawing.Size(66, 32);
+            this.btnReservationRegister.TabIndex = 12;
+            this.btnReservationRegister.Text = "Registar";
+            this.btnReservationRegister.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.radioReservationMenuMeat);
+            this.groupBox1.Controls.Add(this.radioReservationMenuVeggie);
+            this.groupBox1.Controls.Add(this.radioReservationMenuFish);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(64, 272);
             this.groupBox1.Name = "groupBox1";
@@ -89,33 +89,44 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Menu:";
             // 
-            // radioButton2
+            // radioReservationMenuMeat
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 72);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(91, 19);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Vegetariano";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioReservationMenuMeat.AutoSize = true;
+            this.radioReservationMenuMeat.Location = new System.Drawing.Point(6, 24);
+            this.radioReservationMenuMeat.Name = "radioReservationMenuMeat";
+            this.radioReservationMenuMeat.Size = new System.Drawing.Size(58, 19);
+            this.radioReservationMenuMeat.TabIndex = 2;
+            this.radioReservationMenuMeat.TabStop = true;
+            this.radioReservationMenuMeat.Text = "Carne";
+            this.radioReservationMenuMeat.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radioReservationMenuVeggie
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 47);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(56, 19);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Peixe";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioReservationMenuVeggie.AutoSize = true;
+            this.radioReservationMenuVeggie.Location = new System.Drawing.Point(6, 72);
+            this.radioReservationMenuVeggie.Name = "radioReservationMenuVeggie";
+            this.radioReservationMenuVeggie.Size = new System.Drawing.Size(91, 19);
+            this.radioReservationMenuVeggie.TabIndex = 1;
+            this.radioReservationMenuVeggie.TabStop = true;
+            this.radioReservationMenuVeggie.Text = "Vegetariano";
+            this.radioReservationMenuVeggie.UseVisualStyleBackColor = true;
+            // 
+            // radioReservationMenuFish
+            // 
+            this.radioReservationMenuFish.AutoSize = true;
+            this.radioReservationMenuFish.Location = new System.Drawing.Point(6, 47);
+            this.radioReservationMenuFish.Name = "radioReservationMenuFish";
+            this.radioReservationMenuFish.Size = new System.Drawing.Size(56, 19);
+            this.radioReservationMenuFish.TabIndex = 0;
+            this.radioReservationMenuFish.TabStop = true;
+            this.radioReservationMenuFish.Text = "Peixe";
+            this.radioReservationMenuFish.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.btnReservationSearch);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.tBoxReservationNif);
             this.groupBox2.Location = new System.Drawing.Point(37, 18);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(361, 68);
@@ -123,15 +134,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pesquisa:";
             // 
-            // button3
+            // btnReservationSearch
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(236, 23);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(70, 30);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Procurar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnReservationSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReservationSearch.Location = new System.Drawing.Point(236, 23);
+            this.btnReservationSearch.Name = "btnReservationSearch";
+            this.btnReservationSearch.Size = new System.Drawing.Size(70, 30);
+            this.btnReservationSearch.TabIndex = 10;
+            this.btnReservationSearch.Text = "Procurar";
+            this.btnReservationSearch.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -143,21 +154,21 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "NIF:";
             // 
-            // textBox4
+            // tBoxReservationNif
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(70, 29);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(160, 21);
-            this.textBox4.TabIndex = 8;
+            this.tBoxReservationNif.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBoxReservationNif.Location = new System.Drawing.Point(70, 29);
+            this.tBoxReservationNif.Name = "tBoxReservationNif";
+            this.tBoxReservationNif.Size = new System.Drawing.Size(160, 21);
+            this.tBoxReservationNif.TabIndex = 8;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.labelReservationResultMenu);
+            this.groupBox3.Controls.Add(this.labelReservationResultId);
+            this.groupBox3.Controls.Add(this.labelReservationResultDate);
+            this.groupBox3.Controls.Add(this.labelReservationResultNif);
+            this.groupBox3.Controls.Add(this.labelReservationResultName);
             this.groupBox3.Location = new System.Drawing.Point(273, 98);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(305, 274);
@@ -165,88 +176,77 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Resultado:";
             // 
-            // label5
+            // labelReservationResultMenu
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(28, 161);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(25, 15);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "ID:";
+            this.labelReservationResultMenu.AutoSize = true;
+            this.labelReservationResultMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReservationResultMenu.Location = new System.Drawing.Point(6, 198);
+            this.labelReservationResultMenu.Name = "labelReservationResultMenu";
+            this.labelReservationResultMenu.Size = new System.Drawing.Size(47, 15);
+            this.labelReservationResultMenu.TabIndex = 4;
+            this.labelReservationResultMenu.Text = "Menu:";
             // 
-            // label3
+            // labelReservationResultId
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 119);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Data:";
+            this.labelReservationResultId.AutoSize = true;
+            this.labelReservationResultId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReservationResultId.Location = new System.Drawing.Point(28, 161);
+            this.labelReservationResultId.Name = "labelReservationResultId";
+            this.labelReservationResultId.Size = new System.Drawing.Size(25, 15);
+            this.labelReservationResultId.TabIndex = 3;
+            this.labelReservationResultId.Text = "ID:";
             // 
-            // label2
+            // labelReservationResultDate
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "NIF:";
+            this.labelReservationResultDate.AutoSize = true;
+            this.labelReservationResultDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReservationResultDate.Location = new System.Drawing.Point(12, 119);
+            this.labelReservationResultDate.Name = "labelReservationResultDate";
+            this.labelReservationResultDate.Size = new System.Drawing.Size(41, 15);
+            this.labelReservationResultDate.TabIndex = 2;
+            this.labelReservationResultDate.Text = "Data:";
             // 
-            // label1
+            // labelReservationResultNif
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nome:";
+            this.labelReservationResultNif.AutoSize = true;
+            this.labelReservationResultNif.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReservationResultNif.Location = new System.Drawing.Point(20, 83);
+            this.labelReservationResultNif.Name = "labelReservationResultNif";
+            this.labelReservationResultNif.Size = new System.Drawing.Size(33, 15);
+            this.labelReservationResultNif.TabIndex = 1;
+            this.labelReservationResultNif.Text = "NIF:";
             // 
-            // radioButton3
+            // labelReservationResultName
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(6, 24);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(58, 19);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Carne";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.labelReservationResultName.AutoSize = true;
+            this.labelReservationResultName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReservationResultName.Location = new System.Drawing.Point(4, 43);
+            this.labelReservationResultName.Name = "labelReservationResultName";
+            this.labelReservationResultName.Size = new System.Drawing.Size(49, 15);
+            this.labelReservationResultName.TabIndex = 0;
+            this.labelReservationResultName.Text = "Nome:";
             // 
-            // button4
+            // btnReservationPrint
             // 
-            this.button4.Location = new System.Drawing.Point(273, 408);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(66, 32);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Imprimir";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 198);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 15);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Menu:";
+            this.btnReservationPrint.Location = new System.Drawing.Point(273, 408);
+            this.btnReservationPrint.Name = "btnReservationPrint";
+            this.btnReservationPrint.Size = new System.Drawing.Size(66, 32);
+            this.btnReservationPrint.TabIndex = 16;
+            this.btnReservationPrint.Text = "Imprimir";
+            this.btnReservationPrint.UseVisualStyleBackColor = true;
             // 
             // ReservationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 461);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnReservationPrint);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnReservationLeave);
+            this.Controls.Add(this.btnReservationRegister);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.monthCalendarReservation);
             this.Name = "ReservationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ReservationForm";
@@ -262,23 +262,23 @@
 
         #endregion
 
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.MonthCalendar monthCalendarReservation;
+        private System.Windows.Forms.Button btnReservationLeave;
+        private System.Windows.Forms.Button btnReservationRegister;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioReservationMenuVeggie;
+        private System.Windows.Forms.RadioButton radioReservationMenuFish;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnReservationSearch;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tBoxReservationNif;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label labelReservationResultId;
+        private System.Windows.Forms.Label labelReservationResultDate;
+        private System.Windows.Forms.Label labelReservationResultNif;
+        private System.Windows.Forms.Label labelReservationResultName;
+        private System.Windows.Forms.RadioButton radioReservationMenuMeat;
+        private System.Windows.Forms.Label labelReservationResultMenu;
+        private System.Windows.Forms.Button btnReservationPrint;
     }
 }
