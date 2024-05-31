@@ -56,52 +56,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BalanceForm.cs">
+    <Compile Include="Migrations\202405311754489_fist.cs" />
+    <Compile Include="Migrations\202405311754489_fist.Designer.cs">
+      <DependentUpon>202405311754489_fist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\BalanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BalanceForm.Designer.cs">
+    <Compile Include="views\BalanceForm.Designer.cs">
       <DependentUpon>BalanceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientAddForm.cs">
+    <Compile Include="views\ClientAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClientAddForm.Designer.cs">
+    <Compile Include="views\ClientAddForm.Designer.cs">
       <DependentUpon>ClientAddForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ExtrasAddForm.cs">
+    <Compile Include="views\ExtrasAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ExtrasAddForm.Designer.cs">
+    <Compile Include="views\ExtrasAddForm.Designer.cs">
       <DependentUpon>ExtrasAddForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="views\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="views\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="views\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="views\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MealAddForm.cs">
+    <Compile Include="views\MealAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MealAddForm.Designer.cs">
+    <Compile Include="views\MealAddForm.Designer.cs">
       <DependentUpon>MealAddForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MealRegisterForm.cs">
+    <Compile Include="views\MealRegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MealRegisterForm.Designer.cs">
+    <Compile Include="views\MealRegisterForm.Designer.cs">
       <DependentUpon>MealRegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuAddForm.cs">
+    <Compile Include="views\MenuAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuAddForm.Designer.cs">
+    <Compile Include="views\MenuAddForm.Designer.cs">
       <DependentUpon>MenuAddForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
@@ -120,40 +124,43 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SmartCanteenContext.cs" />
-    <Compile Include="RegistryForm.cs">
+    <Compile Include="views\RegistryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistryForm.Designer.cs">
+    <Compile Include="views\RegistryForm.Designer.cs">
       <DependentUpon>RegistryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReservationForm.cs">
+    <Compile Include="views\ReservationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReservationForm.Designer.cs">
+    <Compile Include="views\ReservationForm.Designer.cs">
       <DependentUpon>ReservationForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BalanceForm.resx">
+    <EmbeddedResource Include="Migrations\202405311754489_fist.resx">
+      <DependentUpon>202405311754489_fist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\BalanceForm.resx">
       <DependentUpon>BalanceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClientAddForm.resx">
+    <EmbeddedResource Include="views\ClientAddForm.resx">
       <DependentUpon>ClientAddForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ExtrasAddForm.resx">
+    <EmbeddedResource Include="views\ExtrasAddForm.resx">
       <DependentUpon>ExtrasAddForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="views\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="views\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MealAddForm.resx">
+    <EmbeddedResource Include="views\MealAddForm.resx">
       <DependentUpon>MealAddForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MealRegisterForm.resx">
+    <EmbeddedResource Include="views\MealRegisterForm.resx">
       <DependentUpon>MealRegisterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuAddForm.resx">
+    <EmbeddedResource Include="views\MenuAddForm.resx">
       <DependentUpon>MenuAddForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -166,10 +173,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RegistryForm.resx">
+    <EmbeddedResource Include="views\RegistryForm.resx">
       <DependentUpon>RegistryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReservationForm.resx">
+    <EmbeddedResource Include="views\ReservationForm.resx">
       <DependentUpon>ReservationForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -186,9 +193,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\" />
-    <Folder Include="views\" />
     <None Include="Resources\603-6035882_clock-transparent-time-icon-png-png-download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

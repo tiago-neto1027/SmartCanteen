@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartCanteen.models
 {
-    internal class User
+    abstract class User
     {
         public int id {  get; set; }
         public string name { get; set; }
