@@ -52,6 +52,7 @@
             this.tBoxLoginPassword.Location = new System.Drawing.Point(81, 157);
             this.tBoxLoginPassword.Margin = new System.Windows.Forms.Padding(2);
             this.tBoxLoginPassword.Name = "tBoxLoginPassword";
+            this.tBoxLoginPassword.PasswordChar = '*';
             this.tBoxLoginPassword.Size = new System.Drawing.Size(151, 21);
             this.tBoxLoginPassword.TabIndex = 1;
             // 
@@ -99,7 +100,6 @@
             this.btnLoginCreateUser.TabIndex = 5;
             this.btnLoginCreateUser.Text = "Create User";
             this.btnLoginCreateUser.UseVisualStyleBackColor = true;
-            this.btnLoginCreateUser.Click += new System.EventHandler(this.btnCreateUser_Click);
             // 
             // btnLoginExit
             // 

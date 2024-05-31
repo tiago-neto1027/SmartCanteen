@@ -23,8 +23,8 @@ namespace SmartCanteen
         {
             SmartCanteenContext context = new SmartCanteenContext();
 
-            string username = tBoxUserNameLogin.Text;
-            string password = tBoxPasswordLogin.Text;
+            string username = tBoxLoginUser.Text;
+            string password = tBoxLoginPassword.Text;
 
             if (string.IsNullOrEmpty(username))
             {
