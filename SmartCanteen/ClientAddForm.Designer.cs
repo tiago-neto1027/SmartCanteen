@@ -28,100 +28,100 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.tBoxClientAddName = new System.Windows.Forms.TextBox();
+            this.tBoxClientAddSurname = new System.Windows.Forms.TextBox();
+            this.tBoxClientAddIDNumber = new System.Windows.Forms.TextBox();
+            this.tBoxClientAddNif = new System.Windows.Forms.TextBox();
+            this.clientAddNameLabel = new System.Windows.Forms.Label();
+            this.clientAddSurnameLabel = new System.Windows.Forms.Label();
+            this.clientAddIDNumberLabel = new System.Windows.Forms.Label();
+            this.clientAddNifLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.radioClientAddTeacherType = new System.Windows.Forms.RadioButton();
+            this.radioClientAddStudentType = new System.Windows.Forms.RadioButton();
+            this.btnClientAddCreate = new System.Windows.Forms.Button();
+            this.btnClientAddLeave = new System.Windows.Forms.Button();
+            this.clientAddEmailLabel = new System.Windows.Forms.Label();
+            this.tBoxClientAddEmail = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // tBoxClientAddName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(132, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(287, 21);
-            this.textBox1.TabIndex = 0;
+            this.tBoxClientAddName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBoxClientAddName.Location = new System.Drawing.Point(132, 43);
+            this.tBoxClientAddName.Name = "tBoxClientAddName";
+            this.tBoxClientAddName.Size = new System.Drawing.Size(287, 21);
+            this.tBoxClientAddName.TabIndex = 0;
             // 
-            // textBox2
+            // tBoxClientAddSurname
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(132, 88);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(287, 21);
-            this.textBox2.TabIndex = 1;
+            this.tBoxClientAddSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBoxClientAddSurname.Location = new System.Drawing.Point(132, 88);
+            this.tBoxClientAddSurname.Name = "tBoxClientAddSurname";
+            this.tBoxClientAddSurname.Size = new System.Drawing.Size(287, 21);
+            this.tBoxClientAddSurname.TabIndex = 1;
             // 
-            // textBox3
+            // tBoxClientAddIDNumber
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(132, 171);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(160, 21);
-            this.textBox3.TabIndex = 2;
+            this.tBoxClientAddIDNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBoxClientAddIDNumber.Location = new System.Drawing.Point(132, 171);
+            this.tBoxClientAddIDNumber.Name = "tBoxClientAddIDNumber";
+            this.tBoxClientAddIDNumber.Size = new System.Drawing.Size(160, 21);
+            this.tBoxClientAddIDNumber.TabIndex = 2;
             // 
-            // textBox4
+            // tBoxClientAddNif
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(132, 222);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(160, 21);
-            this.textBox4.TabIndex = 3;
+            this.tBoxClientAddNif.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBoxClientAddNif.Location = new System.Drawing.Point(132, 222);
+            this.tBoxClientAddNif.Name = "tBoxClientAddNif";
+            this.tBoxClientAddNif.Size = new System.Drawing.Size(160, 21);
+            this.tBoxClientAddNif.TabIndex = 3;
             // 
-            // label1
+            // clientAddNameLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(69, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 15);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Nome:";
+            this.clientAddNameLabel.AutoSize = true;
+            this.clientAddNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clientAddNameLabel.Location = new System.Drawing.Point(69, 43);
+            this.clientAddNameLabel.Name = "clientAddNameLabel";
+            this.clientAddNameLabel.Size = new System.Drawing.Size(44, 15);
+            this.clientAddNameLabel.TabIndex = 4;
+            this.clientAddNameLabel.Text = "Nome:";
             // 
-            // label2
+            // clientAddSurnameLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(62, 88);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 15);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Apelido:";
+            this.clientAddSurnameLabel.AutoSize = true;
+            this.clientAddSurnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clientAddSurnameLabel.Location = new System.Drawing.Point(62, 88);
+            this.clientAddSurnameLabel.Name = "clientAddSurnameLabel";
+            this.clientAddSurnameLabel.Size = new System.Drawing.Size(51, 15);
+            this.clientAddSurnameLabel.TabIndex = 5;
+            this.clientAddSurnameLabel.Text = "Apelido:";
             // 
-            // label3
+            // clientAddIDNumberLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 171);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 30);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Nº Estudante/\r\n      Docente:";
+            this.clientAddIDNumberLabel.AutoSize = true;
+            this.clientAddIDNumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clientAddIDNumberLabel.Location = new System.Drawing.Point(32, 171);
+            this.clientAddIDNumberLabel.Name = "clientAddIDNumberLabel";
+            this.clientAddIDNumberLabel.Size = new System.Drawing.Size(81, 30);
+            this.clientAddIDNumberLabel.TabIndex = 6;
+            this.clientAddIDNumberLabel.Text = "Nº Estudante/\r\n      Docente:";
             // 
-            // label4
+            // clientAddNifLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(84, 222);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 15);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "NIF:";
+            this.clientAddNifLabel.AutoSize = true;
+            this.clientAddNifLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clientAddNifLabel.Location = new System.Drawing.Point(84, 222);
+            this.clientAddNifLabel.Name = "clientAddNifLabel";
+            this.clientAddNifLabel.Size = new System.Drawing.Size(29, 15);
+            this.clientAddNifLabel.TabIndex = 7;
+            this.clientAddNifLabel.Text = "NIF:";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.radioClientAddTeacherType);
+            this.groupBox1.Controls.Add(this.radioClientAddStudentType);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(132, 280);
             this.groupBox1.Name = "groupBox1";
@@ -130,83 +130,83 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipo:";
             // 
-            // radioButton2
+            // radioClientAddTeacherType
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(164, 34);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(71, 19);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Docente";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioClientAddTeacherType.AutoSize = true;
+            this.radioClientAddTeacherType.Location = new System.Drawing.Point(164, 34);
+            this.radioClientAddTeacherType.Name = "radioClientAddTeacherType";
+            this.radioClientAddTeacherType.Size = new System.Drawing.Size(71, 19);
+            this.radioClientAddTeacherType.TabIndex = 1;
+            this.radioClientAddTeacherType.TabStop = true;
+            this.radioClientAddTeacherType.Text = "Docente";
+            this.radioClientAddTeacherType.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radioClientAddStudentType
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 34);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(80, 19);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Estudante";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioClientAddStudentType.AutoSize = true;
+            this.radioClientAddStudentType.Location = new System.Drawing.Point(7, 34);
+            this.radioClientAddStudentType.Name = "radioClientAddStudentType";
+            this.radioClientAddStudentType.Size = new System.Drawing.Size(80, 19);
+            this.radioClientAddStudentType.TabIndex = 0;
+            this.radioClientAddStudentType.TabStop = true;
+            this.radioClientAddStudentType.Text = "Estudante";
+            this.radioClientAddStudentType.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnClientAddCreate
             // 
-            this.button1.Location = new System.Drawing.Point(132, 388);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 32);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Adicionar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnClientAddCreate.Location = new System.Drawing.Point(132, 388);
+            this.btnClientAddCreate.Name = "btnClientAddCreate";
+            this.btnClientAddCreate.Size = new System.Drawing.Size(66, 32);
+            this.btnClientAddCreate.TabIndex = 9;
+            this.btnClientAddCreate.Text = "Adicionar";
+            this.btnClientAddCreate.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnClientAddLeave
             // 
-            this.button2.Location = new System.Drawing.Point(353, 388);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(66, 32);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Sair";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnClientAddLeave.Location = new System.Drawing.Point(353, 388);
+            this.btnClientAddLeave.Name = "btnClientAddLeave";
+            this.btnClientAddLeave.Size = new System.Drawing.Size(66, 32);
+            this.btnClientAddLeave.TabIndex = 10;
+            this.btnClientAddLeave.Text = "Sair";
+            this.btnClientAddLeave.UseVisualStyleBackColor = true;
+            this.btnClientAddLeave.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label5
+            // clientAddEmailLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(62, 131);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 15);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Email:";
+            this.clientAddEmailLabel.AutoSize = true;
+            this.clientAddEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clientAddEmailLabel.Location = new System.Drawing.Point(62, 131);
+            this.clientAddEmailLabel.Name = "clientAddEmailLabel";
+            this.clientAddEmailLabel.Size = new System.Drawing.Size(42, 15);
+            this.clientAddEmailLabel.TabIndex = 12;
+            this.clientAddEmailLabel.Text = "Email:";
             // 
-            // textBox5
+            // tBoxClientAddEmail
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(132, 131);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(287, 21);
-            this.textBox5.TabIndex = 11;
+            this.tBoxClientAddEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBoxClientAddEmail.Location = new System.Drawing.Point(132, 131);
+            this.tBoxClientAddEmail.Name = "tBoxClientAddEmail";
+            this.tBoxClientAddEmail.Size = new System.Drawing.Size(287, 21);
+            this.tBoxClientAddEmail.TabIndex = 11;
             // 
             // ClientAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 461);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.clientAddEmailLabel);
+            this.Controls.Add(this.tBoxClientAddEmail);
+            this.Controls.Add(this.btnClientAddLeave);
+            this.Controls.Add(this.btnClientAddCreate);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.clientAddNifLabel);
+            this.Controls.Add(this.clientAddIDNumberLabel);
+            this.Controls.Add(this.clientAddSurnameLabel);
+            this.Controls.Add(this.clientAddNameLabel);
+            this.Controls.Add(this.tBoxClientAddNif);
+            this.Controls.Add(this.tBoxClientAddIDNumber);
+            this.Controls.Add(this.tBoxClientAddSurname);
+            this.Controls.Add(this.tBoxClientAddName);
             this.Name = "ClientAddForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ClientAddForm";
@@ -219,20 +219,20 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tBoxClientAddName;
+        private System.Windows.Forms.TextBox tBoxClientAddSurname;
+        private System.Windows.Forms.TextBox tBoxClientAddIDNumber;
+        private System.Windows.Forms.TextBox tBoxClientAddNif;
+        private System.Windows.Forms.Label clientAddNameLabel;
+        private System.Windows.Forms.Label clientAddSurnameLabel;
+        private System.Windows.Forms.Label clientAddIDNumberLabel;
+        private System.Windows.Forms.Label clientAddNifLabel;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.RadioButton radioClientAddStudentType;
+        private System.Windows.Forms.RadioButton radioClientAddTeacherType;
+        private System.Windows.Forms.Button btnClientAddCreate;
+        private System.Windows.Forms.Button btnClientAddLeave;
+        private System.Windows.Forms.Label clientAddEmailLabel;
+        private System.Windows.Forms.TextBox tBoxClientAddEmail;
     }
 }
