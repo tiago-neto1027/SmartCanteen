@@ -9,7 +9,7 @@ namespace SmartCanteen.models
 {
     abstract class Client : User
     {
-        public float balance  {  get; set; }
+        public float Balance  {  get; set; }
     
         public Client()
         {

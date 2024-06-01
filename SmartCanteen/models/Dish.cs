@@ -7,17 +7,23 @@ using System.Threading.Tasks;
 
 namespace SmartCanteen.models
 {
+    public enum DishType
+    {
+        Meat,
+        Fish,
+        Veggie
+    }
     internal class Dish
     {
-        [Key]
-        public string description { get; set; }
-        public enum type { meat, fish, veggie }
-        public bool active { get; set; }
+        public int ID { get; set; }
+        public string Description { get; set; }
+        public DishType Type { get; set; }
+        public bool Active { get; set; }
 
 
-    public Dish()
-    {
-    }
-
+        public Dish()
+        {
+            
+        }
     }
 }

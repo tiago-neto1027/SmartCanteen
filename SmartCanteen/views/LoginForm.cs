@@ -40,11 +40,11 @@ namespace SmartCanteen
             {
                 var matchingStaff = context.Users
                     .OfType<Staff>()
-                    .FirstOrDefault(staff => staff.username == username && staff.password == password);
+                    .FirstOrDefault(staff => staff.Username == username && staff.Password == password);
 
                 if (matchingStaff != null)
                 {
-                    Console.WriteLine($"Staff member found: {matchingStaff.name}");
+                    Console.WriteLine($"Staff member found: {matchingStaff.Name}");
                     this.Hide();
                     MainForm mainForm = new MainForm();
                     mainForm.ShowDialog();

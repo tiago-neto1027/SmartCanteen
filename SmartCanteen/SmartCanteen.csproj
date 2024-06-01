@@ -56,10 +56,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202405311754489_fist.cs" />
-    <Compile Include="Migrations\202405311754489_fist.Designer.cs">
-      <DependentUpon>202405311754489_fist.cs</DependentUpon>
-    </Compile>
+    <Compile Include="controllers\DishController.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="views\BalanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,7 +106,6 @@
     <Compile Include="views\MenuAddForm.Designer.cs">
       <DependentUpon>MenuAddForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="models\Client.cs" />
     <Compile Include="models\Dish.cs" />
     <Compile Include="models\Extra.cs" />
@@ -136,9 +133,6 @@
     <Compile Include="views\ReservationForm.Designer.cs">
       <DependentUpon>ReservationForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202405311754489_fist.resx">
-      <DependentUpon>202405311754489_fist.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="views\BalanceForm.resx">
       <DependentUpon>BalanceForm.cs</DependentUpon>
     </EmbeddedResource>

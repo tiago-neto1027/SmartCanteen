@@ -9,9 +9,9 @@ namespace SmartCanteen.models
 {
     internal class Invoice
     {
-        [Key]
-        public double total {  get; set; }
-        public DateTime date { get; set; }
+        public int ID { get; set; }
+        public double Total {  get; set; }
+        public DateTime Date { get; set; }
 
         public Invoice()
         {

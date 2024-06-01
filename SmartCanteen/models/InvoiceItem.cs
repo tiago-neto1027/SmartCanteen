@@ -9,9 +9,9 @@ namespace SmartCanteen.models
 {
     internal class InvoiceItem
     {
-        [Key]
-        public string description {  get; set; }
-        public double price { get; set; }
+        public int ID { get; set; }
+        public string Description {  get; set; }
+        public double Price { get; set; }
 
         public InvoiceItem()
         {
