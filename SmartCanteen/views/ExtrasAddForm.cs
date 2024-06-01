@@ -34,8 +34,21 @@ namespace SmartCanteen
         /// </summary>
         private void btnExtrasAddRegister_Click(object sender, EventArgs e)
         {
+            //Verify if fields are empty
+            if (string.IsNullOrEmpty(tBoxExtrasAddDescription.Text))
+            {
+                MessageBox.Show("A descrição não pode estar vazia.");
+                return;
+            }
+            if (numericExtrasAddStudentPrice.Value == 0)
+            {
+                MessageBox.Show("O preço do produto não pode ser 0.");
+                return;
+            }
+
+            //Fetches the data
             string description = tBoxExtrasAddDescription.Text;
-            ExtraType extraType = new ExtraType();
+            ExtraType extraType = ExtraType.Other;
             double price = (double)numericExtrasAddStudentPrice.Value;
 
             if (radioExtrasAddTypeSoup.Checked)
