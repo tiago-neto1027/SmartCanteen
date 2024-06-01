@@ -2,25 +2,24 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SmartCanteen.controllers
 {
-    internal class DishController
+    internal class ExtraController
     {
-        public DishController() 
+        public ExtraController()
         {
-        
+
         }
 
-        public void AddDish(string description, DishType dishType)
+        public void AddExtra(string description, ExtraType extraType, double price)
         {
             using (var db = new SmartCanteenContext())
             {
-                var dish = new Dish(description, dishType);
-                db.Dishes.Add(dish);
+                Extra extra = new Extra(description, extraType, price);
+                db.Extras.Add(extra);
                 db.SaveChanges();
             }
         }
