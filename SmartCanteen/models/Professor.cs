@@ -9,8 +9,7 @@ namespace SmartCanteen.models
 {
     internal class Professor : Client
     {
-        [Key]
-        public string email { get; set; }
+        public string Email { get; set; }
         public Professor() 
         {
             

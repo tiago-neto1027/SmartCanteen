@@ -9,7 +9,6 @@ namespace SmartCanteen.models
 {
     internal class Student : Client
     {
-        [Key]
         public int StudentID {  get; set; }
 
         public Student() 
