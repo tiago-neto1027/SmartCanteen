@@ -20,6 +20,7 @@ namespace SmartCanteen.models
         public DishType Type { get; set; }
         public bool Active { get; set; }
 
+        public Dish() { }
 
         public Dish(string description,DishType dishType)
         {
