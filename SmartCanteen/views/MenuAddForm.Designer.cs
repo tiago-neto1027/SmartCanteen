@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.cBoxMenuAddDesert = new System.Windows.Forms.ComboBox();
+            this.cBoxMenuAddDessert = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cBoxMenuAddSoup = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -70,7 +70,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.cBoxMenuAddDesert);
+            this.groupBox5.Controls.Add(this.cBoxMenuAddDessert);
             this.groupBox5.Location = new System.Drawing.Point(27, 221);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(554, 44);
@@ -78,13 +78,13 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Sobremesa:";
             // 
-            // cBoxMenuAddDesert
+            // cBoxMenuAddDessert
             // 
-            this.cBoxMenuAddDesert.FormattingEnabled = true;
-            this.cBoxMenuAddDesert.Location = new System.Drawing.Point(89, 15);
-            this.cBoxMenuAddDesert.Name = "cBoxMenuAddDesert";
-            this.cBoxMenuAddDesert.Size = new System.Drawing.Size(432, 23);
-            this.cBoxMenuAddDesert.TabIndex = 4;
+            this.cBoxMenuAddDessert.FormattingEnabled = true;
+            this.cBoxMenuAddDessert.Location = new System.Drawing.Point(89, 15);
+            this.cBoxMenuAddDessert.Name = "cBoxMenuAddDessert";
+            this.cBoxMenuAddDessert.Size = new System.Drawing.Size(432, 25);
+            this.cBoxMenuAddDessert.TabIndex = 4;
             // 
             // groupBox4
             // 
@@ -101,7 +101,7 @@
             this.cBoxMenuAddSoup.FormattingEnabled = true;
             this.cBoxMenuAddSoup.Location = new System.Drawing.Point(89, 15);
             this.cBoxMenuAddSoup.Name = "cBoxMenuAddSoup";
-            this.cBoxMenuAddSoup.Size = new System.Drawing.Size(432, 23);
+            this.cBoxMenuAddSoup.Size = new System.Drawing.Size(432, 25);
             this.cBoxMenuAddSoup.TabIndex = 3;
             // 
             // groupBox3
@@ -122,27 +122,29 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 87);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Location = new System.Drawing.Point(-1, 82);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 15);
+            this.label3.Size = new System.Drawing.Size(89, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Vegetariano:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 58);
+            this.label2.Location = new System.Drawing.Point(42, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 15);
+            this.label2.Size = new System.Drawing.Size(46, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Peixe:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 29);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(38, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 15);
+            this.label1.Size = new System.Drawing.Size(50, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Carne:";
             // 
@@ -151,7 +153,7 @@
             this.cBoxMenuAddVeggie.FormattingEnabled = true;
             this.cBoxMenuAddVeggie.Location = new System.Drawing.Point(89, 79);
             this.cBoxMenuAddVeggie.Name = "cBoxMenuAddVeggie";
-            this.cBoxMenuAddVeggie.Size = new System.Drawing.Size(432, 23);
+            this.cBoxMenuAddVeggie.Size = new System.Drawing.Size(432, 25);
             this.cBoxMenuAddVeggie.TabIndex = 2;
             // 
             // cBoxMenuAddFish
@@ -159,7 +161,7 @@
             this.cBoxMenuAddFish.FormattingEnabled = true;
             this.cBoxMenuAddFish.Location = new System.Drawing.Point(89, 50);
             this.cBoxMenuAddFish.Name = "cBoxMenuAddFish";
-            this.cBoxMenuAddFish.Size = new System.Drawing.Size(432, 23);
+            this.cBoxMenuAddFish.Size = new System.Drawing.Size(432, 25);
             this.cBoxMenuAddFish.TabIndex = 1;
             // 
             // cBoxMenuAddMeat
@@ -167,7 +169,7 @@
             this.cBoxMenuAddMeat.FormattingEnabled = true;
             this.cBoxMenuAddMeat.Location = new System.Drawing.Point(89, 21);
             this.cBoxMenuAddMeat.Name = "cBoxMenuAddMeat";
-            this.cBoxMenuAddMeat.Size = new System.Drawing.Size(432, 23);
+            this.cBoxMenuAddMeat.Size = new System.Drawing.Size(432, 25);
             this.cBoxMenuAddMeat.TabIndex = 0;
             // 
             // groupBox2
@@ -184,7 +186,7 @@
             // 
             // btnMenuAddDateConsult
             // 
-            this.btnMenuAddDateConsult.Location = new System.Drawing.Point(296, 18);
+            this.btnMenuAddDateConsult.Location = new System.Drawing.Point(293, 22);
             this.btnMenuAddDateConsult.Name = "btnMenuAddDateConsult";
             this.btnMenuAddDateConsult.Size = new System.Drawing.Size(75, 23);
             this.btnMenuAddDateConsult.TabIndex = 5;
@@ -195,7 +197,7 @@
             // 
             this.dateTimePickerMenuAdd.Location = new System.Drawing.Point(65, 20);
             this.dateTimePickerMenuAdd.Name = "dateTimePickerMenuAdd";
-            this.dateTimePickerMenuAdd.Size = new System.Drawing.Size(194, 21);
+            this.dateTimePickerMenuAdd.Size = new System.Drawing.Size(194, 23);
             this.dateTimePickerMenuAdd.TabIndex = 4;
             // 
             // btnMenuAddLeave
@@ -258,7 +260,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cBoxMenuAddDesert;
+        private System.Windows.Forms.ComboBox cBoxMenuAddDessert;
         private System.Windows.Forms.ComboBox cBoxMenuAddSoup;
     }
 }

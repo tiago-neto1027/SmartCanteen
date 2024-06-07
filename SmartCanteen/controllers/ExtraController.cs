@@ -23,5 +23,13 @@ namespace SmartCanteen.controllers
                 db.SaveChanges();
             }
         }
+
+        public List<Extra> FetchExtras(ExtraType extraType)
+        {
+            using (var db = new SmartCanteenContext())
+            {
+                return db.Extras.Where(e => e.Active && e.Type == extraType).ToList();
+            }
+        }
     }
 }

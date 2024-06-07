@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="controllers\DishController.cs" />
     <Compile Include="controllers\ExtraController.cs" />
+    <Compile Include="controllers\MenuController.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="views\BalanceForm.cs">
       <SubType>Form</SubType>
