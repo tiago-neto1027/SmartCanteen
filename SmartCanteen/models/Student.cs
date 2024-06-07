@@ -10,14 +10,14 @@ namespace SmartCanteen.models
 {
     internal class Student : Client
     {
-        public int StudentID {  get; set; }
+        public string StudentID {  get; set; }
 
-        public Student(string name, string nif, float balance, int studentID) : base(name, nif, balance)
+        public Student(string name, string nif, decimal balance, string studentID) : base(name, nif, balance)
         {
-            string Name = name;
-            string Nif = nif;
-            float Balance = balance;
-            int StudentID = studentID;
+             Name = name;
+             NIF = nif;
+             Balance = balance;
+             StudentID = studentID;
         }
     }
 }

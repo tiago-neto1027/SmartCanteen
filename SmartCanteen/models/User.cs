@@ -17,5 +17,10 @@ namespace SmartCanteen.models
             string Name = name;
             string Nif = nif;
         }
+
+        public User()
+        {
+
+        }
     }
 }

@@ -14,11 +14,14 @@ namespace SmartCanteen.models
 
         public Staff(string name, string nif, string username, string password) : base(name, nif)
         {
-            string Name = name;
-            string Nif = nif;
-            string Username = username;
-            string Password = password;
+             Name = name;
+             NIF = nif;
+             Username = username;
+             Password = password;
+        }
 
+        public Staff()
+        {
         }
     }
 }

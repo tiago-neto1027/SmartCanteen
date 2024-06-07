@@ -53,12 +53,11 @@ namespace SmartCanteen
                 }
                 else
                 {
-                    Console.WriteLine("No matching staff member found.");
-                    this.Close();
+                    MessageBox.Show("No matching staff member found."); 
+                    tBoxLoginPassword.Text=string.Empty;
+                    tBoxLoginUser.Text = string.Empty;
                 }
             }
-            
-
         }
 
         private void btnExitLogin_Click(object sender, EventArgs e)
