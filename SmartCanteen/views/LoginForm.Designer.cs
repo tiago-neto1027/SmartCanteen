@@ -100,6 +100,7 @@
             this.btnLoginCreateUser.TabIndex = 5;
             this.btnLoginCreateUser.Text = "Create User";
             this.btnLoginCreateUser.UseVisualStyleBackColor = true;
+            this.btnLoginCreateUser.Click += new System.EventHandler(this.btnLoginCreateUser_Click);
             // 
             // btnLoginExit
             // 

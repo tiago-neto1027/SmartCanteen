@@ -10,10 +10,12 @@ namespace SmartCanteen.models
     abstract class Client : User
     {
         public float Balance  {  get; set; }
-    
-        public Client()
-        {
 
+        public Client(string name, string nif,float balance) : base(name, nif)
+        {
+            string Name = name;
+            string Nif = nif;
+            float Balance = balance;
         }
     }
 

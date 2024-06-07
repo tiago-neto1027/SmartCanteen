@@ -12,9 +12,10 @@ namespace SmartCanteen.models
         public string Name { get; set; }
         public string NIF { get; set; }
 
-        public User() 
-        { 
-        
+        public User(string name, string nif)
+        {
+            string Name = name;
+            string Nif = nif;
         }
     }
 }
