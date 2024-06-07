@@ -16,6 +16,7 @@ namespace SmartCanteen.models
     }
     internal class Extra
     {
+        [Key]
         public int ID { get; set; }
         public string Description {  get; set; }
         public ExtraType Type { get; set; }

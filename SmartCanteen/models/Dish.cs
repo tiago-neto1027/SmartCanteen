@@ -15,6 +15,7 @@ namespace SmartCanteen.models
     }
     internal class Dish
     {
+        [Key]
         public int ID { get; set; }
         public string Description { get; set; }
         public DishType Type { get; set; }

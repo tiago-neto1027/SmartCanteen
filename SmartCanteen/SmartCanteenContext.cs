@@ -11,7 +11,6 @@ namespace SmartCanteen
     internal class SmartCanteenContext : DbContext
     {
         public DbSet<User> Users { get; set; }
- 
         //public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Fine> Fines { get; set; }
         public DbSet<Menu> Menus { get; set; }

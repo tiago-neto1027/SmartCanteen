@@ -9,6 +9,7 @@ namespace SmartCanteen.models
 {
     internal class Menu
     {
+        [Key]
         public int ID { get; set; }
         public DateTime Date {  get; set; }
         public int Quantity { get; set; }

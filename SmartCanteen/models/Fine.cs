@@ -10,6 +10,7 @@ namespace SmartCanteen.models
 {
     internal class Fine
     {
+        [Key]
         public int ID { get; set; }
         public float NumHours {  get; set; }
         public double Value {
