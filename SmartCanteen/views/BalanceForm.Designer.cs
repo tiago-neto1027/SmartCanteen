@@ -30,7 +30,7 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBalanceSearch = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelNIF = new System.Windows.Forms.Label();
             this.tBoxBalanceNif = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.labelBalanceCurrent = new System.Windows.Forms.Label();
@@ -40,16 +40,20 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnBalanceLeave = new System.Windows.Forms.Button();
             this.btnBalanceAddValue = new System.Windows.Forms.Button();
-            this.tBoxBalanceAddValue = new System.Windows.Forms.TextBox();
+            this.listBoxClients = new System.Windows.Forms.ListBox();
+            this.labelClients = new System.Windows.Forms.Label();
+            this.AddValue = new System.Windows.Forms.NumericUpDown();
+            this.btnShowAll = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AddValue)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnBalanceSearch);
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.labelNIF);
             this.groupBox1.Controls.Add(this.tBoxBalanceNif);
             this.groupBox1.Location = new System.Drawing.Point(25, 51);
             this.groupBox1.Name = "groupBox1";
@@ -67,16 +71,17 @@
             this.btnBalanceSearch.TabIndex = 10;
             this.btnBalanceSearch.Text = "Procurar";
             this.btnBalanceSearch.UseVisualStyleBackColor = true;
+            this.btnBalanceSearch.Click += new System.EventHandler(this.btnBalanceSearch_Click);
             // 
-            // label4
+            // labelNIF
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(22, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 15);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "NIF:";
+            this.labelNIF.AutoSize = true;
+            this.labelNIF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNIF.Location = new System.Drawing.Point(22, 29);
+            this.labelNIF.Name = "labelNIF";
+            this.labelNIF.Size = new System.Drawing.Size(29, 15);
+            this.labelNIF.TabIndex = 9;
+            this.labelNIF.Text = "NIF:";
             // 
             // tBoxBalanceNif
             // 
@@ -141,9 +146,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.AddValue);
             this.groupBox3.Controls.Add(this.btnBalanceLeave);
             this.groupBox3.Controls.Add(this.btnBalanceAddValue);
-            this.groupBox3.Controls.Add(this.tBoxBalanceAddValue);
             this.groupBox3.Location = new System.Drawing.Point(25, 326);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(361, 87);
@@ -160,7 +165,7 @@
             this.btnBalanceLeave.TabIndex = 12;
             this.btnBalanceLeave.Text = "Sair";
             this.btnBalanceLeave.UseVisualStyleBackColor = true;
-            this.btnBalanceLeave.Click += new System.EventHandler(this.button3_Click);
+            this.btnBalanceLeave.Click += new System.EventHandler(this.btnBalanceLeave_Click);
             // 
             // btnBalanceAddValue
             // 
@@ -171,20 +176,53 @@
             this.btnBalanceAddValue.TabIndex = 11;
             this.btnBalanceAddValue.Text = "Adicionar";
             this.btnBalanceAddValue.UseVisualStyleBackColor = true;
+            this.btnBalanceAddValue.Click += new System.EventHandler(this.btnBalanceAddValue_Click);
             // 
-            // tBoxBalanceAddValue
+            // listBoxClients
             // 
-            this.tBoxBalanceAddValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBoxBalanceAddValue.Location = new System.Drawing.Point(70, 40);
-            this.tBoxBalanceAddValue.Name = "tBoxBalanceAddValue";
-            this.tBoxBalanceAddValue.Size = new System.Drawing.Size(100, 21);
-            this.tBoxBalanceAddValue.TabIndex = 0;
+            this.listBoxClients.FormattingEnabled = true;
+            this.listBoxClients.Location = new System.Drawing.Point(425, 143);
+            this.listBoxClients.Name = "listBoxClients";
+            this.listBoxClients.Size = new System.Drawing.Size(244, 264);
+            this.listBoxClients.TabIndex = 3;
+            this.listBoxClients.SelectedIndexChanged += new System.EventHandler(this.listBoxClients_SelectedIndexChanged);
+            // 
+            // labelClients
+            // 
+            this.labelClients.AutoSize = true;
+            this.labelClients.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelClients.Location = new System.Drawing.Point(422, 125);
+            this.labelClients.Name = "labelClients";
+            this.labelClients.Size = new System.Drawing.Size(54, 15);
+            this.labelClients.TabIndex = 11;
+            this.labelClients.Text = "Clientes:";
+            // 
+            // AddValue
+            // 
+            this.AddValue.Location = new System.Drawing.Point(50, 41);
+            this.AddValue.Name = "AddValue";
+            this.AddValue.Size = new System.Drawing.Size(120, 20);
+            this.AddValue.TabIndex = 13;
+            // 
+            // btnShowAll
+            // 
+            this.btnShowAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowAll.Location = new System.Drawing.Point(475, 413);
+            this.btnShowAll.Name = "btnShowAll";
+            this.btnShowAll.Size = new System.Drawing.Size(142, 30);
+            this.btnShowAll.TabIndex = 11;
+            this.btnShowAll.Text = "Mostrar Todos";
+            this.btnShowAll.UseVisualStyleBackColor = true;
+            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
             // BalanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 461);
+            this.ClientSize = new System.Drawing.Size(700, 461);
+            this.Controls.Add(this.btnShowAll);
+            this.Controls.Add(this.labelClients);
+            this.Controls.Add(this.listBoxClients);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -196,15 +234,16 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AddValue)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelNIF;
         private System.Windows.Forms.TextBox tBoxBalanceNif;
         private System.Windows.Forms.Button btnBalanceSearch;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -214,7 +253,10 @@
         private System.Windows.Forms.Label labelBalanceCurrent;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnBalanceAddValue;
-        private System.Windows.Forms.TextBox tBoxBalanceAddValue;
         private System.Windows.Forms.Button btnBalanceLeave;
+        private System.Windows.Forms.ListBox listBoxClients;
+        private System.Windows.Forms.Label labelClients;
+        private System.Windows.Forms.NumericUpDown AddValue;
+        private System.Windows.Forms.Button btnShowAll;
     }
 }

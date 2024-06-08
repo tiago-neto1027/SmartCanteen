@@ -20,8 +20,8 @@ namespace SmartCanteen.controllers
         public void AddStaff(string name, string nif, string username, string password)
         {
             using (var db = new SmartCanteenContext())
-            {
-                var staff = new Staff(name, nif,username, password);
+            { 
+                var staff = new Staff(name, nif, username, password);
                 db.Users.Add(staff);
                 try
                 {
@@ -52,6 +52,43 @@ namespace SmartCanteen.controllers
                 var student = new Student(name, nif, balance, studentID);
                 db.Users.Add(student);
                 db.SaveChanges();
+            }
+        }
+
+        public static List<Client> GetAllClients()
+        {
+            using (var db = new SmartCanteenContext())
+            {
+                return db.Users.OfType<Client>().ToList();
+            }
+        }
+
+        public static bool UpdateClientBalance(string nif, decimal addedValue)
+        {
+            using (var db = new SmartCanteenContext())
+            {
+                var customer = db.Users.OfType<Client>().FirstOrDefault(c => c.NIF == nif);
+                if (customer == null)
+                {
+                    return false;
+                }
+
+                customer.Balance += addedValue;
+
+                db.SaveChanges();
+                return true;
+            }
+        }
+
+        public static Client SearchClient(string nif)
+        {
+            using (var db = new SmartCanteenContext())
+            {
+                var customer = db.Users.OfType<Client>().FirstOrDefault(c => c.NIF == nif);
+                if (customer != null)
+                    return customer;
+                else
+                    return null;
             }
         }
        

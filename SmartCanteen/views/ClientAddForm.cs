@@ -50,6 +50,8 @@ namespace SmartCanteen
 
         private void btnClientAddCreate_Click(object sender, EventArgs e)
         {
+            UserController userController = new UserController();
+
             string name = tBoxName.Text;
             string nif = tBoxNIF.Text;
             decimal balance = BalanceInput.Value;
@@ -61,6 +63,13 @@ namespace SmartCanteen
             if (!NIFsuccess)
             {
                 MessageBox.Show("NIF has to be a numeric value.");
+                return;
+            }
+
+            var searchNIF = UserController.SearchClient(nif);
+            if (searchNIF != null)
+            {
+                MessageBox.Show("This NIF is already in use");
                 return;
             }
 
@@ -94,7 +103,6 @@ namespace SmartCanteen
                     MessageBox.Show("Student ID has to be a numeric value.");
                     return;
                 }
-                UserController userController = new UserController();
                 userController.AddStudent(name, nif, balance, studentID);
                 MessageBox.Show("Student added sucessfully");
 
@@ -112,10 +120,14 @@ namespace SmartCanteen
                     MessageBox.Show("Invalid email");
                     return;
                 }
-                UserController userController = new UserController();
                 userController.AddProfessor(name, nif, balance, email);
                 MessageBox.Show("Professor added sucessfully");
             }
+            tBoxEmail.Text = null;
+            tBoxName.Text = null;
+            tBoxNIF.Text = null;
+            tBoxStudentID = null;
+            BalanceInput.Value = 0;
         }
 
         private void btnLeave_Click(object sender, EventArgs e)

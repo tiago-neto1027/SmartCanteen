@@ -17,6 +17,16 @@ namespace SmartCanteen.models
             string Nif = nif;
             decimal Balance = balance;
         }
+
+        public Client()
+        {
+
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 
 }
