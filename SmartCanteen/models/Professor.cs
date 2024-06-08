@@ -17,5 +17,15 @@ namespace SmartCanteen.models
              Balance = balance;
              Email = email;
         }
+
+        public Professor()
+        {
+
+        }
+
+        public override string ToString()
+        {
+            return "Professor: " + Name + " - " + Email;
+        }
     }
 }

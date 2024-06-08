@@ -19,5 +19,14 @@ namespace SmartCanteen.models
              Balance = balance;
              StudentID = studentID;
         }
+
+        public Student()
+        {
+
+        }
+        public override string ToString() 
+        {
+            return "Aluno: " + Name + " - " + StudentID;
+        }
     }
 }
