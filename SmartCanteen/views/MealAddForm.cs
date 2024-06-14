@@ -35,14 +35,12 @@ namespace SmartCanteen
         /// </summary>
         private void btnMealAddRegister_Click(object sender, EventArgs e)
         {
-            //Verify if description is empty
             if (string.IsNullOrEmpty(tBoxMealAddDescription.Text))
             {
                 MessageBox.Show("A descrição não pode estar vazia.");
                 return;
             }
 
-            //Fetches the data
             string description = tBoxMealAddDescription.Text;
             DishType dishType = DishType.Meat;
 

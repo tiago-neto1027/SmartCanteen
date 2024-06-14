@@ -15,6 +15,7 @@ namespace SmartCanteen
 {
     public partial class ClientAddForm : Form
     {
+        ClientController clientController = new ClientController();
         public ClientAddForm()
         {
 
@@ -50,8 +51,6 @@ namespace SmartCanteen
 
         private void btnClientAddCreate_Click(object sender, EventArgs e)
         {
-            UserController userController = new UserController();
-
             string name = tBoxName.Text;
             string nif = tBoxNIF.Text;
             decimal balance = BalanceInput.Value;
@@ -62,36 +61,36 @@ namespace SmartCanteen
             bool NIFsuccess = int.TryParse(nif, out int NIFresult);
             if (!NIFsuccess)
             {
-                MessageBox.Show("NIF has to be a numeric value.");
+                MessageBox.Show("NIF tem de ser um valor numérico.");
                 return;
             }
 
-            var searchNIF = UserController.SearchClient(nif);
+            var searchNIF = clientController.SearchClient(nif);
             if (searchNIF != null)
             {
-                MessageBox.Show("This NIF is already in use");
+                MessageBox.Show("O NIF já está a ser usado.");
                 return;
             }
 
             if (string.IsNullOrEmpty(name)
                 || string.IsNullOrEmpty(nif))
                 { 
-                MessageBox.Show("All fields are required");
+                MessageBox.Show("Tem de preencher todos os campos.");
                 return;
             }
             if (string.IsNullOrEmpty(name))
             {
-                MessageBox.Show("Name is empty!");
+                MessageBox.Show("Nome está vazio!");
                 return;
             }
             if (string.IsNullOrEmpty(nif))
             {
-                MessageBox.Show("NIF is empty!");
+                MessageBox.Show("NIF está vazio!");
                 return;
             }
             if (nif.Length != 9)
             {
-                MessageBox.Show("NIF needs to be 9 characters");
+                MessageBox.Show("NIF precisa de ter 9 caracteres");
                 return;
             }
 
@@ -100,28 +99,28 @@ namespace SmartCanteen
                 bool IDsuccess = int.TryParse(studentID, out int IDresult);
                 if (!IDsuccess && studentID != null)
                 {
-                    MessageBox.Show("Student ID has to be a numeric value.");
+                    MessageBox.Show("Student ID tem de ser numérico.");
                     return;
                 }
-                userController.AddStudent(name, nif, balance, studentID);
-                MessageBox.Show("Student added sucessfully");
+                clientController.AddStudent(name, nif, balance, studentID);
+                MessageBox.Show("Estudante adicionado com sucesso");
 
             }
             if (radioClientAddProfessorType.Checked == true)
             {
                 if (string.IsNullOrEmpty(email))
                 {
-                    MessageBox.Show("Email needs to be filled in");
+                    MessageBox.Show("Email não pode estar vazio!");
                     return;
                 }
 
                if(!Regex.IsMatch(email, pattern))
                 {
-                    MessageBox.Show("Invalid email");
+                    MessageBox.Show("Email inválido.");
                     return;
                 }
-                userController.AddProfessor(name, nif, balance, email);
-                MessageBox.Show("Professor added sucessfully");
+                clientController.AddProfessor(name, nif, balance, email);
+                MessageBox.Show("Professor adicionado com sucesso");
             }
             tBoxEmail.Text = null;
             tBoxName.Text = null;

@@ -15,6 +15,7 @@ namespace SmartCanteen
 {
     public partial class BalanceForm : Form
     {
+        ClientController clientController = new ClientController();
         private List<Client> clientList;
         private Client selectedClient = null;
 
@@ -22,9 +23,7 @@ namespace SmartCanteen
         {
             InitializeComponent();
 
-            UserController userController = new UserController();
-
-            List<Client> clientList = UserController.GetAllClients();
+            List<Client> clientList = clientController.GetAllClients();
 
             listBoxClients.DataSource = null;
             listBoxClients.DataSource = clientList;
@@ -47,7 +46,7 @@ namespace SmartCanteen
             }
 
             decimal addedvalue = AddValue.Value;
-            bool result = UserController.UpdateClientBalance(selectedClient.NIF, addedvalue);
+            bool result = clientController.UpdateClientBalance(selectedClient.NIF, addedvalue);
 
             if (addedvalue == 0)
             {
@@ -89,7 +88,7 @@ namespace SmartCanteen
             }
             List<Client> clientSearch;
             clientSearch = new List<Client>();
-            clientSearch.Add(UserController.SearchClient(searchNif));
+            clientSearch.Add(clientController.SearchClient(searchNif));
             
             if (clientSearch == null)
             {
@@ -121,7 +120,7 @@ namespace SmartCanteen
         private void updateClientListBox()
         {
             int index = listBoxClients.SelectedIndex;
-            clientList = UserController.GetAllClients();
+            clientList = clientController.GetAllClients();
             listBoxClients.DataSource = null;
             listBoxClients.DataSource = clientList;
             listBoxClients.SelectedIndex = index;
