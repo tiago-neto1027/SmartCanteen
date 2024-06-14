@@ -46,6 +46,7 @@ namespace SmartCanteen
                 MessageBox.Show("All fields are required");
                 return;
             }
+
             if (string.IsNullOrEmpty(name))
             {
                 MessageBox.Show("Name is empty!");
@@ -61,19 +62,16 @@ namespace SmartCanteen
                 MessageBox.Show("Username is empty!");
                 return;
             }
-
             if (string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Password is empty!");
                 return;
             }
-
             if (string.IsNullOrEmpty(confirmedPassword))
             {
                 MessageBox.Show("Confirmation password is empty!");
                 return;
             }
-
             if (string.IsNullOrEmpty(managementPassword))
             {
                 MessageBox.Show("Management Password password is empty!");

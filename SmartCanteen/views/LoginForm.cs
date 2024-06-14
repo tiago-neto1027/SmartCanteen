@@ -1,4 +1,5 @@
-﻿using SmartCanteen.models;
+﻿using SmartCanteen.controllers;
+using SmartCanteen.models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,8 @@ namespace SmartCanteen
 {
     public partial class LoginForm : Form
     {
+        UserController userController = new UserController();
+
         public LoginForm()
         {
             InitializeComponent();
@@ -28,35 +31,28 @@ namespace SmartCanteen
 
             if (string.IsNullOrEmpty(username))
             {
-                MessageBox.Show("Username is empty!");
+                MessageBox.Show("Username não pode estar vazio!");
                 return;
             }
             if (string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Password is empty!");
+                MessageBox.Show("Password não pode estar vazia!");
                 return;
             }
-            using (context = new SmartCanteenContext())
+
+            if (userController.LoginStaff(username, password))
             {
-                var matchingStaff = context.Users
-                    .OfType<Staff>()
-                    .FirstOrDefault(staff => staff.Username == username && staff.Password == password);
+                this.Hide();
+                MainForm mainForm = new MainForm();
+                mainForm.ShowDialog();
 
-                if (matchingStaff != null)
-                {
-                    Console.WriteLine($"Staff member found: {matchingStaff.Name}");
-                    this.Hide();
-                    MainForm mainForm = new MainForm();
-                    mainForm.ShowDialog();
-
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("No matching staff member found."); 
-                    tBoxLoginPassword.Text=string.Empty;
-                    tBoxLoginUser.Text = string.Empty;
-                }
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Não foi encontrado nenhum membro da staff com essas credenciais.");
+                tBoxLoginPassword.Text = string.Empty;
+                tBoxLoginUser.Text = string.Empty;
             }
         }
 

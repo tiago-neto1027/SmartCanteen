@@ -56,10 +56,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controllers\ClientController.cs" />
     <Compile Include="controllers\DishController.cs" />
     <Compile Include="controllers\ExtraController.cs" />
     <Compile Include="controllers\MenuController.cs" />
     <Compile Include="controllers\UserController.cs" />
+    <Compile Include="Migrations\202406140904411_Update.cs" />
+    <Compile Include="Migrations\202406140904411_Update.Designer.cs">
+      <DependentUpon>202406140904411_Update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="views\BalanceForm.cs">
       <SubType>Form</SubType>
@@ -138,6 +143,9 @@
     </Compile>
     <EmbeddedResource Include="Migrations\202406071757054_teste.resx">
       <DependentUpon>202406071757054_teste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406140904411_Update.resx">
+      <DependentUpon>202406140904411_Update.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\BalanceForm.resx">
       <DependentUpon>BalanceForm.cs</DependentUpon>

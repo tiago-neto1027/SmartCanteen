@@ -24,7 +24,7 @@ namespace SmartCanteen.controllers
             }
         }
 
-        public List<Extra> FetchExtras(ExtraType extraType)
+        public List<Extra> FetchExtrasByType(ExtraType extraType)
         {
             using (var db = new SmartCanteenContext())
             {
