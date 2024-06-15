@@ -32,35 +32,33 @@
             this.btnExtrasAddRegister = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.numericExtrasAddStudentPrice = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioExtrasAddTypeOther = new System.Windows.Forms.RadioButton();
             this.radioExtrasAddTypeBeverage = new System.Windows.Forms.RadioButton();
             this.radioExtrasAddTypeDessert = new System.Windows.Forms.RadioButton();
             this.radioExtrasAddTypeSoup = new System.Windows.Forms.RadioButton();
-            this.extrasAddDescriptionLabel = new System.Windows.Forms.Label();
             this.extrasAddNameLabel = new System.Windows.Forms.Label();
             this.tBoxExtrasAddDescription = new System.Windows.Forms.TextBox();
-            this.tBoxExtrasAddName = new System.Windows.Forms.TextBox();
-            this.numericExtrasAddStudentPrice = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericExtrasAddStudentPrice)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnExtrasAddLeave
             // 
-            this.btnExtrasAddLeave.Location = new System.Drawing.Point(562, 392);
+            this.btnExtrasAddLeave.Location = new System.Drawing.Point(583, 239);
             this.btnExtrasAddLeave.Name = "btnExtrasAddLeave";
             this.btnExtrasAddLeave.Size = new System.Drawing.Size(66, 32);
             this.btnExtrasAddLeave.TabIndex = 18;
-            this.btnExtrasAddLeave.Text = "sair";
+            this.btnExtrasAddLeave.Text = "Sair";
             this.btnExtrasAddLeave.UseVisualStyleBackColor = true;
             this.btnExtrasAddLeave.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnExtrasAddRegister
             // 
-            this.btnExtrasAddRegister.Location = new System.Drawing.Point(451, 392);
+            this.btnExtrasAddRegister.Location = new System.Drawing.Point(502, 239);
             this.btnExtrasAddRegister.Name = "btnExtrasAddRegister";
             this.btnExtrasAddRegister.Size = new System.Drawing.Size(66, 32);
             this.btnExtrasAddRegister.TabIndex = 17;
@@ -72,14 +70,12 @@
             // 
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.extrasAddDescriptionLabel);
             this.groupBox1.Controls.Add(this.extrasAddNameLabel);
             this.groupBox1.Controls.Add(this.tBoxExtrasAddDescription);
-            this.groupBox1.Controls.Add(this.tBoxExtrasAddName);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(35, 37);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(614, 323);
+            this.groupBox1.Size = new System.Drawing.Size(614, 181);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Extra:";
@@ -93,6 +89,13 @@
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Preço estudante";
+            // 
+            // numericExtrasAddStudentPrice
+            // 
+            this.numericExtrasAddStudentPrice.Location = new System.Drawing.Point(16, 32);
+            this.numericExtrasAddStudentPrice.Name = "numericExtrasAddStudentPrice";
+            this.numericExtrasAddStudentPrice.Size = new System.Drawing.Size(120, 23);
+            this.numericExtrasAddStudentPrice.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -152,16 +155,6 @@
             this.radioExtrasAddTypeSoup.Text = "Sopa";
             this.radioExtrasAddTypeSoup.UseVisualStyleBackColor = true;
             // 
-            // extrasAddDescriptionLabel
-            // 
-            this.extrasAddDescriptionLabel.AutoSize = true;
-            this.extrasAddDescriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.extrasAddDescriptionLabel.Location = new System.Drawing.Point(26, 154);
-            this.extrasAddDescriptionLabel.Name = "extrasAddDescriptionLabel";
-            this.extrasAddDescriptionLabel.Size = new System.Drawing.Size(75, 17);
-            this.extrasAddDescriptionLabel.TabIndex = 3;
-            this.extrasAddDescriptionLabel.Text = "Descrição:";
-            // 
             // extrasAddNameLabel
             // 
             this.extrasAddNameLabel.AutoSize = true;
@@ -175,32 +168,16 @@
             // tBoxExtrasAddDescription
             // 
             this.tBoxExtrasAddDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBoxExtrasAddDescription.Location = new System.Drawing.Point(26, 172);
-            this.tBoxExtrasAddDescription.Multiline = true;
+            this.tBoxExtrasAddDescription.Location = new System.Drawing.Point(29, 54);
             this.tBoxExtrasAddDescription.Name = "tBoxExtrasAddDescription";
-            this.tBoxExtrasAddDescription.Size = new System.Drawing.Size(570, 128);
+            this.tBoxExtrasAddDescription.Size = new System.Drawing.Size(564, 23);
             this.tBoxExtrasAddDescription.TabIndex = 1;
-            // 
-            // tBoxExtrasAddName
-            // 
-            this.tBoxExtrasAddName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBoxExtrasAddName.Location = new System.Drawing.Point(26, 46);
-            this.tBoxExtrasAddName.Name = "tBoxExtrasAddName";
-            this.tBoxExtrasAddName.Size = new System.Drawing.Size(570, 23);
-            this.tBoxExtrasAddName.TabIndex = 0;
-            // 
-            // numericExtrasAddStudentPrice
-            // 
-            this.numericExtrasAddStudentPrice.Location = new System.Drawing.Point(16, 32);
-            this.numericExtrasAddStudentPrice.Name = "numericExtrasAddStudentPrice";
-            this.numericExtrasAddStudentPrice.Size = new System.Drawing.Size(120, 23);
-            this.numericExtrasAddStudentPrice.TabIndex = 0;
             // 
             // ExtrasAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 461);
+            this.ClientSize = new System.Drawing.Size(684, 297);
             this.Controls.Add(this.btnExtrasAddLeave);
             this.Controls.Add(this.btnExtrasAddRegister);
             this.Controls.Add(this.groupBox1);
@@ -210,9 +187,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericExtrasAddStudentPrice)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericExtrasAddStudentPrice)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -227,10 +204,8 @@
         private System.Windows.Forms.RadioButton radioExtrasAddTypeBeverage;
         private System.Windows.Forms.RadioButton radioExtrasAddTypeDessert;
         private System.Windows.Forms.RadioButton radioExtrasAddTypeSoup;
-        private System.Windows.Forms.Label extrasAddDescriptionLabel;
         private System.Windows.Forms.Label extrasAddNameLabel;
         private System.Windows.Forms.TextBox tBoxExtrasAddDescription;
-        private System.Windows.Forms.TextBox tBoxExtrasAddName;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.NumericUpDown numericExtrasAddStudentPrice;
     }
