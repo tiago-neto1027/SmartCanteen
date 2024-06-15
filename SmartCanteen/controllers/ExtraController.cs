@@ -31,5 +31,13 @@ namespace SmartCanteen.controllers
                 return db.Extras.Where(e => e.Active && e.Type == extraType).ToList();
             }
         }
+
+        public List<Extra> ActiveExtras()
+        {
+            using (var db = new SmartCanteenContext())
+            {
+                return db.Extras.Where(e => e.Active).ToList();
+            }
+        }
     }
 }

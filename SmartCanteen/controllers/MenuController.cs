@@ -11,5 +11,14 @@ namespace SmartCanteen.controllers
     {
         public MenuController() { }
 
+        public void AddMenu(DateTime date, int quantity, double price, List<Dish> dishes, List<Extra> extras)
+        {
+            using (var db = new SmartCanteenContext())
+            {
+                Menu menu = new Menu(date, quantity, price, dishes, extras);
+                db.Menus.Add(menu);
+                db.SaveChanges();
+            }
+        }
     }
 }

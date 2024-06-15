@@ -18,10 +18,14 @@ namespace SmartCanteen.models
 
         public virtual ICollection<Dish> Dishes { get; set; }
         public virtual ICollection<Extra> Extras { get; set; }
-        public Menu()
+        public Menu(DateTime date, int quantity, double price, List<Dish> dishes, List<Extra> extras)
         {
-            Dishes = new HashSet<Dish>();
-            Extras = new HashSet<Extra>();
+            Date = date;
+            Quantity = quantity;
+            StudentPrice = price;
+            TeacherPrice = price + 0.6;
+            Dishes = dishes;
+            Extras = extras;
         }
     }
 }
