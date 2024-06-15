@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.cBoxMenuAddDessert = new System.Windows.Forms.ComboBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.cBoxMenuAddSoup = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,9 +43,13 @@
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnMenuAddLeave = new System.Windows.Forms.Button();
             this.btnMenuAddRegister = new System.Windows.Forms.Button();
+            this.listBoxAvailableExtras = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.listBoxSelectedExtras = new System.Windows.Forms.ListBox();
+            this.btnSelectExtras = new System.Windows.Forms.Button();
+            this.btnRemoveExtras = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -57,52 +57,20 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.groupBox5);
-            this.groupBox1.Controls.Add(this.groupBox4);
+            this.groupBox1.Controls.Add(this.btnRemoveExtras);
+            this.groupBox1.Controls.Add(this.btnSelectExtras);
+            this.groupBox1.Controls.Add(this.listBoxSelectedExtras);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.listBoxAvailableExtras);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(33, 88);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(614, 294);
+            this.groupBox1.Size = new System.Drawing.Size(614, 356);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Menu";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.cBoxMenuAddDessert);
-            this.groupBox5.Location = new System.Drawing.Point(27, 221);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(554, 44);
-            this.groupBox5.TabIndex = 1;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Sobremesa:";
-            // 
-            // cBoxMenuAddDessert
-            // 
-            this.cBoxMenuAddDessert.FormattingEnabled = true;
-            this.cBoxMenuAddDessert.Location = new System.Drawing.Point(89, 15);
-            this.cBoxMenuAddDessert.Name = "cBoxMenuAddDessert";
-            this.cBoxMenuAddDessert.Size = new System.Drawing.Size(432, 25);
-            this.cBoxMenuAddDessert.TabIndex = 4;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.cBoxMenuAddSoup);
-            this.groupBox4.Location = new System.Drawing.Point(27, 162);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(554, 44);
-            this.groupBox4.TabIndex = 1;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Sopa:";
-            // 
-            // cBoxMenuAddSoup
-            // 
-            this.cBoxMenuAddSoup.FormattingEnabled = true;
-            this.cBoxMenuAddSoup.Location = new System.Drawing.Point(89, 15);
-            this.cBoxMenuAddSoup.Name = "cBoxMenuAddSoup";
-            this.cBoxMenuAddSoup.Size = new System.Drawing.Size(432, 25);
-            this.cBoxMenuAddSoup.TabIndex = 3;
             // 
             // groupBox3
             // 
@@ -202,7 +170,7 @@
             // 
             // btnMenuAddLeave
             // 
-            this.btnMenuAddLeave.Location = new System.Drawing.Point(581, 388);
+            this.btnMenuAddLeave.Location = new System.Drawing.Point(581, 464);
             this.btnMenuAddLeave.Name = "btnMenuAddLeave";
             this.btnMenuAddLeave.Size = new System.Drawing.Size(66, 32);
             this.btnMenuAddLeave.TabIndex = 20;
@@ -212,18 +180,72 @@
             // 
             // btnMenuAddRegister
             // 
-            this.btnMenuAddRegister.Location = new System.Drawing.Point(470, 388);
+            this.btnMenuAddRegister.Location = new System.Drawing.Point(483, 464);
             this.btnMenuAddRegister.Name = "btnMenuAddRegister";
             this.btnMenuAddRegister.Size = new System.Drawing.Size(66, 32);
             this.btnMenuAddRegister.TabIndex = 19;
             this.btnMenuAddRegister.Text = "Registar";
             this.btnMenuAddRegister.UseVisualStyleBackColor = true;
             // 
+            // listBoxAvailableExtras
+            // 
+            this.listBoxAvailableExtras.FormattingEnabled = true;
+            this.listBoxAvailableExtras.ItemHeight = 17;
+            this.listBoxAvailableExtras.Location = new System.Drawing.Point(29, 203);
+            this.listBoxAvailableExtras.Name = "listBoxAvailableExtras";
+            this.listBoxAvailableExtras.Size = new System.Drawing.Size(206, 140);
+            this.listBoxAvailableExtras.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(29, 169);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(127, 17);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Extras Disponíveis:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(370, 169);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(140, 17);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Extras Selecionados:";
+            // 
+            // listBoxSelectedExtras
+            // 
+            this.listBoxSelectedExtras.FormattingEnabled = true;
+            this.listBoxSelectedExtras.ItemHeight = 17;
+            this.listBoxSelectedExtras.Location = new System.Drawing.Point(373, 203);
+            this.listBoxSelectedExtras.Name = "listBoxSelectedExtras";
+            this.listBoxSelectedExtras.Size = new System.Drawing.Size(206, 140);
+            this.listBoxSelectedExtras.TabIndex = 4;
+            // 
+            // btnSelectExtras
+            // 
+            this.btnSelectExtras.Location = new System.Drawing.Point(250, 224);
+            this.btnSelectExtras.Name = "btnSelectExtras";
+            this.btnSelectExtras.Size = new System.Drawing.Size(104, 33);
+            this.btnSelectExtras.TabIndex = 5;
+            this.btnSelectExtras.Text = "Selecionar ->";
+            this.btnSelectExtras.UseVisualStyleBackColor = true;
+            // 
+            // btnRemoveExtras
+            // 
+            this.btnRemoveExtras.Location = new System.Drawing.Point(250, 263);
+            this.btnRemoveExtras.Name = "btnRemoveExtras";
+            this.btnRemoveExtras.Size = new System.Drawing.Size(104, 33);
+            this.btnRemoveExtras.TabIndex = 6;
+            this.btnRemoveExtras.Text = "<- Remover";
+            this.btnRemoveExtras.UseVisualStyleBackColor = true;
+            // 
             // MenuAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 461);
+            this.ClientSize = new System.Drawing.Size(684, 508);
             this.Controls.Add(this.btnMenuAddLeave);
             this.Controls.Add(this.btnMenuAddRegister);
             this.Controls.Add(this.groupBox2);
@@ -232,8 +254,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MenuAddForm";
             this.groupBox1.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -250,8 +271,6 @@
         private System.Windows.Forms.Button btnMenuAddDateConsult;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ComboBox cBoxMenuAddVeggie;
         private System.Windows.Forms.ComboBox cBoxMenuAddFish;
         private System.Windows.Forms.ComboBox cBoxMenuAddMeat;
@@ -260,7 +279,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cBoxMenuAddDessert;
-        private System.Windows.Forms.ComboBox cBoxMenuAddSoup;
+        private System.Windows.Forms.Button btnRemoveExtras;
+        private System.Windows.Forms.Button btnSelectExtras;
+        private System.Windows.Forms.ListBox listBoxSelectedExtras;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListBox listBoxAvailableExtras;
     }
 }

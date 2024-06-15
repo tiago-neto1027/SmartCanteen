@@ -19,7 +19,7 @@ namespace SmartCanteen
             InitializeComponent();
 
             LoadDishes();
-            LoadExtras();
+            //LoadExtras();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -41,13 +41,13 @@ namespace SmartCanteen
             BindComboBox(cBoxMenuAddVeggie, dishController.ActiveDishesByType(DishType.Veggie));
         }
 
-        private void LoadExtras()
+        /*private void LoadExtras()
         {
             ExtraController extraController = new ExtraController();
 
             BindComboBox(cBoxMenuAddSoup, extraController.ActiveExtrasByType(ExtraType.Soup));
             BindComboBox(cBoxMenuAddDessert, extraController.ActiveExtrasByType(ExtraType.Dessert));
-        }
+        }*/
 
         private void BindComboBox(ComboBox comboBox, object dataSource)
         {
