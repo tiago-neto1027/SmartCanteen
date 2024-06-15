@@ -16,9 +16,12 @@ namespace SmartCanteen.models
         public double StudentPrice { get; set; }
         public double TeacherPrice { get; set; }
 
+        public virtual ICollection<Dish> Dishes { get; set; }
+        public virtual ICollection<Extra> Extras { get; set; }
         public Menu()
         {
-
+            Dishes = new HashSet<Dish>();
+            Extras = new HashSet<Extra>();
         }
     }
 }

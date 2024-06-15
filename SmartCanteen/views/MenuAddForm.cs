@@ -36,17 +36,17 @@ namespace SmartCanteen
         {
             DishController dishController = new DishController();
 
-            BindComboBox(cBoxMenuAddMeat, dishController.FetchDishesByType(DishType.Meat));
-            BindComboBox(cBoxMenuAddFish, dishController.FetchDishesByType(DishType.Fish));
-            BindComboBox(cBoxMenuAddVeggie, dishController.FetchDishesByType(DishType.Veggie));
+            BindComboBox(cBoxMenuAddMeat, dishController.ActiveDishesByType(DishType.Meat));
+            BindComboBox(cBoxMenuAddFish, dishController.ActiveDishesByType(DishType.Fish));
+            BindComboBox(cBoxMenuAddVeggie, dishController.ActiveDishesByType(DishType.Veggie));
         }
 
         private void LoadExtras()
         {
             ExtraController extraController = new ExtraController();
 
-            BindComboBox(cBoxMenuAddSoup, extraController.FetchExtrasByType(ExtraType.Soup));
-            BindComboBox(cBoxMenuAddDessert, extraController.FetchExtrasByType(ExtraType.Dessert));
+            BindComboBox(cBoxMenuAddSoup, extraController.ActiveExtrasByType(ExtraType.Soup));
+            BindComboBox(cBoxMenuAddDessert, extraController.ActiveExtrasByType(ExtraType.Dessert));
         }
 
         private void BindComboBox(ComboBox comboBox, object dataSource)

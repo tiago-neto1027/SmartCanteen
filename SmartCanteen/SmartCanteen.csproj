@@ -65,6 +65,10 @@
     <Compile Include="Migrations\202406140904411_Update.Designer.cs">
       <DependentUpon>202406140904411_Update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202406150759363_MenuDishesExtrasRelation.cs" />
+    <Compile Include="Migrations\202406150759363_MenuDishesExtrasRelation.Designer.cs">
+      <DependentUpon>202406150759363_MenuDishesExtrasRelation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="views\BalanceForm.cs">
       <SubType>Form</SubType>
@@ -146,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202406140904411_Update.resx">
       <DependentUpon>202406140904411_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406150759363_MenuDishesExtrasRelation.resx">
+      <DependentUpon>202406150759363_MenuDishesExtrasRelation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\BalanceForm.resx">
       <DependentUpon>BalanceForm.cs</DependentUpon>

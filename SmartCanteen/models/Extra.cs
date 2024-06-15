@@ -23,6 +23,12 @@ namespace SmartCanteen.models
         public double Price { get; set; }
         public bool Active { get; set; }
 
+        public virtual ICollection<Menu> Menus { get; set; }
+        public Extra()
+        {
+            Menus = new HashSet<Menu>();
+        }
+
         public Extra(string description, ExtraType extraType, double price)
         {
             Description = description;
@@ -30,7 +36,5 @@ namespace SmartCanteen.models
             Price = price;
             Active = true;
         }
-
-        public Extra() { }
     }
 }
