@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tBoxMealAddName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioMealAddCategoryVeggie = new System.Windows.Forms.RadioButton();
             this.radioMealAddCategoryFish = new System.Windows.Forms.RadioButton();
             this.radioMealAddCategoryMeat = new System.Windows.Forms.RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tBoxMealAddDescription = new System.Windows.Forms.TextBox();
             this.btnMealAddLeave = new System.Windows.Forms.Button();
@@ -43,25 +41,15 @@
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tBoxMealAddName
-            // 
-            this.tBoxMealAddName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBoxMealAddName.Location = new System.Drawing.Point(26, 46);
-            this.tBoxMealAddName.Name = "tBoxMealAddName";
-            this.tBoxMealAddName.Size = new System.Drawing.Size(567, 23);
-            this.tBoxMealAddName.TabIndex = 0;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.tBoxMealAddDescription);
-            this.groupBox1.Controls.Add(this.tBoxMealAddName);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(36, 46);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(614, 323);
+            this.groupBox1.Size = new System.Drawing.Size(614, 176);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Prato:";
@@ -112,16 +100,6 @@
             this.radioMealAddCategoryMeat.Text = "Carne";
             this.radioMealAddCategoryMeat.UseVisualStyleBackColor = true;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 154);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Descrição:";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -135,25 +113,24 @@
             // tBoxMealAddDescription
             // 
             this.tBoxMealAddDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBoxMealAddDescription.Location = new System.Drawing.Point(26, 172);
-            this.tBoxMealAddDescription.Multiline = true;
+            this.tBoxMealAddDescription.Location = new System.Drawing.Point(29, 54);
             this.tBoxMealAddDescription.Name = "tBoxMealAddDescription";
-            this.tBoxMealAddDescription.Size = new System.Drawing.Size(570, 128);
+            this.tBoxMealAddDescription.Size = new System.Drawing.Size(564, 23);
             this.tBoxMealAddDescription.TabIndex = 1;
             // 
             // btnMealAddLeave
             // 
-            this.btnMealAddLeave.Location = new System.Drawing.Point(563, 401);
+            this.btnMealAddLeave.Location = new System.Drawing.Point(563, 246);
             this.btnMealAddLeave.Name = "btnMealAddLeave";
             this.btnMealAddLeave.Size = new System.Drawing.Size(66, 32);
             this.btnMealAddLeave.TabIndex = 15;
-            this.btnMealAddLeave.Text = "sair";
+            this.btnMealAddLeave.Text = "Sair";
             this.btnMealAddLeave.UseVisualStyleBackColor = true;
             this.btnMealAddLeave.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnMealAddRegister
             // 
-            this.btnMealAddRegister.Location = new System.Drawing.Point(452, 401);
+            this.btnMealAddRegister.Location = new System.Drawing.Point(485, 246);
             this.btnMealAddRegister.Name = "btnMealAddRegister";
             this.btnMealAddRegister.Size = new System.Drawing.Size(66, 32);
             this.btnMealAddRegister.TabIndex = 14;
@@ -165,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 461);
+            this.ClientSize = new System.Drawing.Size(684, 313);
             this.Controls.Add(this.btnMealAddLeave);
             this.Controls.Add(this.btnMealAddRegister);
             this.Controls.Add(this.groupBox1);
@@ -181,10 +158,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox tBoxMealAddName;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tBoxMealAddDescription;
         private System.Windows.Forms.Button btnMealAddLeave;
