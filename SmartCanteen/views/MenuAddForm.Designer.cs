@@ -56,12 +56,20 @@
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnLeaveForm = new System.Windows.Forms.Button();
             this.btnMenuAddRegister = new System.Windows.Forms.Button();
+            this.groupBoxOthers = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.nrQuantity = new System.Windows.Forms.NumericUpDown();
+            this.nrPrice = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBoxExtras.SuspendLayout();
             this.groupBoxFilters.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.groupBoxOthers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nrQuantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nrPrice)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -321,7 +329,7 @@
             // 
             // btnLeaveForm
             // 
-            this.btnLeaveForm.Location = new System.Drawing.Point(566, 589);
+            this.btnLeaveForm.Location = new System.Drawing.Point(565, 696);
             this.btnLeaveForm.Name = "btnLeaveForm";
             this.btnLeaveForm.Size = new System.Drawing.Size(66, 32);
             this.btnLeaveForm.TabIndex = 20;
@@ -331,7 +339,7 @@
             // 
             // btnMenuAddRegister
             // 
-            this.btnMenuAddRegister.Location = new System.Drawing.Point(494, 589);
+            this.btnMenuAddRegister.Location = new System.Drawing.Point(485, 696);
             this.btnMenuAddRegister.Name = "btnMenuAddRegister";
             this.btnMenuAddRegister.Size = new System.Drawing.Size(66, 32);
             this.btnMenuAddRegister.TabIndex = 19;
@@ -339,11 +347,63 @@
             this.btnMenuAddRegister.UseVisualStyleBackColor = true;
             this.btnMenuAddRegister.Click += new System.EventHandler(this.btnMenuAddRegister_Click);
             // 
+            // groupBoxOthers
+            // 
+            this.groupBoxOthers.Controls.Add(this.nrPrice);
+            this.groupBoxOthers.Controls.Add(this.nrQuantity);
+            this.groupBoxOthers.Controls.Add(this.label7);
+            this.groupBoxOthers.Controls.Add(this.label6);
+            this.groupBoxOthers.Location = new System.Drawing.Point(33, 600);
+            this.groupBoxOthers.Name = "groupBoxOthers";
+            this.groupBoxOthers.Size = new System.Drawing.Size(598, 73);
+            this.groupBoxOthers.TabIndex = 21;
+            this.groupBoxOthers.TabStop = false;
+            this.groupBoxOthers.Text = "Outros:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(35, 31);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Quantidade:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(282, 30);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(64, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Preço base:";
+            // 
+            // nrQuantity
+            // 
+            this.nrQuantity.Location = new System.Drawing.Point(106, 28);
+            this.nrQuantity.Name = "nrQuantity";
+            this.nrQuantity.Size = new System.Drawing.Size(120, 20);
+            this.nrQuantity.TabIndex = 2;
+            // 
+            // nrPrice
+            // 
+            this.nrPrice.DecimalPlaces = 2;
+            this.nrPrice.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.nrPrice.Location = new System.Drawing.Point(357, 28);
+            this.nrPrice.Name = "nrPrice";
+            this.nrPrice.Size = new System.Drawing.Size(120, 20);
+            this.nrPrice.TabIndex = 3;
+            // 
             // MenuAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(653, 633);
+            this.ClientSize = new System.Drawing.Size(653, 740);
+            this.Controls.Add(this.groupBoxOthers);
             this.Controls.Add(this.btnLeaveForm);
             this.Controls.Add(this.btnMenuAddRegister);
             this.Controls.Add(this.groupBox2);
@@ -360,6 +420,10 @@
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            this.groupBoxOthers.ResumeLayout(false);
+            this.groupBoxOthers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nrQuantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nrPrice)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -393,5 +457,10 @@
         private System.Windows.Forms.RadioButton rBtnSoup;
         private System.Windows.Forms.RadioButton rBtnAll;
         private System.Windows.Forms.RadioButton rBtnOthers;
+        private System.Windows.Forms.GroupBox groupBoxOthers;
+        private System.Windows.Forms.NumericUpDown nrPrice;
+        private System.Windows.Forms.NumericUpDown nrQuantity;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
     }
 }

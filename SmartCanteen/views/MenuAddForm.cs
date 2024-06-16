@@ -55,14 +55,32 @@ namespace SmartCanteen
 
         private void btnMenuAddRegister_Click(object sender, EventArgs e)
         {
-            //FALTAM ADICIONAR TODAS AS VERIFICAÇOES AQUI AINDA
+            if (dateTimePickerMenuAdd.Value == DateTimePicker.MinimumDateTime)
+            {
+                MessageBox.Show("Por favor, selecione uma data válida.");
+                return;
+            }
+            DateTime date = dateTimePickerMenuAdd.Value;
 
-            DateTime date = dateTimePickerMenuAdd.Value.Date;
+            int quantity = (int)nrQuantity.Value;
+            if (quantity <= 0)
+            {
+                MessageBox.Show("Por favor, insira uma quantidade válida.");
+                return;
+            }
 
-            //int quantity = 
+            double price = (double)nrPrice.Value;
+            if (price <= 0)
+            {
+                MessageBox.Show("Por favor, insira um preço válido.");
+                return;
+            }
 
-            //int price = 
-
+            if (cBoxMenuAddMeat.SelectedItem == null || cBoxMenuAddFish.SelectedItem == null || cBoxMenuAddVeggie.SelectedItem == null)
+            {
+                MessageBox.Show("Por favor, selecione pelo menos um prato de cada tipo.");
+                return;
+            }
             List<Dish> dishes = new List<Dish>
             {
                 (Dish)cBoxMenuAddMeat.SelectedItem,
@@ -70,10 +88,15 @@ namespace SmartCanteen
                 (Dish)cBoxMenuAddVeggie.SelectedItem
             };
 
+            if (selectedExtras.Count == 0)
+            {
+                MessageBox.Show("Por favor, selecione pelo menos um extra.");
+                return;
+            }
             List<Extra> extras = selectedExtras;
 
             MenuController menuController = new MenuController();
-            //menuController.AddMenu(date, quantity, price, dishes, extras);
+            menuController.AddMenu(date, quantity, price, dishes, extras);
 
             MessageBox.Show("Menu adicionado com sucesso!");
             this.Close();
