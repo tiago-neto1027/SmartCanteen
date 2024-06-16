@@ -18,5 +18,16 @@ namespace SmartCanteen
         public DbSet<Extra> Extras { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
         public DbSet<InvoiceItem> InvoicesItems { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Menu>()
+                .HasMany(t => t.Dishes)
+                .WithMany(t => t.Menus);
+
+            modelBuilder.Entity<Menu>()
+                .HasMany(t => t.Extras)
+                .WithMany(t => t.Menus);
+        }
     }
 }

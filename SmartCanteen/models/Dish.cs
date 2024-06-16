@@ -21,7 +21,11 @@ namespace SmartCanteen.models
         public DishType Type { get; set; }
         public bool Active { get; set; }
 
-        public Dish() { }
+        public virtual ICollection<Menu> Menus { get; set; }
+        public Dish()
+        {
+            Menus = new HashSet<Menu>();
+        }
 
         public Dish(string description,DishType dishType)
         {

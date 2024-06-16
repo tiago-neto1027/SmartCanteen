@@ -24,7 +24,7 @@ namespace SmartCanteen.controllers
             }
         }
 
-        public List<Dish> FetchDishesByType(DishType dishType)
+        public List<Dish> ActiveDishesByType(DishType dishType)
         {
             using (var db = new SmartCanteenContext())
             {
