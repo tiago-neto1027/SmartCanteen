@@ -84,7 +84,8 @@ namespace SmartCanteen
 
         private void btnMealEdit_Click(object sender, EventArgs e)
         {
-
+            MealEditForm mealEditForm = new MealEditForm();
+            mealEditForm.ShowDialog();
         }
     }
 }

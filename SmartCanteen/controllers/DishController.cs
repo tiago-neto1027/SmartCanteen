@@ -31,5 +31,33 @@ namespace SmartCanteen.controllers
                 return db.Dishes.Where(d => d.Active && d.Type == dishType).ToList();
             }
         }
+
+        //listing for dataGrid
+        public List<Dish> GetAllDishes()
+        {
+            using (var db = new SmartCanteenContext())
+            {
+                return db.Dishes.ToList();
+            }
+        }
+
+        public void UpdateDish(Dish updatedDish)
+        {
+            using (var db = new SmartCanteenContext())
+            {
+                var existingDish = db.Dishes.SingleOrDefault(e => e.ID == updatedDish.ID);
+
+                if (existingDish == null)
+                {
+                    throw new InvalidOperationException("Prato não encontrado.");
+                }
+
+                // properties
+                existingDish.Description = updatedDish.Description;
+                existingDish.Type = updatedDish.Type;
+
+                db.SaveChanges();
+            }
+        }
     }
 }

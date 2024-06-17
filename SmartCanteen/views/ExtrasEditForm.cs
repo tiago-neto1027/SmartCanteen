@@ -40,7 +40,7 @@ namespace SmartCanteen
 
                 if (selectedExtra != null)
                 {
-                    label2.Text = selectedExtra.ID.ToString();
+                    labelExtrasEditIdValue.Text = selectedExtra.ID.ToString();
                     tBoxExtrasEditDescription.Text = selectedExtra.Description;
                     numericExtrasEditStudentPrice.Value = Convert.ToDecimal(selectedExtra.Price);
 
@@ -80,7 +80,7 @@ namespace SmartCanteen
             {
                 var updatedExtra = new Extra
                 {
-                    ID = int.Parse(label2.Text),
+                    ID = int.Parse(labelExtrasEditIdValue.Text),
                     Description = tBoxExtrasEditDescription.Text,
                     Price = (double)numericExtrasEditStudentPrice.Value,
                     Type = GetSelectedExtraType()
@@ -89,7 +89,7 @@ namespace SmartCanteen
                 ExtraController extraController = new ExtraController();
                 extraController.UpdateExtra(updatedExtra);
 
-                MessageBox.Show("Extra updated successfully.");
+                MessageBox.Show("Extra atualizado com sucesso.");
                 
 
                 var extras = extraController.GetAllExtras();
@@ -121,7 +121,7 @@ namespace SmartCanteen
                 return ExtraType.Other;
             }
 
-            throw new InvalidOperationException("No ExtraType selected.");
+            throw new InvalidOperationException("nenhum tipo selecionado.");
         }
 
         private void btnExtrasEditDelete_Click(object sender, EventArgs e)

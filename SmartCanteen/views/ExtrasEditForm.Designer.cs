@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelExtrasEditIdValue = new System.Windows.Forms.Label();
+            this.labelExtrasEditId = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.numericExtrasEditStudentPrice = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -42,8 +44,6 @@
             this.btnExtrasEditRegister = new System.Windows.Forms.Button();
             this.dataGridViewExtras = new System.Windows.Forms.DataGridView();
             this.btnExtrasEditEdit = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnExtrasEditDelete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -54,8 +54,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.labelExtrasEditIdValue);
+            this.groupBox1.Controls.Add(this.labelExtrasEditId);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.extrasEditNameLabel);
@@ -67,6 +67,26 @@
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Extra:";
+            // 
+            // labelExtrasEditIdValue
+            // 
+            this.labelExtrasEditIdValue.AutoSize = true;
+            this.labelExtrasEditIdValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelExtrasEditIdValue.Location = new System.Drawing.Point(290, 27);
+            this.labelExtrasEditIdValue.Name = "labelExtrasEditIdValue";
+            this.labelExtrasEditIdValue.Size = new System.Drawing.Size(10, 15);
+            this.labelExtrasEditIdValue.TabIndex = 7;
+            this.labelExtrasEditIdValue.Text = ".";
+            // 
+            // labelExtrasEditId
+            // 
+            this.labelExtrasEditId.AutoSize = true;
+            this.labelExtrasEditId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelExtrasEditId.Location = new System.Drawing.Point(262, 27);
+            this.labelExtrasEditId.Name = "labelExtrasEditId";
+            this.labelExtrasEditId.Size = new System.Drawing.Size(22, 15);
+            this.labelExtrasEditId.TabIndex = 6;
+            this.labelExtrasEditId.Text = "ID:";
             // 
             // groupBox3
             // 
@@ -201,26 +221,6 @@
             this.btnExtrasEditEdit.UseVisualStyleBackColor = true;
             this.btnExtrasEditEdit.Click += new System.EventHandler(this.btnExtrasEditEdit_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(262, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(22, 15);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "ID:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(290, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(10, 15);
-            this.label2.TabIndex = 7;
-            this.label2.Text = ".";
-            // 
             // btnExtrasEditDelete
             // 
             this.btnExtrasEditDelete.BackColor = System.Drawing.Color.RosyBrown;
@@ -274,8 +274,8 @@
         private System.Windows.Forms.Button btnExtrasEditRegister;
         private System.Windows.Forms.DataGridView dataGridViewExtras;
         private System.Windows.Forms.Button btnExtrasEditEdit;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelExtrasEditIdValue;
+        private System.Windows.Forms.Label labelExtrasEditId;
         private System.Windows.Forms.Button btnExtrasEditDelete;
     }
 }

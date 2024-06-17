@@ -61,6 +61,12 @@
     <Compile Include="controllers\ExtraController.cs" />
     <Compile Include="controllers\MenuController.cs" />
     <Compile Include="controllers\UserController.cs" />
+    <Compile Include="views\MealEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\MealEditForm.Designer.cs">
+      <DependentUpon>MealEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\ExtrasEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\MealAddForm.resx">
       <DependentUpon>MealAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\MealEditForm.resx">
+      <DependentUpon>MealEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\MealRegisterForm.resx">
       <DependentUpon>MealRegisterForm.cs</DependentUpon>

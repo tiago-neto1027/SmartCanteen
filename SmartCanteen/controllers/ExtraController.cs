@@ -57,7 +57,7 @@ namespace SmartCanteen.controllers
 
                 if (existingExtra == null)
                 {
-                    throw new InvalidOperationException("Extra not found.");
+                    throw new InvalidOperationException("Extra não encontrado.");
                 }
 
                 // properties
