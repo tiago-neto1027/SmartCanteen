@@ -39,15 +39,17 @@
             this.btnBalance = new System.Windows.Forms.Button();
             this.btnClientAdd = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnExtrasEdit = new System.Windows.Forms.Button();
             this.btnMealRegister = new System.Windows.Forms.Button();
             this.btnExtrasAdd = new System.Windows.Forms.Button();
             this.btnMealAdd = new System.Windows.Forms.Button();
             this.btnMenuAdd = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbDate = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnMealEdit = new System.Windows.Forms.Button();
             this.menuStripMain.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -140,6 +142,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnMealEdit);
+            this.groupBox2.Controls.Add(this.btnExtrasEdit);
             this.groupBox2.Controls.Add(this.btnMealRegister);
             this.groupBox2.Controls.Add(this.btnExtrasAdd);
             this.groupBox2.Controls.Add(this.btnMealAdd);
@@ -151,6 +155,16 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Refeição";
+            // 
+            // btnExtrasEdit
+            // 
+            this.btnExtrasEdit.Location = new System.Drawing.Point(107, 112);
+            this.btnExtrasEdit.Name = "btnExtrasEdit";
+            this.btnExtrasEdit.Size = new System.Drawing.Size(57, 40);
+            this.btnExtrasEdit.TabIndex = 7;
+            this.btnExtrasEdit.Text = "Editar";
+            this.btnExtrasEdit.UseVisualStyleBackColor = true;
+            this.btnExtrasEdit.Click += new System.EventHandler(this.btn_Click);
             // 
             // btnMealRegister
             // 
@@ -206,6 +220,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Semanal";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SmartCanteen.Properties.Resources._603_6035882_clock_transparent_time_icon_png_png_download;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(55, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // lbDate
             // 
             this.lbDate.AutoSize = true;
@@ -231,15 +255,15 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
-            // pictureBox1
+            // btnMealEdit
             // 
-            this.pictureBox1.Image = global::SmartCanteen.Properties.Resources._603_6035882_clock_transparent_time_icon_png_png_download;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 23);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(55, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.btnMealEdit.Location = new System.Drawing.Point(107, 66);
+            this.btnMealEdit.Name = "btnMealEdit";
+            this.btnMealEdit.Size = new System.Drawing.Size(57, 40);
+            this.btnMealEdit.TabIndex = 8;
+            this.btnMealEdit.Text = "Editar";
+            this.btnMealEdit.UseVisualStyleBackColor = true;
+            this.btnMealEdit.Click += new System.EventHandler(this.btnMealEdit_Click);
             // 
             // MainForm
             // 
@@ -289,5 +313,7 @@
         private System.Windows.Forms.Label lbDate;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnExtrasEdit;
+        private System.Windows.Forms.Button btnMealEdit;
     }
 }

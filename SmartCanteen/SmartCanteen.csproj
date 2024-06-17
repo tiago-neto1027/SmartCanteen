@@ -61,6 +61,12 @@
     <Compile Include="controllers\ExtraController.cs" />
     <Compile Include="controllers\MenuController.cs" />
     <Compile Include="controllers\UserController.cs" />
+    <Compile Include="views\ExtrasEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\ExtrasEditForm.Designer.cs">
+      <DependentUpon>ExtrasEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202406140904411_Update.cs" />
     <Compile Include="Migrations\202406140904411_Update.Designer.cs">
       <DependentUpon>202406140904411_Update.cs</DependentUpon>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\ExtrasAddForm.resx">
       <DependentUpon>ExtrasAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\ExtrasEditForm.resx">
+      <DependentUpon>ExtrasEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

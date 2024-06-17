@@ -76,6 +76,15 @@ namespace SmartCanteen
             mealRegisterForm.ShowDialog();
         }
 
-        
+        private void btn_Click(object sender, EventArgs e)
+        {
+            ExtrasEditForm extrasEditForm = new ExtrasEditForm();
+            extrasEditForm.ShowDialog();
+        }
+
+        private void btnMealEdit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
