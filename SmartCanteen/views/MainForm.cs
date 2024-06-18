@@ -76,6 +76,10 @@ namespace SmartCanteen
             mealRegisterForm.ShowDialog();
         }
 
-        
+        private void btnClientChange_Click(object sender, EventArgs e)
+        {
+            ClientModifyForm clientModifyForm = new ClientModifyForm();
+            clientModifyForm.ShowDialog();
+        }
     }
 }

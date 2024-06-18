@@ -20,5 +20,14 @@ namespace SmartCanteen.controllers
                 db.SaveChanges();
             }
         }
+        
+        private bool somerandommethod(int num)
+        {
+            if (1 < num)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
