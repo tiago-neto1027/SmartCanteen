@@ -43,7 +43,6 @@
             this.btnExtrasEditLeave = new System.Windows.Forms.Button();
             this.btnExtrasEditRegister = new System.Windows.Forms.Button();
             this.dataGridViewExtras = new System.Windows.Forms.DataGridView();
-            this.btnExtrasEditEdit = new System.Windows.Forms.Button();
             this.btnExtrasEditDelete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -213,16 +212,7 @@
             this.dataGridViewExtras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewExtras.Size = new System.Drawing.Size(614, 150);
             this.dataGridViewExtras.TabIndex = 21;
-            // 
-            // btnExtrasEditEdit
-            // 
-            this.btnExtrasEditEdit.Location = new System.Drawing.Point(437, 399);
-            this.btnExtrasEditEdit.Name = "btnExtrasEditEdit";
-            this.btnExtrasEditEdit.Size = new System.Drawing.Size(66, 32);
-            this.btnExtrasEditEdit.TabIndex = 22;
-            this.btnExtrasEditEdit.Text = "Editar";
-            this.btnExtrasEditEdit.UseVisualStyleBackColor = true;
-            this.btnExtrasEditEdit.Click += new System.EventHandler(this.btnExtrasEditEdit_Click);
+            this.dataGridViewExtras.SelectionChanged += new System.EventHandler(this.dataGridViewExtras_SelectionChanged);
             // 
             // btnExtrasEditDelete
             // 
@@ -241,7 +231,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 461);
             this.Controls.Add(this.btnExtrasEditDelete);
-            this.Controls.Add(this.btnExtrasEditEdit);
             this.Controls.Add(this.dataGridViewExtras);
             this.Controls.Add(this.btnExtrasEditLeave);
             this.Controls.Add(this.btnExtrasEditRegister);
@@ -249,7 +238,6 @@
             this.Name = "ExtrasEditForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ExtrasEditForm";
-            this.Load += new System.EventHandler(this.ExtrasEditForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -276,7 +264,6 @@
         private System.Windows.Forms.Button btnExtrasEditLeave;
         private System.Windows.Forms.Button btnExtrasEditRegister;
         private System.Windows.Forms.DataGridView dataGridViewExtras;
-        private System.Windows.Forms.Button btnExtrasEditEdit;
         private System.Windows.Forms.Label labelExtrasEditIdValue;
         private System.Windows.Forms.Label labelExtrasEditId;
         private System.Windows.Forms.Button btnExtrasEditDelete;

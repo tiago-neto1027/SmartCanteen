@@ -60,7 +60,6 @@ namespace SmartCanteen.controllers
                     }
 
                     db.Dishes.Remove(dish);
-
                     db.SaveChanges();
                 }
                 else

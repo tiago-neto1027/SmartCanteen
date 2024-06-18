@@ -23,6 +23,44 @@ namespace SmartCanteen.controllers
                 db.SaveChanges();
             }
         }
+        public void UpdateExtra(Extra updatedExtra)
+        {
+            using (var db = new SmartCanteenContext())
+            {
+                var existingExtra = db.Extras.SingleOrDefault(e => e.ID == updatedExtra.ID);
+
+                if (existingExtra != null)
+                {
+                    existingExtra.Description = updatedExtra.Description;
+                    existingExtra.Price = updatedExtra.Price;
+                    existingExtra.Type = updatedExtra.Type;
+
+                    db.SaveChanges();
+                }
+                else
+                {
+                    throw new InvalidOperationException("Extra não encontrado.");
+                }
+            }
+        }
+
+        public void DeleteExtra(int extraId)
+        {
+            using (var db = new SmartCanteenContext())
+            {
+                var extra = db.Extras.SingleOrDefault(e => e.ID == extraId);
+
+                if (extra != null)
+                {
+                    db.Extras.Remove(extra);
+                    db.SaveChanges();
+                }
+                else
+                {
+                    throw new InvalidOperationException("Extra não encontrado.");
+                }
+            }
+        }
 
         public List<Extra> ActiveExtrasByType(ExtraType extraType)
         {
@@ -39,50 +77,12 @@ namespace SmartCanteen.controllers
                 return db.Extras.Where(e => e.Active).ToList();
             }
         }
-
-        //listing for dataGrid
         public List<Extra> GetAllExtras()
         {
             using (var db = new SmartCanteenContext())
             {
                 return db.Extras.ToList();
             }      
-        }
-
-        public void UpdateExtra(Extra updatedExtra)
-        {
-            using (var db = new SmartCanteenContext())
-            {
-                var existingExtra = db.Extras.SingleOrDefault(e => e.ID == updatedExtra.ID);
-
-                if (existingExtra == null)
-                {
-                    throw new InvalidOperationException("Extra não encontrado.");
-                }
-
-                // properties
-                existingExtra.Description = updatedExtra.Description;
-                existingExtra.Price = updatedExtra.Price;
-                existingExtra.Type = updatedExtra.Type;
-
-                db.SaveChanges();
-            }
-        }
-
-        public void DeleteExtra(int extraId)
-        {
-            using (var db = new SmartCanteenContext())
-            {
-                var extra = db.Extras.SingleOrDefault(e => e.ID == extraId);
-
-                if (extra == null)
-                {
-                    throw new InvalidOperationException("Extra não encontrado.");
-                }
-
-                db.Extras.Remove(extra);
-                db.SaveChanges();
-            }
         }
     }
 }

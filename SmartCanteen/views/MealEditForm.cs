@@ -35,9 +35,7 @@ namespace SmartCanteen
             {
                 if (dataGridViewMeals.SelectedRows.Count > 0)
                 {
-                    var selectedMeal = dataGridViewMeals.SelectedRows[0].DataBoundItem as Dish;
-
-                    if (selectedMeal != null)
+                    if (dataGridViewMeals.SelectedRows[0].DataBoundItem is Dish selectedMeal)
                     {
                         labelMealEditIdValue.Text = selectedMeal.ID.ToString();
                         tBoxMealEditDescription.Text = selectedMeal.Description;
