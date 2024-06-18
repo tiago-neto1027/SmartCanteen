@@ -61,6 +61,12 @@
     <Compile Include="controllers\MenuController.cs" />
     <Compile Include="controllers\UserController.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="views\ClientModifyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\ClientModifyForm.Designer.cs">
+      <DependentUpon>ClientModifyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\BalanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </Compile>
     <EmbeddedResource Include="Migrations\202406071757054_teste.resx">
       <DependentUpon>202406071757054_teste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\ClientModifyForm.resx">
+      <DependentUpon>ClientModifyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\BalanceForm.resx">
       <DependentUpon>BalanceForm.cs</DependentUpon>

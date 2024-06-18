@@ -55,11 +55,53 @@ namespace SmartCanteen.controllers
             }
         }
 
+        public static bool ModifClient(string oldNIF, string name, string nif, string extra)
+        {
+            using (var db = new SmartCanteenContext())
+            {
+                var client = db.Users.OfType<Client>().FirstOrDefault(c => c.NIF == oldNIF);
+                if (client == null)
+                {
+                    return false;
+                }
+
+                client.Name = name;
+                client.NIF = nif;
+
+                if (client is Professor professor)
+                {
+                    professor.Email = extra;
+                }
+                else if (client is Student student)
+                {
+                    student.StudentID = extra;
+                }
+                db.SaveChanges();
+                return true;
+            }
+        }
+
         public static List<Client> GetAllClients()
         {
             using (var db = new SmartCanteenContext())
             {
                 return db.Users.OfType<Client>().ToList();
+            }
+        }
+
+        public static bool DeleteClient(string nif)
+        {
+            using (var db = new SmartCanteenContext())
+            {
+                var customer = db.Users.OfType<Client>().FirstOrDefault(c => c.NIF == nif);
+                if (customer == null)
+                {
+                    return false;
+                }
+
+                db.Users.Remove(customer);
+                db.SaveChanges();
+                return true;
             }
         }
 
@@ -79,6 +121,7 @@ namespace SmartCanteen.controllers
                 return true;
             }
         }
+
 
         public static Client SearchClient(string nif)
         {
