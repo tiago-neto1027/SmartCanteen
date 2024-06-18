@@ -37,7 +37,7 @@ namespace SmartCanteen
         private void radioClientAddProfessorType_Click(object sender, EventArgs e)
         {
             radioClientAddStudentType.Checked = false;
-            tBoxStudentID.Text = string.Empty;
+            tBoxStudentID.Text = 0.ToString();
 
             tBoxStudentID.Visible = false;
             StudentIDLabel.Visible = false; 

@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class MealTime : DbMigration
+    public partial class _123 : DbMigration
     {
         public override void Up()
         {

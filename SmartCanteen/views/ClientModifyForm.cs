@@ -147,11 +147,21 @@ namespace SmartCanteen
 
             if (radiobtnTypeStudent.Checked == true)
             {
-                ClientController.ModifyClient(oldNIF, name, NIF, email);
+                if(!ClientController.ModifyClient(oldNIF, name, NIF, email))
+                {
+                    MessageBox.Show("Erro ao alterar dados");
+                    return;
+                }
+                MessageBox.Show("Dados de aluno alterados com sucesso");
             }
             else
             {
-                ClientController.ModifyClient(oldNIF, name, NIF, studentID);
+                if (!ClientController.ModifyClient(oldNIF, name, NIF, email))
+                {
+                    MessageBox.Show("Erro ao alterar dados");
+                    return;
+                }
+                MessageBox.Show("Dados de docente alterados com sucesso");
             }
 
             updateClientInfo();

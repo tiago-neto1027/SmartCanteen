@@ -7,13 +7,13 @@ namespace SmartCanteen.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class MenuDishesExtrasRelation : IMigrationMetadata
+    public sealed partial class _123 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(MenuDishesExtrasRelation));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(_123));
         
         string IMigrationMetadata.Id
         {
-            get { return "202406150759363_MenuDishesExtrasRelation"; }
+            get { return "202406181216445_123"; }
         }
         
         string IMigrationMetadata.Source

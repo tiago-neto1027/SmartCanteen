@@ -35,21 +35,21 @@
             this.logoutChangeUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnReservation = new System.Windows.Forms.Button();
+            this.btnClientModify = new System.Windows.Forms.Button();
             this.btnBalance = new System.Windows.Forms.Button();
             this.btnClientAdd = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnMealEdit = new System.Windows.Forms.Button();
             this.btnExtrasEdit = new System.Windows.Forms.Button();
             this.btnMealRegister = new System.Windows.Forms.Button();
             this.btnExtrasAdd = new System.Windows.Forms.Button();
             this.btnMealAdd = new System.Windows.Forms.Button();
             this.btnMenuAdd = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbDate = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnMealEdit = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStripMain.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -99,25 +99,26 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnReservation);
+            this.groupBox1.Controls.Add(this.btnClientModify);
             this.groupBox1.Controls.Add(this.btnBalance);
             this.groupBox1.Controls.Add(this.btnClientAdd);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(632, 62);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(170, 165);
+            this.groupBox1.Size = new System.Drawing.Size(208, 117);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
             // 
-            // btnReservation
+            // btnClientModify
             // 
-            this.btnReservation.Location = new System.Drawing.Point(6, 115);
-            this.btnReservation.Name = "btnReservation";
-            this.btnReservation.Size = new System.Drawing.Size(95, 40);
-            this.btnReservation.TabIndex = 2;
-            this.btnReservation.Text = "Reserva";
-            this.btnReservation.UseVisualStyleBackColor = true;
+            this.btnClientModify.Location = new System.Drawing.Point(107, 23);
+            this.btnClientModify.Name = "btnClientModify";
+            this.btnClientModify.Size = new System.Drawing.Size(95, 40);
+            this.btnClientModify.TabIndex = 2;
+            this.btnClientModify.Text = "Modificar";
+            this.btnClientModify.UseVisualStyleBackColor = true;
+            this.btnClientModify.Click += new System.EventHandler(this.btnClientModify_Click);
             // 
             // btnBalance
             // 
@@ -154,6 +155,16 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Refeição";
+            // 
+            // btnMealEdit
+            // 
+            this.btnMealEdit.Location = new System.Drawing.Point(107, 66);
+            this.btnMealEdit.Name = "btnMealEdit";
+            this.btnMealEdit.Size = new System.Drawing.Size(57, 40);
+            this.btnMealEdit.TabIndex = 8;
+            this.btnMealEdit.Text = "Editar";
+            this.btnMealEdit.UseVisualStyleBackColor = true;
+            this.btnMealEdit.Click += new System.EventHandler(this.btnMealEdit_Click);
             // 
             // btnExtrasEdit
             // 
@@ -219,16 +230,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Semanal";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SmartCanteen.Properties.Resources._603_6035882_clock_transparent_time_icon_png_png_download;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 23);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(55, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // lbDate
             // 
             this.lbDate.AutoSize = true;
@@ -254,15 +255,15 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
-            // btnMealEdit
+            // pictureBox1
             // 
-            this.btnMealEdit.Location = new System.Drawing.Point(107, 66);
-            this.btnMealEdit.Name = "btnMealEdit";
-            this.btnMealEdit.Size = new System.Drawing.Size(57, 40);
-            this.btnMealEdit.TabIndex = 8;
-            this.btnMealEdit.Text = "Editar";
-            this.btnMealEdit.UseVisualStyleBackColor = true;
-            this.btnMealEdit.Click += new System.EventHandler(this.btnMealEdit_Click);
+            this.pictureBox1.Image = global::SmartCanteen.Properties.Resources._603_6035882_clock_transparent_time_icon_png_png_download;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(55, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // MainForm
             // 
@@ -299,7 +300,7 @@
         private System.Windows.Forms.ToolStripMenuItem logoutChangeUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnReservation;
+        private System.Windows.Forms.Button btnClientModify;
         private System.Windows.Forms.Button btnBalance;
         private System.Windows.Forms.Button btnClientAdd;
         private System.Windows.Forms.GroupBox groupBox2;
