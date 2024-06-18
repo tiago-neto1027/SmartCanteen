@@ -170,6 +170,9 @@
     <EmbeddedResource Include="Migrations\202406180347513_MealTime.resx">
       <DependentUpon>202406180347513_MealTime.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\ClientModifyForm.resx">
+      <DependentUpon>ClientModifyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\BalanceForm.resx">
       <DependentUpon>BalanceForm.cs</DependentUpon>
     </EmbeddedResource>

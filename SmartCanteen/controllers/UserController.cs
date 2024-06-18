@@ -61,6 +61,32 @@ namespace SmartCanteen.controllers
             }
         }
 
+        public static bool ModifyClient(string oldNIF, string name, string nif, string extra)
+        {
+            using (var db = new SmartCanteenContext())
+            {
+                var client = db.Users.OfType<Client>().FirstOrDefault(c => c.NIF == oldNIF);
+                if (client == null)
+                {
+                    return false;
+                }
+
+                client.Name = name;
+                client.NIF = nif;
+
+                if (client is Professor professor)
+                {
+                    professor.Email = extra;
+                }
+                else if (client is Student student)
+                {
+                    student.StudentID = extra;
+                }
+                db.SaveChanges();
+                return true;
+            }
+        }
+
         public static List<Client> GetAllClients()
         {
             using (var db = new SmartCanteenContext())
@@ -101,5 +127,6 @@ namespace SmartCanteen.controllers
                 }
             }
         }
+       
     }
 }
