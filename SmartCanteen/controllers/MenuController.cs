@@ -10,6 +10,14 @@ namespace SmartCanteen.controllers
     internal class MenuController
     {
         public MenuController() { }
-
+        
+        private bool somerandommethod(int num)
+        {
+            if (1 < num)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
