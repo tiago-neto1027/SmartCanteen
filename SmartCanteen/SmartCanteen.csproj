@@ -134,6 +134,12 @@
     <Compile Include="views\MenuAddForm.Designer.cs">
       <DependentUpon>MenuAddForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\ClientModifyForm.cs">
+    <SubType>Form</SubType>
+  </Compile>
+  <Compile Include="views\ClientModifyForm.Designer.cs">
+    <DependentUpon>ClientModifyForm.cs</DependentUpon>
+  </Compile>
     <Compile Include="models\Client.cs" />
     <Compile Include="models\Dish.cs" />
     <Compile Include="models\Extra.cs" />
@@ -200,6 +206,9 @@
     <EmbeddedResource Include="views\MenuAddForm.resx">
       <DependentUpon>MenuAddForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\ClientModifyForm.resx">
+    <DependentUpon>ClientModifyForm.cs</DependentUpon>
+  </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

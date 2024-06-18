@@ -65,7 +65,7 @@ namespace SmartCanteen
                 return;
             }
 
-            var searchNIF = clientController.SearchClient(nif);
+            var searchNIF = ClientController.SearchClient(nif);
             if (searchNIF != null)
             {
                 MessageBox.Show("O NIF já está a ser usado.");
@@ -104,7 +104,6 @@ namespace SmartCanteen
                 }
                 clientController.AddStudent(name, nif, balance, studentID);
                 MessageBox.Show("Estudante adicionado com sucesso");
-
             }
             if (radioClientAddProfessorType.Checked == true)
             {

@@ -46,7 +46,7 @@ namespace SmartCanteen
             }
 
             decimal addedvalue = AddValue.Value;
-            bool result = clientController.UpdateClientBalance(selectedClient.NIF, addedvalue);
+            bool result = ClientController.UpdateClientBalance(selectedClient.NIF, addedvalue);
 
             if (addedvalue == 0)
             {
@@ -88,7 +88,7 @@ namespace SmartCanteen
             }
             List<Client> clientSearch;
             clientSearch = new List<Client>();
-            clientSearch.Add(clientController.SearchClient(searchNif));
+            clientSearch.Add(ClientController.SearchClient(searchNif));
             
             if (clientSearch == null)
             {

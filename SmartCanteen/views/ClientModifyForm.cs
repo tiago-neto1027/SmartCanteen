@@ -22,9 +22,9 @@ namespace SmartCanteen
         {
             InitializeComponent();
 
-            UserController userController = new UserController();
+            ClientController clientController = new ClientController();
 
-            List<Client> clientList = UserController.GetAllClients();
+            List<Client> clientList = clientController.GetAllClients();
 
             listBoxClients.DataSource = null;
             listBoxClients.DataSource = clientList;
@@ -52,7 +52,8 @@ namespace SmartCanteen
             List<Client> clientSearch;
             clientSearch = new List<Client>
             {
-                UserController.SearchClient(searchNif)
+                ClientController.SearchClient(searchNif)
+
             };
 
             if (clientSearch == null)
@@ -113,7 +114,7 @@ namespace SmartCanteen
                 MessageBox.Show("Peencha o NIF");
                 return;
             }
-            var searchNIF = UserController.SearchClient(NIF);
+            var searchNIF = ClientController.SearchClient(NIF);
             if (searchNIF != null && NIF != selectedClient.NIF)
             {
                 MessageBox.Show("O NIF já esá a ser utilizador por outro cliente.");
@@ -146,11 +147,11 @@ namespace SmartCanteen
 
             if (radiobtnTypeStudent.Checked == true)
             {
-                UserController.ModifyClient(oldNIF, name, NIF, email);
+                ClientController.ModifyClient(oldNIF, name, NIF, email);
             }
             else
             {
-                UserController.ModifyClient(oldNIF, name, NIF, studentID);
+                ClientController.ModifyClient(oldNIF, name, NIF, studentID);
             }
 
             updateClientInfo();
@@ -165,7 +166,7 @@ namespace SmartCanteen
                 MessageBox.Show("Selecione um cliente primeiro");
                 return;
             }
-            UserController.DeleteClient(selectedClient.NIF);
+            ClientController.DeleteClient(selectedClient.NIF);
             updateClientListBox();
         }
 
@@ -184,8 +185,9 @@ namespace SmartCanteen
 
         private void updateClientListBox()
         {
+            ClientController clientController = new ClientController();
             int index = listBoxClients.SelectedIndex;
-            clientList = UserController.GetAllClients();
+            clientList = clientController.GetAllClients();
             listBoxClients.DataSource = null;
             listBoxClients.DataSource = clientList;
             listBoxClients.SelectedIndex = index;

@@ -118,7 +118,6 @@
             this.btnReservation.TabIndex = 2;
             this.btnReservation.Text = "Reserva";
             this.btnReservation.UseVisualStyleBackColor = true;
-            this.btnReservation.Click += new System.EventHandler(this.btnReservation_Click);
             // 
             // btnBalance
             // 
