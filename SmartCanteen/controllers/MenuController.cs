@@ -11,10 +11,13 @@ namespace SmartCanteen.controllers
     {
         public MenuController() { }
 
-        public void AddMenu(DateTime date, int quantity, double price, List<Dish> dishes, List<Extra> extras, MealTime time)
+        public void AddMenu(DateTime date, int quantity, double price, List<int> dishIds, List<int> extraIds, MealTime time)
         {
             using (var db = new SmartCanteenContext())
             {
+                List<Dish> dishes = db.Dishes.Where(d => dishIds.Contains(d.ID)).ToList();
+                List<Extra> extras = db.Extras.Where(e => extraIds.Contains(e.ID)).ToList();
+
                 Menu menu = new Menu(date, quantity, price, dishes, extras, time);
                 db.Menus.Add(menu);
                 db.SaveChanges();
