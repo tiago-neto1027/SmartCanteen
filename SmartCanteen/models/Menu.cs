@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace SmartCanteen.models
 {
+    public enum MealTime
+    {
+        Lunch,
+        Dinner
+    }
     internal class Menu
     {
         [Key]
@@ -15,10 +20,11 @@ namespace SmartCanteen.models
         public int Quantity { get; set; }
         public double StudentPrice { get; set; }
         public double TeacherPrice { get; set; }
+        public MealTime Time { get; set; }
 
         public virtual ICollection<Dish> Dishes { get; set; }
         public virtual ICollection<Extra> Extras { get; set; }
-        public Menu(DateTime date, int quantity, double price, List<Dish> dishes, List<Extra> extras)
+        public Menu(DateTime date, int quantity, double price, List<Dish> dishes, List<Extra> extras, MealTime time)
         {
             Date = date;
             Quantity = quantity;
@@ -26,6 +32,7 @@ namespace SmartCanteen.models
             TeacherPrice = price + 0.6;
             Dishes = dishes;
             Extras = extras;
+            Time = time;
         }
     }
 }

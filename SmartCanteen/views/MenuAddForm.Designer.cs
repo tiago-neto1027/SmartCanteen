@@ -51,16 +51,17 @@
             this.cBoxMenuAddFish = new System.Windows.Forms.ComboBox();
             this.cBoxMenuAddMeat = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnMenuAddDateConsult = new System.Windows.Forms.Button();
             this.dateTimePickerMenuAdd = new System.Windows.Forms.DateTimePicker();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnLeaveForm = new System.Windows.Forms.Button();
             this.btnMenuAddRegister = new System.Windows.Forms.Button();
             this.groupBoxOthers = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.nrQuantity = new System.Windows.Forms.NumericUpDown();
             this.nrPrice = new System.Windows.Forms.NumericUpDown();
+            this.nrQuantity = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.rBtnLunch = new System.Windows.Forms.RadioButton();
+            this.rBtnDinner = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBoxExtras.SuspendLayout();
             this.groupBoxFilters.SuspendLayout();
@@ -68,8 +69,8 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.groupBoxOthers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nrQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nrPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nrQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -301,7 +302,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnMenuAddDateConsult);
+            this.groupBox2.Controls.Add(this.rBtnDinner);
+            this.groupBox2.Controls.Add(this.rBtnLunch);
             this.groupBox2.Controls.Add(this.dateTimePickerMenuAdd);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(33, 25);
@@ -310,15 +312,6 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data:";
-            // 
-            // btnMenuAddDateConsult
-            // 
-            this.btnMenuAddDateConsult.Location = new System.Drawing.Point(293, 22);
-            this.btnMenuAddDateConsult.Name = "btnMenuAddDateConsult";
-            this.btnMenuAddDateConsult.Size = new System.Drawing.Size(75, 23);
-            this.btnMenuAddDateConsult.TabIndex = 5;
-            this.btnMenuAddDateConsult.Text = "Consultar";
-            this.btnMenuAddDateConsult.UseVisualStyleBackColor = true;
             // 
             // dateTimePickerMenuAdd
             // 
@@ -360,31 +353,6 @@
             this.groupBoxOthers.TabStop = false;
             this.groupBoxOthers.Text = "Outros:";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(35, 31);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Quantidade:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(282, 30);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 13);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Preço base:";
-            // 
-            // nrQuantity
-            // 
-            this.nrQuantity.Location = new System.Drawing.Point(106, 28);
-            this.nrQuantity.Name = "nrQuantity";
-            this.nrQuantity.Size = new System.Drawing.Size(120, 20);
-            this.nrQuantity.TabIndex = 2;
-            // 
             // nrPrice
             // 
             this.nrPrice.DecimalPlaces = 2;
@@ -397,6 +365,54 @@
             this.nrPrice.Name = "nrPrice";
             this.nrPrice.Size = new System.Drawing.Size(120, 20);
             this.nrPrice.TabIndex = 3;
+            // 
+            // nrQuantity
+            // 
+            this.nrQuantity.Location = new System.Drawing.Point(106, 28);
+            this.nrQuantity.Name = "nrQuantity";
+            this.nrQuantity.Size = new System.Drawing.Size(120, 20);
+            this.nrQuantity.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(282, 30);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(64, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Preço base:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(35, 31);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Quantidade:";
+            // 
+            // rBtnLunch
+            // 
+            this.rBtnLunch.AutoSize = true;
+            this.rBtnLunch.Checked = true;
+            this.rBtnLunch.Location = new System.Drawing.Point(285, 22);
+            this.rBtnLunch.Name = "rBtnLunch";
+            this.rBtnLunch.Size = new System.Drawing.Size(65, 21);
+            this.rBtnLunch.TabIndex = 5;
+            this.rBtnLunch.TabStop = true;
+            this.rBtnLunch.Text = "Lunch";
+            this.rBtnLunch.UseVisualStyleBackColor = true;
+            // 
+            // rBtnDinner
+            // 
+            this.rBtnDinner.AutoSize = true;
+            this.rBtnDinner.Location = new System.Drawing.Point(357, 22);
+            this.rBtnDinner.Name = "rBtnDinner";
+            this.rBtnDinner.Size = new System.Drawing.Size(68, 21);
+            this.rBtnDinner.TabIndex = 6;
+            this.rBtnDinner.TabStop = true;
+            this.rBtnDinner.Text = "Dinner";
+            this.rBtnDinner.UseVisualStyleBackColor = true;
             // 
             // MenuAddForm
             // 
@@ -419,11 +435,12 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.groupBoxOthers.ResumeLayout(false);
             this.groupBoxOthers.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nrQuantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nrPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nrQuantity)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -433,7 +450,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DateTimePicker dateTimePickerMenuAdd;
-        private System.Windows.Forms.Button btnMenuAddDateConsult;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox cBoxMenuAddVeggie;
@@ -462,5 +478,7 @@
         private System.Windows.Forms.NumericUpDown nrQuantity;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RadioButton rBtnDinner;
+        private System.Windows.Forms.RadioButton rBtnLunch;
     }
 }

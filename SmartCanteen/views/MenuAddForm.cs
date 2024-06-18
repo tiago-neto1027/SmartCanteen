@@ -55,12 +55,12 @@ namespace SmartCanteen
 
         private void btnMenuAddRegister_Click(object sender, EventArgs e)
         {
-            if (dateTimePickerMenuAdd.Value == DateTimePicker.MinimumDateTime)
+            DateTime date = dateTimePickerMenuAdd.Value;
+            if (date == DateTimePicker.MinimumDateTime)
             {
                 MessageBox.Show("Por favor, selecione uma data válida.");
                 return;
             }
-            DateTime date = dateTimePickerMenuAdd.Value;
 
             int quantity = (int)nrQuantity.Value;
             if (quantity <= 0)
@@ -95,8 +95,14 @@ namespace SmartCanteen
             }
             List<Extra> extras = selectedExtras;
 
+            MealTime time;
+            if (rBtnDinner.Checked)
+                time = MealTime.Dinner;
+            else
+                time = MealTime.Lunch;
+
             MenuController menuController = new MenuController();
-            menuController.AddMenu(date, quantity, price, dishes, extras);
+            menuController.AddMenu(date, quantity, price, dishes, extras, time);
 
             MessageBox.Show("Menu adicionado com sucesso!");
             this.Close();
