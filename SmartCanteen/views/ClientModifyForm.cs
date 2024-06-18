@@ -146,11 +146,11 @@ namespace SmartCanteen
 
             if (radiobtnTypeStudent.Checked == true)
             {
-                UserController.ModifClient(oldNIF, name, NIF, email);
+                UserController.ModifyClient(oldNIF, name, NIF, email);
             }
             else
             {
-                UserController.ModifClient(oldNIF, name, NIF, studentID);
+                UserController.ModifyClient(oldNIF, name, NIF, studentID);
             }
 
             updateClientInfo();

@@ -46,10 +46,10 @@ namespace SmartCanteen
             balanceForm.ShowDialog();
         }
 
-        private void btnReservation_Click(object sender, EventArgs e)
+        private void btnClientChange_Click(object sender, EventArgs e)
         {
-            ReservationForm reservationForm = new ReservationForm();
-            reservationForm.ShowDialog();
+            ClientModifyForm clientModifyForm = new ClientModifyForm();
+            clientModifyForm.ShowDialog();
         }
 
         private void btnMenuAdd_Click(object sender, EventArgs e)
@@ -75,11 +75,12 @@ namespace SmartCanteen
             MealRegisterForm mealRegisterForm = new MealRegisterForm();
             mealRegisterForm.ShowDialog();
         }
-
-        private void btnClientChange_Click(object sender, EventArgs e)
+        private void btnReservation_Click(object sender, EventArgs e)
         {
-            ClientModifyForm clientModifyForm = new ClientModifyForm();
-            clientModifyForm.ShowDialog();
-        }
+            {
+                ReservationForm reservationForm = new ReservationForm();
+                reservationForm.ShowDialog();
+            }
+
     }
 }

@@ -124,6 +124,11 @@ namespace SmartCanteen.controllers
                 {
                     return false;
                 }
+
+                customer.Balance += addedValue;
+
+                db.SaveChanges();
+                return true;
             }
         }
 
