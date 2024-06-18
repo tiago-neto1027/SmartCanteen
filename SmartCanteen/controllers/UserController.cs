@@ -30,8 +30,7 @@ namespace SmartCanteen.controllers
                 }
                 catch (Exception ex)
                 {
-                    throw new InvalidCastException("TODO: Error");
-                    
+                    throw new InvalidCastException("TODO: " + ex.Message);
                 }
             }
         }

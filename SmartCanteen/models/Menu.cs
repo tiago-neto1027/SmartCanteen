@@ -24,6 +24,8 @@ namespace SmartCanteen.models
 
         public virtual ICollection<Dish> Dishes { get; set; }
         public virtual ICollection<Extra> Extras { get; set; }
+
+        public Menu() { }
         public Menu(DateTime date, int quantity, double price, List<Dish> dishes, List<Extra> extras, MealTime time)
         {
             Date = date;

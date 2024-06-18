@@ -161,9 +161,6 @@
     <Compile Include="views\ReservationForm.Designer.cs">
       <DependentUpon>ReservationForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202406071757054_teste.resx">
-      <DependentUpon>202406071757054_teste.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202406140904411_Update.resx">
       <DependentUpon>202406140904411_Update.cs</DependentUpon>
     </EmbeddedResource>

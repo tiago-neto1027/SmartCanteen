@@ -18,9 +18,55 @@ namespace SmartCanteen.controllers
         {
             using (var db = new SmartCanteenContext())
             {
-                var dish = new Dish(description, dishType);
+                Dish dish = new Dish(description, dishType);
                 db.Dishes.Add(dish);
                 db.SaveChanges();
+            }
+        }
+
+        public void UpdateDish(Dish updatedDish)
+        {
+            using (var db = new SmartCanteenContext())
+            {
+                Dish existingDish = db.Dishes.SingleOrDefault(d => d.ID == updatedDish.ID);
+
+                if (existingDish != null)
+                {
+                    existingDish.Description = updatedDish.Description;
+                    existingDish.Type = updatedDish.Type;
+                    existingDish.Active = updatedDish.Active;
+
+                    db.SaveChanges();
+                }
+                else
+                {
+                    throw new InvalidOperationException($"Dish with ID {existingDish.ID} not found.");
+                }
+            }
+        }
+
+        public void DeleteDish(int dishId)
+        {
+            using (var db = new SmartCanteenContext())
+            {
+                Dish dish = db.Dishes.Include("Menus").SingleOrDefault(d => d.ID == dishId);
+
+                if (dish != null)
+                {
+                    //Deletes the associated menus before deleting the dish
+                    foreach (Menu menu in dish.Menus.ToList())
+                    {
+                        db.Menus.Remove(menu);
+                    }
+
+                    db.Dishes.Remove(dish);
+
+                    db.SaveChanges();
+                }
+                else
+                {
+                    throw new InvalidOperationException($"Dish with ID {dishId} not found.");
+                }
             }
         }
 
@@ -32,47 +78,11 @@ namespace SmartCanteen.controllers
             }
         }
 
-        //listing for dataGrid
         public List<Dish> GetAllDishes()
         {
             using (var db = new SmartCanteenContext())
             {
                 return db.Dishes.ToList();
-            }
-        }
-
-        public void UpdateDish(Dish updatedDish)
-        {
-            using (var db = new SmartCanteenContext())
-            {
-                var existingDish = db.Dishes.SingleOrDefault(e => e.ID == updatedDish.ID);
-
-                if (existingDish == null)
-                {
-                    throw new InvalidOperationException("Prato não encontrado.");
-                }
-
-                // properties
-                existingDish.Description = updatedDish.Description;
-                existingDish.Type = updatedDish.Type;
-
-                db.SaveChanges();
-            }
-        }
-
-        public void DeleteDish(int dishId)
-        {
-            using (var db = new SmartCanteenContext())
-            {
-                var dish = db.Dishes.SingleOrDefault(e => e.ID == dishId);
-
-                if (dish == null)
-                {
-                    throw new InvalidOperationException("Prato não encontrado.");
-                }
-
-                db.Dishes.Remove(dish);
-                db.SaveChanges();
             }
         }
     }

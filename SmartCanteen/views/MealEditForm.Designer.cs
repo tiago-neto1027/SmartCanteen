@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.btnMealEditDelete = new System.Windows.Forms.Button();
-            this.btnMealEditEdit = new System.Windows.Forms.Button();
             this.dataGridViewMeals = new System.Windows.Forms.DataGridView();
             this.btnMealEditLeave = new System.Windows.Forms.Button();
-            this.btnMealEditRegister = new System.Windows.Forms.Button();
+            this.btnMealEdit = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelMealEditIdValue = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -42,6 +41,7 @@
             this.labelMealEditId = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tBoxMealEditDescription = new System.Windows.Forms.TextBox();
+            this.checkBoxActive = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMeals)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -58,24 +58,18 @@
             this.btnMealEditDelete.UseVisualStyleBackColor = false;
             this.btnMealEditDelete.Click += new System.EventHandler(this.btnMealEditDelete_Click);
             // 
-            // btnMealEditEdit
-            // 
-            this.btnMealEditEdit.Location = new System.Drawing.Point(439, 401);
-            this.btnMealEditEdit.Name = "btnMealEditEdit";
-            this.btnMealEditEdit.Size = new System.Drawing.Size(66, 32);
-            this.btnMealEditEdit.TabIndex = 33;
-            this.btnMealEditEdit.Text = "Editar";
-            this.btnMealEditEdit.UseVisualStyleBackColor = true;
-            this.btnMealEditEdit.Click += new System.EventHandler(this.btnMealEditEdit_Click);
-            // 
             // dataGridViewMeals
             // 
+            this.dataGridViewMeals.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewMeals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMeals.Location = new System.Drawing.Point(35, 233);
             this.dataGridViewMeals.Name = "dataGridViewMeals";
+            this.dataGridViewMeals.ReadOnly = true;
+            this.dataGridViewMeals.RowHeadersWidth = 47;
             this.dataGridViewMeals.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewMeals.Size = new System.Drawing.Size(614, 150);
             this.dataGridViewMeals.TabIndex = 32;
+            this.dataGridViewMeals.SelectionChanged += new System.EventHandler(this.dataGridViewMeals_SelectionChanged);
             // 
             // btnMealEditLeave
             // 
@@ -87,18 +81,19 @@
             this.btnMealEditLeave.UseVisualStyleBackColor = true;
             this.btnMealEditLeave.Click += new System.EventHandler(this.btnMealEditLeave_Click);
             // 
-            // btnMealEditRegister
+            // btnMealEdit
             // 
-            this.btnMealEditRegister.Location = new System.Drawing.Point(511, 401);
-            this.btnMealEditRegister.Name = "btnMealEditRegister";
-            this.btnMealEditRegister.Size = new System.Drawing.Size(66, 32);
-            this.btnMealEditRegister.TabIndex = 30;
-            this.btnMealEditRegister.Text = "Registar";
-            this.btnMealEditRegister.UseVisualStyleBackColor = true;
-            this.btnMealEditRegister.Click += new System.EventHandler(this.btnMealEditRegister_Click);
+            this.btnMealEdit.Location = new System.Drawing.Point(511, 401);
+            this.btnMealEdit.Name = "btnMealEdit";
+            this.btnMealEdit.Size = new System.Drawing.Size(66, 32);
+            this.btnMealEdit.TabIndex = 30;
+            this.btnMealEdit.Text = "Editar";
+            this.btnMealEdit.UseVisualStyleBackColor = true;
+            this.btnMealEdit.Click += new System.EventHandler(this.btnMealEditRegister_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBoxActive);
             this.groupBox1.Controls.Add(this.labelMealEditIdValue);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.labelMealEditId);
@@ -118,7 +113,7 @@
             this.labelMealEditIdValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMealEditIdValue.Location = new System.Drawing.Point(281, 27);
             this.labelMealEditIdValue.Name = "labelMealEditIdValue";
-            this.labelMealEditIdValue.Size = new System.Drawing.Size(14, 15);
+            this.labelMealEditIdValue.Size = new System.Drawing.Size(16, 17);
             this.labelMealEditIdValue.TabIndex = 36;
             this.labelMealEditIdValue.Text = "0";
             // 
@@ -139,7 +134,7 @@
             this.radioMealEditCategoryVeggie.AutoSize = true;
             this.radioMealEditCategoryVeggie.Location = new System.Drawing.Point(420, 20);
             this.radioMealEditCategoryVeggie.Name = "radioMealEditCategoryVeggie";
-            this.radioMealEditCategoryVeggie.Size = new System.Drawing.Size(91, 19);
+            this.radioMealEditCategoryVeggie.Size = new System.Drawing.Size(103, 21);
             this.radioMealEditCategoryVeggie.TabIndex = 2;
             this.radioMealEditCategoryVeggie.TabStop = true;
             this.radioMealEditCategoryVeggie.Text = "Vegetariano";
@@ -150,7 +145,7 @@
             this.radioMealEditCategoryFish.AutoSize = true;
             this.radioMealEditCategoryFish.Location = new System.Drawing.Point(215, 20);
             this.radioMealEditCategoryFish.Name = "radioMealEditCategoryFish";
-            this.radioMealEditCategoryFish.Size = new System.Drawing.Size(56, 19);
+            this.radioMealEditCategoryFish.Size = new System.Drawing.Size(60, 21);
             this.radioMealEditCategoryFish.TabIndex = 1;
             this.radioMealEditCategoryFish.TabStop = true;
             this.radioMealEditCategoryFish.Text = "Peixe";
@@ -162,7 +157,7 @@
             this.radioMealEditCategoryMeat.Checked = true;
             this.radioMealEditCategoryMeat.Location = new System.Drawing.Point(10, 20);
             this.radioMealEditCategoryMeat.Name = "radioMealEditCategoryMeat";
-            this.radioMealEditCategoryMeat.Size = new System.Drawing.Size(58, 19);
+            this.radioMealEditCategoryMeat.Size = new System.Drawing.Size(64, 21);
             this.radioMealEditCategoryMeat.TabIndex = 0;
             this.radioMealEditCategoryMeat.TabStop = true;
             this.radioMealEditCategoryMeat.Text = "Carne";
@@ -174,7 +169,7 @@
             this.labelMealEditId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMealEditId.Location = new System.Drawing.Point(253, 27);
             this.labelMealEditId.Name = "labelMealEditId";
-            this.labelMealEditId.Size = new System.Drawing.Size(22, 15);
+            this.labelMealEditId.Size = new System.Drawing.Size(25, 17);
             this.labelMealEditId.TabIndex = 35;
             this.labelMealEditId.Text = "ID:";
             // 
@@ -184,7 +179,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(26, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 15);
+            this.label1.Size = new System.Drawing.Size(49, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nome:";
             // 
@@ -193,8 +188,18 @@
             this.tBoxMealEditDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tBoxMealEditDescription.Location = new System.Drawing.Point(29, 54);
             this.tBoxMealEditDescription.Name = "tBoxMealEditDescription";
-            this.tBoxMealEditDescription.Size = new System.Drawing.Size(564, 21);
+            this.tBoxMealEditDescription.Size = new System.Drawing.Size(564, 23);
             this.tBoxMealEditDescription.TabIndex = 1;
+            // 
+            // checkBoxActive
+            // 
+            this.checkBoxActive.AutoSize = true;
+            this.checkBoxActive.Location = new System.Drawing.Point(449, 27);
+            this.checkBoxActive.Name = "checkBoxActive";
+            this.checkBoxActive.Size = new System.Drawing.Size(65, 21);
+            this.checkBoxActive.TabIndex = 37;
+            this.checkBoxActive.Text = "Active";
+            this.checkBoxActive.UseVisualStyleBackColor = true;
             // 
             // MealEditForm
             // 
@@ -202,15 +207,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 461);
             this.Controls.Add(this.btnMealEditDelete);
-            this.Controls.Add(this.btnMealEditEdit);
             this.Controls.Add(this.dataGridViewMeals);
             this.Controls.Add(this.btnMealEditLeave);
-            this.Controls.Add(this.btnMealEditRegister);
+            this.Controls.Add(this.btnMealEdit);
             this.Controls.Add(this.groupBox1);
             this.Name = "MealEditForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MealEditForm";
-            this.Load += new System.EventHandler(this.MealEditForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMeals)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -223,10 +226,9 @@
         #endregion
 
         private System.Windows.Forms.Button btnMealEditDelete;
-        private System.Windows.Forms.Button btnMealEditEdit;
         private System.Windows.Forms.DataGridView dataGridViewMeals;
         private System.Windows.Forms.Button btnMealEditLeave;
-        private System.Windows.Forms.Button btnMealEditRegister;
+        private System.Windows.Forms.Button btnMealEdit;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radioMealEditCategoryVeggie;
@@ -236,5 +238,6 @@
         private System.Windows.Forms.TextBox tBoxMealEditDescription;
         private System.Windows.Forms.Label labelMealEditIdValue;
         private System.Windows.Forms.Label labelMealEditId;
+        private System.Windows.Forms.CheckBox checkBoxActive;
     }
 }
