@@ -74,9 +74,9 @@
             this.labelExtrasEditIdValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelExtrasEditIdValue.Location = new System.Drawing.Point(290, 27);
             this.labelExtrasEditIdValue.Name = "labelExtrasEditIdValue";
-            this.labelExtrasEditIdValue.Size = new System.Drawing.Size(10, 15);
+            this.labelExtrasEditIdValue.Size = new System.Drawing.Size(14, 15);
             this.labelExtrasEditIdValue.TabIndex = 7;
-            this.labelExtrasEditIdValue.Text = ".";
+            this.labelExtrasEditIdValue.Text = "0";
             // 
             // labelExtrasEditId
             // 

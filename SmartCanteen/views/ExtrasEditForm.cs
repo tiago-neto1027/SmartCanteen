@@ -14,25 +14,28 @@ namespace SmartCanteen
 {
     public partial class ExtrasEditForm : Form
     {
+        private ExtraController extraController = new ExtraController();
         public ExtrasEditForm()
         {
             InitializeComponent();
+            extraController = new ExtraController();
         }
 
         private void ExtrasEditForm_Load(object sender, EventArgs e)
         {
-            // Load data
-            ExtraController extraController = new ExtraController();
-            var extras = extraController.GetAllExtras();
 
-            // Bind data 
-            dataGridViewExtras.DataSource = extras;
+            LoadDataGrid();
 
             dataGridViewExtras.Columns["Active"].Visible = false;
             
         }
+        private void LoadDataGrid()
+        {
+            var extras = extraController.GetAllExtras();
+            dataGridViewExtras.DataSource = extras;
+        }
 
-        private void btnExtrasEditEdit_Click(object sender, EventArgs e)        //atribute values back to the form for editing
+        private void btnExtrasEditEdit_Click(object sender, EventArgs e)        
         {
             try
             {
@@ -86,14 +89,11 @@ namespace SmartCanteen
                     Type = GetSelectedExtraType()
                 };
 
-                ExtraController extraController = new ExtraController();
                 extraController.UpdateExtra(updatedExtra);
 
                 MessageBox.Show("Extra atualizado com sucesso.");
-                
 
-                var extras = extraController.GetAllExtras();
-                dataGridViewExtras.DataSource = extras;         // Reload
+                LoadDataGrid();          // Reload
             }
             catch (Exception ex)
             {
@@ -126,7 +126,38 @@ namespace SmartCanteen
 
         private void btnExtrasEditDelete_Click(object sender, EventArgs e)
         {
-
+            if (dataGridViewExtras.SelectedRows.Count > 0)
+            {
+                int selectedId = (int)dataGridViewExtras.SelectedRows[0].Cells["ID"].Value;
+                int labelId = int.Parse(labelExtrasEditIdValue.Text);
+                if (selectedId == labelId)
+                {
+                    try
+                    {
+                        extraController.DeleteExtra(selectedId);
+                        MessageBox.Show("Extra apagado com sucesso.");
+                        
+                        LoadDataGrid();         // Reload
+                    }
+                    catch (InvalidOperationException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                else if (labelId == null)
+                {
+                    MessageBox.Show("Selecione um item para edição.");
+                }
+                else
+                {
+                    MessageBox.Show("Selecione um item para edição.");
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Selecione um item.");
+            }
         }
     }
 }

@@ -59,5 +59,21 @@ namespace SmartCanteen.controllers
                 db.SaveChanges();
             }
         }
+
+        public void DeleteDish(int dishId)
+        {
+            using (var db = new SmartCanteenContext())
+            {
+                var dish = db.Dishes.SingleOrDefault(e => e.ID == dishId);
+
+                if (dish == null)
+                {
+                    throw new InvalidOperationException("Prato não encontrado.");
+                }
+
+                db.Dishes.Remove(dish);
+                db.SaveChanges();
+            }
+        }
     }
 }

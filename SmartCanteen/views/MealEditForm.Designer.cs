@@ -30,19 +30,19 @@
         {
             this.btnMealEditDelete = new System.Windows.Forms.Button();
             this.btnMealEditEdit = new System.Windows.Forms.Button();
-            this.dataGridViewMeal = new System.Windows.Forms.DataGridView();
+            this.dataGridViewMeals = new System.Windows.Forms.DataGridView();
             this.btnMealEditLeave = new System.Windows.Forms.Button();
             this.btnMealEditRegister = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelMealEditIdValue = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioMealEditCategoryVeggie = new System.Windows.Forms.RadioButton();
             this.radioMealEditCategoryFish = new System.Windows.Forms.RadioButton();
             this.radioMealEditCategoryMeat = new System.Windows.Forms.RadioButton();
+            this.labelMealEditId = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tBoxMealEditDescription = new System.Windows.Forms.TextBox();
-            this.labelMealEditIdValue = new System.Windows.Forms.Label();
-            this.labelMealEditId = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMeal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMeals)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +56,7 @@
             this.btnMealEditDelete.TabIndex = 34;
             this.btnMealEditDelete.Text = "Delete";
             this.btnMealEditDelete.UseVisualStyleBackColor = false;
+            this.btnMealEditDelete.Click += new System.EventHandler(this.btnMealEditDelete_Click);
             // 
             // btnMealEditEdit
             // 
@@ -67,14 +68,14 @@
             this.btnMealEditEdit.UseVisualStyleBackColor = true;
             this.btnMealEditEdit.Click += new System.EventHandler(this.btnMealEditEdit_Click);
             // 
-            // dataGridViewMeal
+            // dataGridViewMeals
             // 
-            this.dataGridViewMeal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMeal.Location = new System.Drawing.Point(35, 233);
-            this.dataGridViewMeal.Name = "dataGridViewMeal";
-            this.dataGridViewMeal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewMeal.Size = new System.Drawing.Size(614, 150);
-            this.dataGridViewMeal.TabIndex = 32;
+            this.dataGridViewMeals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMeals.Location = new System.Drawing.Point(35, 233);
+            this.dataGridViewMeals.Name = "dataGridViewMeals";
+            this.dataGridViewMeals.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewMeals.Size = new System.Drawing.Size(614, 150);
+            this.dataGridViewMeals.TabIndex = 32;
             // 
             // btnMealEditLeave
             // 
@@ -110,6 +111,16 @@
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Prato:";
+            // 
+            // labelMealEditIdValue
+            // 
+            this.labelMealEditIdValue.AutoSize = true;
+            this.labelMealEditIdValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMealEditIdValue.Location = new System.Drawing.Point(281, 27);
+            this.labelMealEditIdValue.Name = "labelMealEditIdValue";
+            this.labelMealEditIdValue.Size = new System.Drawing.Size(14, 15);
+            this.labelMealEditIdValue.TabIndex = 36;
+            this.labelMealEditIdValue.Text = "0";
             // 
             // groupBox2
             // 
@@ -157,6 +168,16 @@
             this.radioMealEditCategoryMeat.Text = "Carne";
             this.radioMealEditCategoryMeat.UseVisualStyleBackColor = true;
             // 
+            // labelMealEditId
+            // 
+            this.labelMealEditId.AutoSize = true;
+            this.labelMealEditId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMealEditId.Location = new System.Drawing.Point(253, 27);
+            this.labelMealEditId.Name = "labelMealEditId";
+            this.labelMealEditId.Size = new System.Drawing.Size(22, 15);
+            this.labelMealEditId.TabIndex = 35;
+            this.labelMealEditId.Text = "ID:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -175,26 +196,6 @@
             this.tBoxMealEditDescription.Size = new System.Drawing.Size(564, 21);
             this.tBoxMealEditDescription.TabIndex = 1;
             // 
-            // labelMealEditIdValue
-            // 
-            this.labelMealEditIdValue.AutoSize = true;
-            this.labelMealEditIdValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMealEditIdValue.Location = new System.Drawing.Point(281, 27);
-            this.labelMealEditIdValue.Name = "labelMealEditIdValue";
-            this.labelMealEditIdValue.Size = new System.Drawing.Size(10, 15);
-            this.labelMealEditIdValue.TabIndex = 36;
-            this.labelMealEditIdValue.Text = ".";
-            // 
-            // labelMealEditId
-            // 
-            this.labelMealEditId.AutoSize = true;
-            this.labelMealEditId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMealEditId.Location = new System.Drawing.Point(253, 27);
-            this.labelMealEditId.Name = "labelMealEditId";
-            this.labelMealEditId.Size = new System.Drawing.Size(22, 15);
-            this.labelMealEditId.TabIndex = 35;
-            this.labelMealEditId.Text = "ID:";
-            // 
             // MealEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,7 +203,7 @@
             this.ClientSize = new System.Drawing.Size(684, 461);
             this.Controls.Add(this.btnMealEditDelete);
             this.Controls.Add(this.btnMealEditEdit);
-            this.Controls.Add(this.dataGridViewMeal);
+            this.Controls.Add(this.dataGridViewMeals);
             this.Controls.Add(this.btnMealEditLeave);
             this.Controls.Add(this.btnMealEditRegister);
             this.Controls.Add(this.groupBox1);
@@ -210,7 +211,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MealEditForm";
             this.Load += new System.EventHandler(this.MealEditForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMeal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMeals)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -223,7 +224,7 @@
 
         private System.Windows.Forms.Button btnMealEditDelete;
         private System.Windows.Forms.Button btnMealEditEdit;
-        private System.Windows.Forms.DataGridView dataGridViewMeal;
+        private System.Windows.Forms.DataGridView dataGridViewMeals;
         private System.Windows.Forms.Button btnMealEditLeave;
         private System.Windows.Forms.Button btnMealEditRegister;
         private System.Windows.Forms.GroupBox groupBox1;

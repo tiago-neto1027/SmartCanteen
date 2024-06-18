@@ -68,5 +68,21 @@ namespace SmartCanteen.controllers
                 db.SaveChanges();
             }
         }
+
+        public void DeleteExtra(int extraId)
+        {
+            using (var db = new SmartCanteenContext())
+            {
+                var extra = db.Extras.SingleOrDefault(e => e.ID == extraId);
+
+                if (extra == null)
+                {
+                    throw new InvalidOperationException("Extra não encontrado.");
+                }
+
+                db.Extras.Remove(extra);
+                db.SaveChanges();
+            }
+        }
     }
 }

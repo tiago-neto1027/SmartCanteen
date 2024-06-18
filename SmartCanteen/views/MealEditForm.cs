@@ -15,9 +15,11 @@ namespace SmartCanteen
 {
     public partial class MealEditForm : Form
     {
+        DishController dishController = new DishController();
         public MealEditForm()
         {
             InitializeComponent();
+            dishController = new DishController();
         }
 
         private void btnMealEditLeave_Click(object sender, EventArgs e)
@@ -25,22 +27,24 @@ namespace SmartCanteen
             this.Close();
         }
 
+        private void LoadDataGrid()
+        {
+            var dishes = dishController.GetAllDishes();
+            dataGridViewMeals.DataSource = dishes;
+        }
+
         private void MealEditForm_Load(object sender, EventArgs e)
         {
-            // Load data
-            DishController dishController = new DishController();
-            var dishes = dishController.GetAllDishes();
+            LoadDataGrid();
 
-            // Bind data
-            dataGridViewMeal.DataSource = dishes;
-            dataGridViewMeal.Columns["Active"].Visible = false;
+            dataGridViewMeals.Columns["Active"].Visible = false;
         }
 
         private void btnMealEditEdit_Click(object sender, EventArgs e)
         {
             try
             {
-                var selectedMeal = dataGridViewMeal.SelectedRows[0].DataBoundItem as Dish;
+                var selectedMeal = dataGridViewMeals.SelectedRows[0].DataBoundItem as Dish;
 
                 if (selectedMeal != null)
                 {
@@ -78,14 +82,11 @@ namespace SmartCanteen
                     Type = GetSelectedMealType()
                 };
 
-                DishController dishController = new DishController();
                 dishController.UpdateDish(updatedDish);
 
                 MessageBox.Show("prato actualizado com sucesso.");
 
-
-                var dishes = dishController.GetAllDishes();
-                dataGridViewMeal.DataSource = dishes;         // Reload
+                LoadDataGrid();       // Reload
             }
             catch (Exception ex)
             {
@@ -109,6 +110,42 @@ namespace SmartCanteen
             }
 
             throw new InvalidOperationException("nenhum tipo selecionado.");
+        }
+
+        private void btnMealEditDelete_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewMeals.SelectedRows.Count > 0)
+            {
+                int selectedId = (int)dataGridViewMeals.SelectedRows[0].Cells["ID"].Value;
+                int labelId = int.Parse(labelMealEditIdValue.Text);
+                if (selectedId == labelId)
+                {
+                    try
+                    {
+                        dishController.DeleteDish(selectedId);
+                        MessageBox.Show("Prato apagado com sucesso.");
+
+                        LoadDataGrid();         // Reload
+                    }
+                    catch (InvalidOperationException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                else if (labelId == null)
+                {
+                    MessageBox.Show("Selecione um item para edição.");
+                }
+                else
+                {
+                    MessageBox.Show("Selecione um item para edição.");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Selecione um item.");
+            }
         }
     }
 }
