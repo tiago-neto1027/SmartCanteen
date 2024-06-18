@@ -71,7 +71,7 @@
             this.radioMealAddCategoryVeggie.AutoSize = true;
             this.radioMealAddCategoryVeggie.Location = new System.Drawing.Point(420, 20);
             this.radioMealAddCategoryVeggie.Name = "radioMealAddCategoryVeggie";
-            this.radioMealAddCategoryVeggie.Size = new System.Drawing.Size(103, 21);
+            this.radioMealAddCategoryVeggie.Size = new System.Drawing.Size(91, 19);
             this.radioMealAddCategoryVeggie.TabIndex = 2;
             this.radioMealAddCategoryVeggie.TabStop = true;
             this.radioMealAddCategoryVeggie.Text = "Vegetariano";
@@ -82,7 +82,7 @@
             this.radioMealAddCategoryFish.AutoSize = true;
             this.radioMealAddCategoryFish.Location = new System.Drawing.Point(215, 20);
             this.radioMealAddCategoryFish.Name = "radioMealAddCategoryFish";
-            this.radioMealAddCategoryFish.Size = new System.Drawing.Size(60, 21);
+            this.radioMealAddCategoryFish.Size = new System.Drawing.Size(56, 19);
             this.radioMealAddCategoryFish.TabIndex = 1;
             this.radioMealAddCategoryFish.TabStop = true;
             this.radioMealAddCategoryFish.Text = "Peixe";
@@ -94,7 +94,7 @@
             this.radioMealAddCategoryMeat.Checked = true;
             this.radioMealAddCategoryMeat.Location = new System.Drawing.Point(10, 20);
             this.radioMealAddCategoryMeat.Name = "radioMealAddCategoryMeat";
-            this.radioMealAddCategoryMeat.Size = new System.Drawing.Size(64, 21);
+            this.radioMealAddCategoryMeat.Size = new System.Drawing.Size(58, 19);
             this.radioMealAddCategoryMeat.TabIndex = 0;
             this.radioMealAddCategoryMeat.TabStop = true;
             this.radioMealAddCategoryMeat.Text = "Carne";
@@ -106,7 +106,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(26, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 17);
+            this.label1.Size = new System.Drawing.Size(44, 15);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nome:";
             // 
@@ -115,7 +115,7 @@
             this.tBoxMealAddDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tBoxMealAddDescription.Location = new System.Drawing.Point(29, 54);
             this.tBoxMealAddDescription.Name = "tBoxMealAddDescription";
-            this.tBoxMealAddDescription.Size = new System.Drawing.Size(564, 23);
+            this.tBoxMealAddDescription.Size = new System.Drawing.Size(564, 21);
             this.tBoxMealAddDescription.TabIndex = 1;
             // 
             // btnMealAddLeave
