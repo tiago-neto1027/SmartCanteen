@@ -248,7 +248,7 @@ namespace SmartCanteen
         private void btnPreviousWeek_Click(object sender, EventArgs e)
         {
             DateTime newWeekStart = weekStart.AddDays(-7);
-            if (newWeekStart <= GetStartOfWeek(curData))
+            if (newWeekStart < curData.AddDays(-7))
             {
                 btnPreviousWeek.Enabled = false;
                 return;
