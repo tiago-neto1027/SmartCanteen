@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SmartCanteen.views;
 
 namespace SmartCanteen
 {
@@ -93,6 +94,18 @@ namespace SmartCanteen
         {
             ClientModifyForm clientModifyForm = new ClientModifyForm();
             clientModifyForm.ShowDialog();
+        }
+
+        private void btnCreateFine_Click(object sender, EventArgs e)
+        {
+            FineAddForm fineAddForm = new FineAddForm();
+            fineAddForm.ShowDialog();
+        }
+
+        private void btnEditFine_Click(object sender, EventArgs e)
+        {
+            FineEditForm fineEditForm = new FineEditForm();
+            fineEditForm.ShowDialog();
         }
     }
 }
