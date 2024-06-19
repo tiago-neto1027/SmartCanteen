@@ -61,10 +61,19 @@
     <Compile Include="controllers\ExtraController.cs" />
     <Compile Include="controllers\FineController.cs" />
     <Compile Include="controllers\MenuController.cs" />
+    <Compile Include="controllers\ReservationController.cs" />
     <Compile Include="controllers\UserController.cs" />
-    <Compile Include="Migrations\202406190217076_Fine-Changes.cs" />
-    <Compile Include="Migrations\202406190217076_Fine-Changes.Designer.cs">
-      <DependentUpon>202406190217076_Fine-Changes.cs</DependentUpon>
+    <Compile Include="Migrations\202406191437105_InitialCreate.cs" />
+    <Compile Include="Migrations\202406191437105_InitialCreate.Designer.cs">
+      <DependentUpon>202406191437105_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406191446237_DishRelation.cs" />
+    <Compile Include="Migrations\202406191446237_DishRelation.Designer.cs">
+      <DependentUpon>202406191446237_DishRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406191511209_ExtrasRelation.cs" />
+    <Compile Include="Migrations\202406191511209_ExtrasRelation.Designer.cs">
+      <DependentUpon>202406191511209_ExtrasRelation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="views\FineAddForm.cs">
@@ -172,8 +181,14 @@
     <Compile Include="views\ReservationForm.Designer.cs">
       <DependentUpon>ReservationForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202406190217076_Fine-Changes.resx">
-      <DependentUpon>202406190217076_Fine-Changes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202406191437105_InitialCreate.resx">
+      <DependentUpon>202406191437105_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406191446237_DishRelation.resx">
+      <DependentUpon>202406191446237_DishRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406191511209_ExtrasRelation.resx">
+      <DependentUpon>202406191511209_ExtrasRelation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\BalanceForm.resx">
       <DependentUpon>BalanceForm.cs</DependentUpon>

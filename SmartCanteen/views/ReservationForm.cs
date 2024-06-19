@@ -19,9 +19,11 @@ namespace SmartCanteen
     {
         private readonly ClientController clientController = new ClientController();
         private readonly MenuController menuController = new MenuController();
+        private readonly ReservationController reservationController = new ReservationController();
 
         Client selectedClient = null;
         Menu selectedMenu = null;
+        Dish selectedDish = null;
         List<Extra> selectedExtras;
 
         public ReservationForm()
@@ -112,6 +114,7 @@ namespace SmartCanteen
             if (radioReservationMenuMeat.Checked)
             {
                 labelReservationResultMenu.Text = "Menu: " + radioReservationMenuMeat.Text;
+                selectedDish = (Dish)radioReservationMenuMeat.Tag;
             }
         }
 
@@ -120,6 +123,7 @@ namespace SmartCanteen
             if (radioReservationMenuFish.Checked)
             {
                 labelReservationResultMenu.Text = "Menu: " + radioReservationMenuFish.Text;
+                selectedDish = (Dish)radioReservationMenuFish.Tag;
             }
         }
 
@@ -128,6 +132,7 @@ namespace SmartCanteen
             if (radioReservationMenuVeggie.Checked)
             {
                 labelReservationResultMenu.Text = "Menu: " + radioReservationMenuVeggie.Text;
+                selectedDish = (Dish)radioReservationMenuVeggie.Tag;
             }
         }
 
@@ -154,6 +159,41 @@ namespace SmartCanteen
         private void rBtnOthers_CheckedChanged(object sender, EventArgs e)
         {
             UpdateExtras(selectedMenu);
+        }
+
+        private void btnReservationRegister_Click(object sender, EventArgs e)
+        {
+            if (selectedClient == null || selectedMenu == null || selectedDish == null || monthCalendarReservation.SelectionStart == DateTime.MinValue)
+            {
+                MessageBox.Show("Por favor selecione todos os campos.");
+                return;
+            }
+            DateTime date = monthCalendarReservation.SelectionStart;
+            MealTime mealTime = MealTime.Dinner;
+
+            if (rBtnLunch.Checked)
+                mealTime = MealTime.Lunch;
+
+            double totalPrice = CalculatePrice();
+
+            int menuID = selectedMenu.ID;
+            int clientID = selectedClient.ID;
+            int dishID = selectedDish.ID;
+
+            if(selectedExtras.Count > 3)
+            {
+                MessageBox.Show("Pode escolher no máximo 3 extras");
+                return;
+            }
+            List<int> extraIds = selectedExtras.Select(extra => extra.ID).ToList();
+
+            if (reservationController.ReservationAdd(date, mealTime, totalPrice, menuID, clientID, dishID, extraIds))
+            {
+                MessageBox.Show("Reserva adicionada com sucesso.");
+                this.Close();
+            }
+            else
+                MessageBox.Show("O menu que escolheu está esgotado.");
         }
 
         //----------------------------------------------------- Form Functions ------------------------------------------------//
@@ -284,14 +324,17 @@ namespace SmartCanteen
                 if (dish.Type == DishType.Meat)
                 {
                     radioReservationMenuMeat.Text = dish.Description;
+                    radioReservationMenuMeat.Tag = dish;
                 }
                 else if (dish.Type == DishType.Fish)
                 {
                     radioReservationMenuFish.Text = dish.Description;
+                    radioReservationMenuFish.Tag = dish;
                 }
                 else if (dish.Type == DishType.Veggie)
                 {
                     radioReservationMenuVeggie.Text = dish.Description;
+                    radioReservationMenuVeggie.Tag = dish;
                 }
             }
         }
@@ -346,8 +389,6 @@ namespace SmartCanteen
                     .Where(f => f.NumHours >= hoursRemaining)
                     .OrderBy(f => f.NumHours)
                     .FirstOrDefault();
-
-                Console.WriteLine("Hours remaining: " + hoursRemaining);
 
                 if (fine != null)
                 {
