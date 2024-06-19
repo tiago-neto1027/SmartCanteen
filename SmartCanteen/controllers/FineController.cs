@@ -19,16 +19,62 @@ namespace SmartCanteen.controllers
         /// </summary>
         /// <param name="hour">The number of hours associated with the fine.</param>
         /// <param name="value">The value of the fine.</param>
-        /// <exception cref="Exception">Thrown when there is an existing fine with fewer hours and a lower value.</exception>
+        /// <exception cref="Exception">Thrown when there is an existing fine with the same hours.</exception>
         public void AddFine(int hour, double value)
         {
             using(var db = new SmartCanteenContext())
             {
-                ValidateFine(hour, value, db);
+                ValidateFine(hour, db);
 
                 var fine = new Fine(hour, value);
                 db.Fines.Add(fine);
                 db.SaveChanges();
+            }
+        }
+
+        public void UpdateFine(Fine updatedFine)
+        {
+            using (var db = new SmartCanteenContext())
+            {
+                var existingFine = db.Fines.SingleOrDefault(f => f.ID == updatedFine.ID);
+
+                if (existingFine != null)
+                {
+                    existingFine.NumHours = updatedFine.NumHours;
+                    existingFine.Value = updatedFine.Value;
+
+                    db.SaveChanges();
+                }
+                else
+                {
+                    throw new InvalidOperationException("Multa não encontrado.");
+                }
+            }
+        }
+
+        public void DeleteFine(int fineId)
+        {
+            using (var db = new SmartCanteenContext())
+            {
+                var fine = db.Fines.SingleOrDefault(f => f.ID == fineId);
+
+                if (fine != null)
+                {
+                    db.Fines.Remove(fine);
+                    db.SaveChanges();
+                }
+                else
+                {
+                    throw new InvalidOperationException("Multa não encontrada.");
+                }
+            }
+        }
+
+        public  List<Fine> GetAllFines()
+        {
+            using (var db = new SmartCanteenContext())
+            {
+                return db.Fines.ToList();
             }
         }
 
@@ -38,11 +84,11 @@ namespace SmartCanteen.controllers
         /// <param name="hour">The number of hours associated with the fine.</param>
         /// <param name="value">The value of the fine.</param>
         /// <param name="db">The database context.</param>
-        /// <exception cref="Exception">Thrown when there is an existing fine with fewer hours and a lower value.</exception>
-        private void ValidateFine(int hour, double value, SmartCanteenContext db)
+        /// <exception cref="Exception">Thrown when there is an existing fine with the same hours.</exception>
+        private void ValidateFine(int hour, SmartCanteenContext db)
         {
             var conflictingFine = db.Fines
-                .Where(f => f.NumHours == hour || (f.NumHours < hour && f.Value >= value))
+                .Where(f => f.NumHours == hour)
                 .FirstOrDefault();
 
             if (conflictingFine != null)

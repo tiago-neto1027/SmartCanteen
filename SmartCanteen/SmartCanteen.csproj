@@ -190,6 +190,9 @@
     <EmbeddedResource Include="views\FineAddForm.resx">
       <DependentUpon>FineAddForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\FineEditForm.resx">
+      <DependentUpon>FineEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
