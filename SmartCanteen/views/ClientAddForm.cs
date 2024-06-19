@@ -22,32 +22,7 @@ namespace SmartCanteen
             InitializeComponent();
             radioClientAddStudentType.Checked = true;
         }
-        private void radioClientAddStudentType_Click(object sender, EventArgs e)
-        {
-            radioClientAddProfessorType.Checked = false;
-            tBoxEmail.Text = string.Empty;
-
-            tBoxEmail.Visible = false;
-            EmailLabel.Visible = false;
-
-            tBoxStudentID.Visible = true;
-            StudentIDLabel.Visible = true;
-        }
-
-        private void radioClientAddProfessorType_Click(object sender, EventArgs e)
-        {
-            radioClientAddStudentType.Checked = false;
-            tBoxStudentID.Text = 0.ToString();
-
-            tBoxStudentID.Visible = false;
-            StudentIDLabel.Visible = false; 
-
-            tBoxEmail.Location = new System.Drawing.Point(132, 130);
-            EmailLabel.Location = new System.Drawing.Point(69, 130);
-
-            tBoxEmail.Visible = true;
-            EmailLabel.Visible = true;
-        }
+        
 
         private void btnClientAddCreate_Click(object sender, EventArgs e)
         {
@@ -133,6 +108,29 @@ namespace SmartCanteen
             this.Close();
         }
 
-      
+        private void radioClientAddStudentType_CheckedChanged(object sender, EventArgs e)
+        {
+            tBoxEmail.Text = string.Empty;
+
+            tBoxEmail.Visible = false;
+            EmailLabel.Visible = false;
+
+            tBoxStudentID.Visible = true;
+            StudentIDLabel.Visible = true;
+        }
+
+        private void radioClientAddProfessorType_CheckedChanged(object sender, EventArgs e)
+        {
+            tBoxStudentID.Text = 0.ToString();
+
+            tBoxStudentID.Visible = false;
+            StudentIDLabel.Visible = false;
+
+            tBoxEmail.Location = new System.Drawing.Point(132, 130);
+            EmailLabel.Location = new System.Drawing.Point(69, 130);
+
+            tBoxEmail.Visible = true;
+            EmailLabel.Visible = true;
+        }
     }
 }

@@ -143,7 +143,7 @@
             this.radioClientAddProfessorType.TabStop = true;
             this.radioClientAddProfessorType.Text = "Docente";
             this.radioClientAddProfessorType.UseVisualStyleBackColor = true;
-            this.radioClientAddProfessorType.Click += new System.EventHandler(this.radioClientAddProfessorType_Click);
+            this.radioClientAddProfessorType.CheckedChanged += new System.EventHandler(this.radioClientAddProfessorType_CheckedChanged);
             // 
             // radioClientAddStudentType
             // 
@@ -155,7 +155,7 @@
             this.radioClientAddStudentType.TabStop = true;
             this.radioClientAddStudentType.Text = "Estudante";
             this.radioClientAddStudentType.UseVisualStyleBackColor = true;
-            this.radioClientAddStudentType.Click += new System.EventHandler(this.radioClientAddStudentType_Click);
+            this.radioClientAddStudentType.CheckedChanged += new System.EventHandler(this.radioClientAddStudentType_CheckedChanged);
             // 
             // btnClientAdd
             // 

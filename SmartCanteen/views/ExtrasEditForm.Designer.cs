@@ -73,7 +73,7 @@
             this.labelExtrasEditIdValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelExtrasEditIdValue.Location = new System.Drawing.Point(290, 27);
             this.labelExtrasEditIdValue.Name = "labelExtrasEditIdValue";
-            this.labelExtrasEditIdValue.Size = new System.Drawing.Size(16, 17);
+            this.labelExtrasEditIdValue.Size = new System.Drawing.Size(14, 15);
             this.labelExtrasEditIdValue.TabIndex = 7;
             this.labelExtrasEditIdValue.Text = "0";
             // 
@@ -83,7 +83,7 @@
             this.labelExtrasEditId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelExtrasEditId.Location = new System.Drawing.Point(262, 27);
             this.labelExtrasEditId.Name = "labelExtrasEditId";
-            this.labelExtrasEditId.Size = new System.Drawing.Size(25, 17);
+            this.labelExtrasEditId.Size = new System.Drawing.Size(22, 15);
             this.labelExtrasEditId.TabIndex = 6;
             this.labelExtrasEditId.Text = "ID:";
             // 
@@ -102,7 +102,7 @@
             this.numericExtrasEditStudentPrice.DecimalPlaces = 2;
             this.numericExtrasEditStudentPrice.Location = new System.Drawing.Point(16, 32);
             this.numericExtrasEditStudentPrice.Name = "numericExtrasEditStudentPrice";
-            this.numericExtrasEditStudentPrice.Size = new System.Drawing.Size(120, 23);
+            this.numericExtrasEditStudentPrice.Size = new System.Drawing.Size(120, 21);
             this.numericExtrasEditStudentPrice.TabIndex = 0;
             // 
             // groupBox2
@@ -124,7 +124,7 @@
             this.radioExtrasAddTypeOther.Checked = true;
             this.radioExtrasAddTypeOther.Location = new System.Drawing.Point(236, 21);
             this.radioExtrasAddTypeOther.Name = "radioExtrasAddTypeOther";
-            this.radioExtrasAddTypeOther.Size = new System.Drawing.Size(62, 21);
+            this.radioExtrasAddTypeOther.Size = new System.Drawing.Size(55, 19);
             this.radioExtrasAddTypeOther.TabIndex = 3;
             this.radioExtrasAddTypeOther.TabStop = true;
             this.radioExtrasAddTypeOther.Text = "Outro";
@@ -135,7 +135,7 @@
             this.radioExtrasAddTypeBeverage.AutoSize = true;
             this.radioExtrasAddTypeBeverage.Location = new System.Drawing.Point(166, 20);
             this.radioExtrasAddTypeBeverage.Name = "radioExtrasAddTypeBeverage";
-            this.radioExtrasAddTypeBeverage.Size = new System.Drawing.Size(70, 21);
+            this.radioExtrasAddTypeBeverage.Size = new System.Drawing.Size(64, 19);
             this.radioExtrasAddTypeBeverage.TabIndex = 2;
             this.radioExtrasAddTypeBeverage.TabStop = true;
             this.radioExtrasAddTypeBeverage.Text = "Bebida";
@@ -146,7 +146,7 @@
             this.radioExtrasAddTypeDessert.AutoSize = true;
             this.radioExtrasAddTypeDessert.Location = new System.Drawing.Point(71, 20);
             this.radioExtrasAddTypeDessert.Name = "radioExtrasAddTypeDessert";
-            this.radioExtrasAddTypeDessert.Size = new System.Drawing.Size(98, 21);
+            this.radioExtrasAddTypeDessert.Size = new System.Drawing.Size(89, 19);
             this.radioExtrasAddTypeDessert.TabIndex = 1;
             this.radioExtrasAddTypeDessert.TabStop = true;
             this.radioExtrasAddTypeDessert.Text = "Sobremesa";
@@ -157,7 +157,7 @@
             this.radioExtrasAddTypeSoup.AutoSize = true;
             this.radioExtrasAddTypeSoup.Location = new System.Drawing.Point(7, 21);
             this.radioExtrasAddTypeSoup.Name = "radioExtrasAddTypeSoup";
-            this.radioExtrasAddTypeSoup.Size = new System.Drawing.Size(59, 21);
+            this.radioExtrasAddTypeSoup.Size = new System.Drawing.Size(54, 19);
             this.radioExtrasAddTypeSoup.TabIndex = 0;
             this.radioExtrasAddTypeSoup.TabStop = true;
             this.radioExtrasAddTypeSoup.Text = "Sopa";
@@ -169,7 +169,7 @@
             this.extrasEditNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.extrasEditNameLabel.Location = new System.Drawing.Point(26, 27);
             this.extrasEditNameLabel.Name = "extrasEditNameLabel";
-            this.extrasEditNameLabel.Size = new System.Drawing.Size(49, 17);
+            this.extrasEditNameLabel.Size = new System.Drawing.Size(44, 15);
             this.extrasEditNameLabel.TabIndex = 2;
             this.extrasEditNameLabel.Text = "Nome:";
             // 
@@ -178,7 +178,7 @@
             this.tBoxExtrasEditDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tBoxExtrasEditDescription.Location = new System.Drawing.Point(29, 54);
             this.tBoxExtrasEditDescription.Name = "tBoxExtrasEditDescription";
-            this.tBoxExtrasEditDescription.Size = new System.Drawing.Size(564, 23);
+            this.tBoxExtrasEditDescription.Size = new System.Drawing.Size(564, 21);
             this.tBoxExtrasEditDescription.TabIndex = 1;
             // 
             // btnExtrasEditLeave
@@ -197,7 +197,7 @@
             this.btnExtrasEditRegister.Name = "btnExtrasEditRegister";
             this.btnExtrasEditRegister.Size = new System.Drawing.Size(66, 32);
             this.btnExtrasEditRegister.TabIndex = 19;
-            this.btnExtrasEditRegister.Text = "Registar";
+            this.btnExtrasEditRegister.Text = "Editar";
             this.btnExtrasEditRegister.UseVisualStyleBackColor = true;
             this.btnExtrasEditRegister.Click += new System.EventHandler(this.btnExtrasEditRegister_Click);
             // 

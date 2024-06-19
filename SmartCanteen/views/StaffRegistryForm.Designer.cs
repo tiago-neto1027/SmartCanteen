@@ -1,6 +1,6 @@
 ﻿namespace SmartCanteen
 {
-    partial class RegistryForm
+    partial class StaffRegistryForm
     {
         /// <summary>
         /// Required designer variable.

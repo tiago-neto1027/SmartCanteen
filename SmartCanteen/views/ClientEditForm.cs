@@ -13,13 +13,13 @@ using System.Windows.Forms;
 
 namespace SmartCanteen
 {
-    public partial class ClientModifyForm : Form
+    public partial class ClientEditForm : Form
     {
         private List<Client> clientList;
         private Client selectedClient = null;
         private readonly ClientController clientController = new ClientController();
 
-        public ClientModifyForm()
+        public ClientEditForm()
         {
             InitializeComponent();
 
@@ -83,90 +83,7 @@ namespace SmartCanteen
             updateClientInfo();
         }
 
-        private void btnClientChange_Click(object sender, EventArgs e)
-        {
-            string oldNIF = selectedClient.NIF;
-            string name = tBoxClientName.Text;
-            string NIF = tBoxClientNIF.Text;
-            string email = null;
-            string studentID = null;
-            bool NIFsuccess = int.TryParse(NIF, out int NIFresult);
-            if (!NIFsuccess)
-            {
-                MessageBox.Show("O NIF tem de ser um valor numérico.");
-                return;
-            }
-
-            if (selectedClient == null)
-            {
-                MessageBox.Show("Selecione um cliente primeiro");
-                return;
-            }
-
-            if(string.IsNullOrEmpty(name))
-            {
-                MessageBox.Show("Preencha o nome");
-                return;
-            }   
-            if (string.IsNullOrEmpty(NIF))
-            {
-                MessageBox.Show("Peencha o NIF");
-                return;
-            }
-            var searchNIF = clientController.SearchClient(NIF);
-            if (searchNIF != null && NIF != selectedClient.NIF)
-            {
-                MessageBox.Show("O NIF já está a ser utilizador por outro cliente.");
-                return;
-            }
-            if (NIF.Length != 9)
-            {
-                MessageBox.Show("O NIF tem de ter 9 caracteres");
-                return;
-            }
-
-            if (radiobtnTypeStudent.Checked == true)
-            {
-                studentID = tBoxStudentNumber.Text;
-                if (string.IsNullOrEmpty(studentID))
-                {
-                    MessageBox.Show("Preencha o numero de estudante");
-                    return;
-                }
-            }
-            else
-            {
-                email = tBoxClientProfessorEmail.Text;
-                if (string.IsNullOrEmpty(email))
-                {
-                    MessageBox.Show("Preencha o email");
-                    return;
-                }
-            }
-
-            if (radiobtnTypeStudent.Checked == true)
-            {
-                if(!clientController.ModifyClient(oldNIF, name, NIF, email))
-                {
-                    MessageBox.Show("Erro ao alterar dados");
-                    return;
-                }
-                MessageBox.Show("Dados de aluno alterados com sucesso");
-            }
-            else
-            {
-                if (!clientController.ModifyClient(oldNIF, name, NIF, email))
-                {
-                    MessageBox.Show("Erro ao alterar dados");
-                    return;
-                }
-                MessageBox.Show("Dados de docente alterados com sucesso");
-            }
-
-            updateClientInfo();
-            updateClientListBox();
-
-        }
+        
 
         private void btnClientDelete_Click(object sender, EventArgs e)
         {
@@ -223,22 +140,11 @@ namespace SmartCanteen
             {
                 updateRadioProfessor();
             }
-        }
-
-        private void radiobtnTypeStudent_Click(object sender, EventArgs e)
-        {
-            updateRadioStudent();
-        }
-
-        private void radiobtnTypeProfessor_Click(object sender, EventArgs e)
-        {
-            updateRadioProfessor();
-        }
+        } 
 
         private void updateRadioProfessor()
         {
             tBoxClientProfessorEmail.Text = (selectedClient as Professor).Email;
-            radiobtnTypeStudent.Checked = false;
             radiobtnTypeProfessor.Checked = true;
 
             labelClientStudentNumber.Visible = false;
@@ -246,19 +152,106 @@ namespace SmartCanteen
 
             labelClientProfessorEmail.Visible = true;
             tBoxClientProfessorEmail.Visible = true;
+
+            labelClientProfessorEmail.Location = new Point(17,149);
+            tBoxClientProfessorEmail.Location = new Point(113, 146);
         }
 
         private void updateRadioStudent()
         {
             tBoxStudentNumber.Text = (selectedClient as Student).StudentID;
             radiobtnTypeStudent.Checked = true;
-            radiobtnTypeProfessor.Checked = false;
 
             labelClientProfessorEmail.Visible = false;
             tBoxClientProfessorEmail.Visible = false;
 
             labelClientStudentNumber.Visible = true;
             tBoxStudentNumber.Visible = true;
+        }
+
+        private void btnClientEdit_Click(object sender, EventArgs e)
+        {
+            string oldNIF = selectedClient.NIF;
+            string name = tBoxClientName.Text;
+            string NIF = tBoxClientNIF.Text;
+            string email = null;
+            string studentID = null;
+            bool NIFsuccess = int.TryParse(NIF, out int NIFresult);
+            if (!NIFsuccess)
+            {
+                MessageBox.Show("O NIF tem de ser um valor numérico.");
+                return;
+            }
+
+            if (selectedClient == null)
+            {
+                MessageBox.Show("Selecione um cliente primeiro");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("Preencha o nome");
+                return;
+            }
+            if (string.IsNullOrEmpty(NIF))
+            {
+                MessageBox.Show("Peencha o NIF");
+                return;
+            }
+            var searchNIF = clientController.SearchClient(NIF);
+            if (searchNIF != null && NIF != selectedClient.NIF)
+            {
+                MessageBox.Show("O NIF já está a ser utilizador por outro cliente.");
+                return;
+            }
+            if (NIF.Length != 9)
+            {
+                MessageBox.Show("O NIF tem de ter 9 caracteres");
+                return;
+            }
+
+            if (radiobtnTypeStudent.Checked == true)
+            {
+                studentID = tBoxStudentNumber.Text;
+                if (string.IsNullOrEmpty(studentID))
+                {
+                    MessageBox.Show("Preencha o numero de estudante");
+                    return;
+                }
+            }
+            else
+            {
+                email = tBoxClientProfessorEmail.Text;
+                if (string.IsNullOrEmpty(email))
+                {
+                    MessageBox.Show("Preencha o email");
+                    return;
+                }
+            }
+
+            if (radiobtnTypeStudent.Checked == true)
+            {
+                if (!clientController.ModifyClient(oldNIF, name, NIF, email))
+                {
+                    MessageBox.Show("Erro ao alterar dados");
+                    return;
+                }
+                MessageBox.Show("Dados de aluno alterados com sucesso");
+            }
+            else
+            {
+                if (!clientController.ModifyClient(oldNIF, name, NIF, email))
+
+                {
+                    MessageBox.Show("Erro ao alterar dados");
+                    return;
+                }
+                MessageBox.Show("Dados de docente alterados com sucesso");
+            }
+
+            updateClientInfo();
+            updateClientListBox();
         }
     }
        

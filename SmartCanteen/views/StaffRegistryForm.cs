@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace SmartCanteen
 {
-    public partial class RegistryForm : Form
+    public partial class StaffRegistryForm : Form
     {
-        public RegistryForm()
+        public StaffRegistryForm()
         {
             InitializeComponent();
         }

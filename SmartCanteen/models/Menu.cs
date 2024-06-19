@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace SmartCanteen.models
 {
@@ -39,6 +40,16 @@ namespace SmartCanteen.models
             Dishes = dishes;
             Extras = extras;
             Time = time;
+        }
+        public override string ToString()
+        {
+            string meatDishes = string.Join(", ", Dishes
+                .Where(dish => dish.Type == DishType.Meat)
+                .Select(dish => dish.Description));
+            if (Time == MealTime.Dinner)
+                return $"Menu: {Date.ToString("dd-MM-yyyy")} - Jantar";
+            else
+                return $"Menu: {Date.ToString("dd-MM-yyyy")} - Almoço";
         }
     }
 }

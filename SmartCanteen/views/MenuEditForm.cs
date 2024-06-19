@@ -10,27 +10,40 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SmartCanteen
+namespace SmartCanteen.views
 {
-    public partial class MenuAddForm : Form
+    public partial class MenuEditForm : Form
     {
-        private readonly MenuController menuController;
-        private readonly ExtraController extraController;
+        private readonly MenuController menuController = new MenuController();
+        private readonly DishController dishController = new DishController();
+        private readonly ExtraController extraController = new ExtraController();
+
         private List<Extra> selectedExtras;
-        public MenuAddForm()
+        private models.Menu selectedMenu = null;
+       
+        public MenuEditForm()
         {
-            menuController = new MenuController();
-            extraController = new ExtraController();
             InitializeComponent();
             selectedExtras = new List<Extra>();
-
-            LoadDishes();
+            LoadExistingMenus();
             LoadExtras();
         }
 
-        private void btnLeaveForm_Click(object sender, EventArgs e)
+        private void lExistingMenus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.Close();
+            int index = lExistingMenus.SelectedIndex;
+            if (index == -1)
+            {
+                selectedMenu = null;
+                return;
+            }
+
+            selectedMenu = (models.Menu)lExistingMenus.SelectedItem;
+            selectedExtras.Clear();
+            selectedExtras = selectedMenu.Extras.ToList();
+            
+            LoadSelectedMenu();
+            LoadExtras();
         }
 
         private void btnSelectExtras_Click(object sender, EventArgs e)
@@ -39,8 +52,9 @@ namespace SmartCanteen
             {
                 Extra selectedExtra = (Extra)listBoxAvailableExtras.SelectedItem;
                 selectedExtras.Add(selectedExtra);
-                BindListBox(listBoxSelectedExtras, selectedExtras);
+                updateAddedExtras();
 
+                LoadSelectedMenu();
                 LoadExtras();
             }
         }
@@ -51,29 +65,32 @@ namespace SmartCanteen
             {
                 Extra selectedExtra = (Extra)listBoxSelectedExtras.SelectedItem;
                 selectedExtras.Remove(selectedExtra);
-                BindListBox(listBoxSelectedExtras, selectedExtras);
 
+                updateAvailableExtras(selectedExtras);
+
+                LoadSelectedMenu();
                 LoadExtras();
             }
         }
-
-        private void btnMenuAddRegister_Click(object sender, EventArgs e)
+        private void btnMenuEdit_Click(object sender, EventArgs e)
         {
+            int id = selectedMenu.ID;
             DateTime date = dateTimePickerMenuAdd.Value;
             MealTime time;
             if (rBtnDinner.Checked)
                 time = MealTime.Dinner;
             else
                 time = MealTime.Lunch;
-            if (date == DateTimePicker.MinimumDateTime)
-            {
-                MessageBox.Show("Por favor, selecione uma data válida.");
-                return;
-            }
-            var searchMenu = menuController.GetMenuByDateTime(date,time);
+
+            var searchMenu = menuController.GetMenuByDateTime(date, time);
             if (searchMenu != null)
             {
                 MessageBox.Show("Já existe um menu criado para esta data / refeição");
+                return;
+            }
+            if (date == DateTimePicker.MinimumDateTime)
+            {
+                MessageBox.Show("Por favor, selecione uma data válida.");
                 return;
             }
 
@@ -110,12 +127,29 @@ namespace SmartCanteen
             }
             List<int> extraIds = selectedExtras.Select(extra => extra.ID).ToList();
 
-            
-            
+           
+            menuController.EditMenu(id, date, quantity, price, dishIds, extraIds, time);
 
-            menuController.AddMenu(date, quantity, price, dishIds, extraIds, time);
+            MessageBox.Show("Menu editado com sucesso");
 
-            MessageBox.Show("Menu adicionado com sucesso!");
+            LoadExistingMenus();
+
+        }
+
+        private void btnDeleteMenu_Click(object sender, EventArgs e)
+        {
+            if (selectedMenu == null)
+            {
+                MessageBox.Show("Selecione um menu primeiro");
+                return;
+            }
+            menuController.DeleteMenu(selectedMenu.ID);
+            LoadExistingMenus();
+            MessageBox.Show("Menu eliminado com sucesso");
+        }
+
+        private void btnLeaveForm_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
 
@@ -143,19 +177,55 @@ namespace SmartCanteen
         }
 
         //---------------------------- Form Functions -----------------------------//
-
-        private void LoadDishes()
+        private void LoadExistingMenus()
         {
-            DishController dishController = new DishController();
+            lExistingMenus.DataSource = menuController.SearchExistingMenus();
+        }
+        private void LoadSelectedMenu()
+        {
+            // -----------Load Menu Dishes-----------//
+            List<Dish> meatDishes = new List<Dish>();
+            List<Dish> fishDishes = new List<Dish>();
+            List<Dish> veggieDishes = new List<Dish>();
 
-            BindComboBox(cBoxMenuAddMeat, dishController.ActiveDishesByType(DishType.Meat));
-            BindComboBox(cBoxMenuAddFish, dishController.ActiveDishesByType(DishType.Fish));
-            BindComboBox(cBoxMenuAddVeggie, dishController.ActiveDishesByType(DishType.Veggie));
+            BindComboBox(cBoxMenuAddMeat, LoadMenuDishes(meatDishes, selectedMenu, DishType.Meat));
+            BindComboBox(cBoxMenuAddFish, LoadMenuDishes(fishDishes, selectedMenu, DishType.Fish));
+            BindComboBox(cBoxMenuAddVeggie, LoadMenuDishes(veggieDishes, selectedMenu, DishType.Veggie));
+
+            //LoadDishes();
+            if (selectedMenu == null)
+                return;
+
+            if (selectedMenu.Time == MealTime.Lunch)
+            {
+                rBtnLunch.Checked = true;
+                rBtnDinner.Checked = false;
+            }
+            else if (selectedMenu.Time == MealTime.Dinner)
+            {
+                rBtnLunch.Checked = false;
+                rBtnDinner.Checked = true;
+            }
+            updateAddedExtras();
+            dateTimePickerMenuAdd.Value = selectedMenu.Date;            
+            nrQuantity.Value = selectedMenu.Quantity;
+            nrPrice.Value = (decimal)selectedMenu.StudentPrice;
+            LoadExtras();
+        }
+
+        private List<Dish> LoadMenuDishes(List<Dish> dishList, models.Menu menu, DishType dishType)
+        {
+            dishList = menuController.MenuDishesByType(menu, dishType);
+            dishList.AddRange(dishController.ActiveDishesByType(dishType));
+            // Remove duplicates based on dish ID
+            return dishList = dishList
+            .GroupBy(dish => dish.ID)
+                .Select(group => group.First())
+                .ToList();
         }
 
         private void LoadExtras()
         {
-            ExtraController extraController = new ExtraController();
             List<Extra> availableExtras;
 
             if (rBtnAll.Checked)
@@ -176,7 +246,7 @@ namespace SmartCanteen
                 .Where(extra => !selectedExtras.Any(selected => selected.ID == extra.ID))
                 .ToList();
 
-            BindListBox(listBoxAvailableExtras, availableExtras);
+            updateAvailableExtras(availableExtras);
         }
 
         private void BindComboBox(ComboBox comboBox, object dataSource)
@@ -185,13 +255,23 @@ namespace SmartCanteen
             comboBox.DisplayMember = "Description";
             comboBox.ValueMember = "ID";
         }
-
-        private void BindListBox(ListBox listBox, object dataSource)
+        
+        private void updateAvailableExtras(object dataSource)
         {
-            listBox.DataSource = null;
-            listBox.DataSource = dataSource;
-            listBox.DisplayMember = "Description";
-            listBox.ValueMember = "ID";
+            listBoxAvailableExtras.DataSource = null;
+            listBoxAvailableExtras.DataSource = dataSource;
+
+            listBoxAvailableExtras.DisplayMember = "Description";
+            listBoxAvailableExtras.ValueMember = "ID";
+        }
+
+        private void updateAddedExtras()
+        {
+            listBoxSelectedExtras.DataSource = null;
+            listBoxSelectedExtras.DataSource = selectedExtras;
+            
+            listBoxSelectedExtras.DisplayMember = "Description";
+            listBoxSelectedExtras.ValueMember = "ID";
         }
     }
 }
