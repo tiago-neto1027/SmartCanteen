@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
@@ -193,6 +194,9 @@ namespace SmartCanteen
             if (reservationController.ReservationAdd(date, mealTime, totalPrice, menuID, clientID, dishID, extraIds))
             {
                 MessageBox.Show("Reserva adicionada com sucesso.");
+
+                BuildTxt();
+
                 this.Close();
             }
             else
@@ -200,6 +204,31 @@ namespace SmartCanteen
         }
 
         //----------------------------------------------------- Form Functions ------------------------------------------------//
+
+        private void BuildTxt()
+        {
+            StringBuilder reservationDetails = new StringBuilder();
+
+            reservationDetails.AppendLine("Detalhes da Reserva:");
+            reservationDetails.AppendLine("--------------------");
+            reservationDetails.AppendLine($"Nome do Cliente: {selectedClient.Name}");
+            reservationDetails.AppendLine($"NIF: {selectedClient.NIF}");
+            reservationDetails.AppendLine($"Data: {monthCalendarReservation.SelectionStart.ToString("dd/MM/yyyy")}");
+            reservationDetails.AppendLine($"Refeição: {(rBtnLunch.Checked ? "Almoço" : "Jantar")}");
+            reservationDetails.AppendLine($"Menu: {selectedDish.Description}");
+            reservationDetails.AppendLine("Extras:");
+            foreach (var extra in selectedExtras)
+            {
+                reservationDetails.AppendLine($"- {extra.Description}");
+            }
+            reservationDetails.AppendLine($"Preço Total: {CalculatePrice()}€");
+
+            string fileName = Path.Combine(Path.GetTempPath(), $"Reserva_{selectedClient.NIF}_{DateTime.Now:yyyyMMddHHmmss}.txt");
+            File.WriteAllText(fileName, reservationDetails.ToString());
+
+            MessageBox.Show($"Os detalhes da reserva foram salvos em {fileName}");
+            System.Diagnostics.Process.Start("notepad.exe", fileName);
+        }
 
         private bool ValidateNif(string nif)
         {
