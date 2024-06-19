@@ -85,7 +85,7 @@ namespace SmartCanteen
             }
             else
             {
-                MessageBox.Show("Não foi possível marcar a reserva, por favor, tente novamente.");
+                MessageBox.Show("Não foi possível marcar a reserva, selecione outra reserva ou tente novamente.");
             }
 
         }
