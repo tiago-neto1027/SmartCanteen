@@ -35,7 +35,7 @@
             this.logoutChangeUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnClientModify = new System.Windows.Forms.Button();
+            this.btnClientEdit = new System.Windows.Forms.Button();
             this.btnBalance = new System.Windows.Forms.Button();
             this.btnClientAdd = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -46,10 +46,11 @@
             this.btnMealAdd = new System.Windows.Forms.Button();
             this.btnMenuAdd = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbDate = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnMenuEdit = new System.Windows.Forms.Button();
             this.menuStripMain.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -66,7 +67,7 @@
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
             this.menuStripMain.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStripMain.Size = new System.Drawing.Size(884, 24);
+            this.menuStripMain.Size = new System.Drawing.Size(820, 24);
             this.menuStripMain.TabIndex = 1;
             this.menuStripMain.Text = "menuStrip1";
             // 
@@ -99,26 +100,26 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnClientModify);
+            this.groupBox1.Controls.Add(this.btnClientEdit);
             this.groupBox1.Controls.Add(this.btnBalance);
             this.groupBox1.Controls.Add(this.btnClientAdd);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(632, 62);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(208, 117);
+            this.groupBox1.Size = new System.Drawing.Size(170, 117);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
             // 
-            // btnClientModify
+            // btnClientEdit
             // 
-            this.btnClientModify.Location = new System.Drawing.Point(107, 23);
-            this.btnClientModify.Name = "btnClientModify";
-            this.btnClientModify.Size = new System.Drawing.Size(95, 40);
-            this.btnClientModify.TabIndex = 2;
-            this.btnClientModify.Text = "Modificar";
-            this.btnClientModify.UseVisualStyleBackColor = true;
-            this.btnClientModify.Click += new System.EventHandler(this.btnClientModify_Click);
+            this.btnClientEdit.Location = new System.Drawing.Point(107, 23);
+            this.btnClientEdit.Name = "btnClientEdit";
+            this.btnClientEdit.Size = new System.Drawing.Size(57, 40);
+            this.btnClientEdit.TabIndex = 2;
+            this.btnClientEdit.Text = "Editar";
+            this.btnClientEdit.UseVisualStyleBackColor = true;
+            this.btnClientEdit.Click += new System.EventHandler(this.btnClientEdit_Click);
             // 
             // btnBalance
             // 
@@ -142,6 +143,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnMenuEdit);
             this.groupBox2.Controls.Add(this.btnMealEdit);
             this.groupBox2.Controls.Add(this.btnExtrasEdit);
             this.groupBox2.Controls.Add(this.btnMealRegister);
@@ -230,6 +232,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Semanal";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SmartCanteen.Properties.Resources._603_6035882_clock_transparent_time_icon_png_png_download;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(55, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // lbDate
             // 
             this.lbDate.AutoSize = true;
@@ -255,21 +267,21 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
-            // pictureBox1
+            // btnMenuEdit
             // 
-            this.pictureBox1.Image = global::SmartCanteen.Properties.Resources._603_6035882_clock_transparent_time_icon_png_png_download;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 23);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(55, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.btnMenuEdit.Location = new System.Drawing.Point(107, 20);
+            this.btnMenuEdit.Name = "btnMenuEdit";
+            this.btnMenuEdit.Size = new System.Drawing.Size(57, 40);
+            this.btnMenuEdit.TabIndex = 9;
+            this.btnMenuEdit.Text = "Editar";
+            this.btnMenuEdit.UseVisualStyleBackColor = true;
+            this.btnMenuEdit.Click += new System.EventHandler(this.btnMenuEdit_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.ClientSize = new System.Drawing.Size(820, 561);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -300,7 +312,7 @@
         private System.Windows.Forms.ToolStripMenuItem logoutChangeUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnClientModify;
+        private System.Windows.Forms.Button btnClientEdit;
         private System.Windows.Forms.Button btnBalance;
         private System.Windows.Forms.Button btnClientAdd;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -315,5 +327,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnExtrasEdit;
         private System.Windows.Forms.Button btnMealEdit;
+        private System.Windows.Forms.Button btnMenuEdit;
     }
 }

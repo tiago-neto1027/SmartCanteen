@@ -13,12 +13,12 @@ using System.Windows.Forms;
 
 namespace SmartCanteen
 {
-    public partial class ClientModifyForm : Form
+    public partial class ClientEditForm : Form
     {
         private List<Client> clientList;
         private Client selectedClient = null;
 
-        public ClientModifyForm()
+        public ClientEditForm()
         {
             InitializeComponent();
 
@@ -84,7 +84,95 @@ namespace SmartCanteen
             updateClientInfo();
         }
 
-        private void btnClientChange_Click(object sender, EventArgs e)
+        
+
+        private void btnClientDelete_Click(object sender, EventArgs e)
+        {
+            if (selectedClient == null)
+            {
+                MessageBox.Show("Selecione um cliente primeiro");
+                return;
+            }
+            ClientController.DeleteClient(selectedClient.NIF);
+            updateClientListBox();
+        }
+
+        private void btnShowAll_Click(object sender, EventArgs e)
+        {
+            updateClientListBox();
+        }
+
+        private void btnClientLeave_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void updateClientListBox()
+        {
+            ClientController clientController = new ClientController();
+            int index = listBoxClients.SelectedIndex;
+            clientList = clientController.GetAllClients();
+            listBoxClients.DataSource = null;
+            listBoxClients.DataSource = clientList;
+            listBoxClients.SelectedIndex = index;
+        }
+
+        private void updateClientInfo()
+        {
+            if (selectedClient == null)
+            {
+                tBoxClientName.Text = null;
+                tBoxClientNIF.Text = null; 
+                radiobtnTypeProfessor.Checked = false;
+                radiobtnTypeStudent.Checked = false;
+                tBoxClientBalance = null;
+                return;
+            }
+
+            tBoxClientName.Text = selectedClient.Name;
+            tBoxClientNIF.Text = selectedClient.NIF;
+            tBoxClientBalance.Text =  selectedClient.Balance + " €";
+            
+            if(selectedClient is Student)
+            {
+                updateRadioStudent();
+            }
+            else
+            {
+                updateRadioProfessor();
+            }
+        } 
+
+        private void updateRadioProfessor()
+        {
+            tBoxClientProfessorEmail.Text = (selectedClient as Professor).Email;
+            radiobtnTypeStudent.Checked = false;
+            radiobtnTypeProfessor.Checked = true;
+
+            labelClientStudentNumber.Visible = false;
+            tBoxStudentNumber.Visible = false;
+
+            labelClientProfessorEmail.Visible = true;
+            tBoxClientProfessorEmail.Visible = true;
+
+            labelClientProfessorEmail.Location = new Point(17,149);
+            tBoxClientProfessorEmail.Location = new Point(113, 146);
+        }
+
+        private void updateRadioStudent()
+        {
+            tBoxStudentNumber.Text = (selectedClient as Student).StudentID;
+            radiobtnTypeStudent.Checked = true;
+            radiobtnTypeProfessor.Checked = false;
+
+            labelClientProfessorEmail.Visible = false;
+            tBoxClientProfessorEmail.Visible = false;
+
+            labelClientStudentNumber.Visible = true;
+            tBoxStudentNumber.Visible = true;
+        }
+
+        private void btnClientEdit_Click(object sender, EventArgs e)
         {
             string oldNIF = selectedClient.NIF;
             string name = tBoxClientName.Text;
@@ -104,11 +192,11 @@ namespace SmartCanteen
                 return;
             }
 
-            if(string.IsNullOrEmpty(name))
+            if (string.IsNullOrEmpty(name))
             {
                 MessageBox.Show("Preencha o nome");
                 return;
-            }   
+            }
             if (string.IsNullOrEmpty(NIF))
             {
                 MessageBox.Show("Peencha o NIF");
@@ -147,7 +235,7 @@ namespace SmartCanteen
 
             if (radiobtnTypeStudent.Checked == true)
             {
-                if(!ClientController.ModifyClient(oldNIF, name, NIF, email))
+                if (!ClientController.EditClient(oldNIF, name, NIF, email))
                 {
                     MessageBox.Show("Erro ao alterar dados");
                     return;
@@ -156,7 +244,7 @@ namespace SmartCanteen
             }
             else
             {
-                if (!ClientController.ModifyClient(oldNIF, name, NIF, email))
+                if (!ClientController.EditClient(oldNIF, name, NIF, email))
                 {
                     MessageBox.Show("Erro ao alterar dados");
                     return;
@@ -166,104 +254,9 @@ namespace SmartCanteen
 
             updateClientInfo();
             updateClientListBox();
-
         }
 
-        private void btnClientDelete_Click(object sender, EventArgs e)
-        {
-            if (selectedClient == null)
-            {
-                MessageBox.Show("Selecione um cliente primeiro");
-                return;
-            }
-            ClientController.DeleteClient(selectedClient.NIF);
-            updateClientListBox();
-        }
-
-        private void btnShowAll_Click(object sender, EventArgs e)
-        {
-            updateClientListBox();
-        }
-
-        private void btnClientLeave_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            MainForm mainForm = new MainForm();
-            mainForm.ShowDialog();
-            this.Close();
-        }
-
-        private void updateClientListBox()
-        {
-            ClientController clientController = new ClientController();
-            int index = listBoxClients.SelectedIndex;
-            clientList = clientController.GetAllClients();
-            listBoxClients.DataSource = null;
-            listBoxClients.DataSource = clientList;
-            listBoxClients.SelectedIndex = index;
-        }
-
-        private void updateClientInfo()
-        {
-            if (selectedClient == null)
-            {
-                tBoxClientName.Text = null;
-                tBoxClientNIF.Text = null; 
-                radiobtnTypeProfessor.Checked = false;
-                radiobtnTypeStudent.Checked = false;
-                tBoxClientBalance = null;
-                return;
-            }
-
-            tBoxClientName.Text = selectedClient.Name;
-            tBoxClientNIF.Text = selectedClient.NIF;
-            tBoxClientBalance.Text =  selectedClient.Balance + " €";
-            
-            if(selectedClient is Student)
-            {
-                updateRadioStudent();
-            }
-            else
-            {
-                updateRadioProfessor();
-            }
-        }
-
-        private void radiobtnTypeStudent_Click(object sender, EventArgs e)
-        {
-            updateRadioStudent();
-        }
-
-        private void radiobtnTypeProfessor_Click(object sender, EventArgs e)
-        {
-            updateRadioProfessor();
-        }
-
-        private void updateRadioProfessor()
-        {
-            tBoxClientProfessorEmail.Text = (selectedClient as Professor).Email;
-            radiobtnTypeStudent.Checked = false;
-            radiobtnTypeProfessor.Checked = true;
-
-            labelClientStudentNumber.Visible = false;
-            tBoxStudentNumber.Visible = false;
-
-            labelClientProfessorEmail.Visible = true;
-            tBoxClientProfessorEmail.Visible = true;
-        }
-
-        private void updateRadioStudent()
-        {
-            tBoxStudentNumber.Text = (selectedClient as Student).StudentID;
-            radiobtnTypeStudent.Checked = true;
-            radiobtnTypeProfessor.Checked = false;
-
-            labelClientProfessorEmail.Visible = false;
-            tBoxClientProfessorEmail.Visible = false;
-
-            labelClientStudentNumber.Visible = true;
-            tBoxStudentNumber.Visible = true;
-        }
+        
     }
        
 }

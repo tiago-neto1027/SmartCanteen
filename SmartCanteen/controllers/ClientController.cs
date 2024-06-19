@@ -68,7 +68,7 @@ namespace SmartCanteen.controllers
                     return null;
             }
         }
-        public static bool ModifyClient(string oldNIF, string name, string nif, string extra)
+        public static bool EditClient(string oldNIF, string name, string nif, string extra)
         {
             using (var db = new SmartCanteenContext())
             {
