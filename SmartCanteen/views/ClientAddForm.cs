@@ -121,10 +121,10 @@ namespace SmartCanteen
                 clientController.AddProfessor(name, nif, balance, email);
                 MessageBox.Show("Professor adicionado com sucesso");
             }
-            tBoxEmail.Text = null;
-            tBoxName.Text = null;
-            tBoxNIF.Text = null;
-            tBoxStudentID = null;
+            tBoxEmail.Text = "";
+            tBoxName.Text = "";
+            tBoxNIF.Text = "";
+            tBoxStudentID.Text = "";
             BalanceInput.Value = 0;
         }
 

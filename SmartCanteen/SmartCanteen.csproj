@@ -75,6 +75,10 @@
     <Compile Include="Migrations\202406191511209_ExtrasRelation.Designer.cs">
       <DependentUpon>202406191511209_ExtrasRelation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202406191558034_UsedColumnInReservation.cs" />
+    <Compile Include="Migrations\202406191558034_UsedColumnInReservation.Designer.cs">
+      <DependentUpon>202406191558034_UsedColumnInReservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="views\FineAddForm.cs">
       <SubType>Form</SubType>
@@ -189,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202406191511209_ExtrasRelation.resx">
       <DependentUpon>202406191511209_ExtrasRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406191558034_UsedColumnInReservation.resx">
+      <DependentUpon>202406191558034_UsedColumnInReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\BalanceForm.resx">
       <DependentUpon>BalanceForm.cs</DependentUpon>

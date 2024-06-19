@@ -15,6 +15,7 @@ namespace SmartCanteen.models
         public DateTime Date { get; set; }
         public MealTime MealTime { get; set; }
         public double TotalPrice { get; set; }
+        public bool Used { get; set; }
         //Menu
         public int MenuID { get; set; }
         public virtual Menu Menu { get; set; }
@@ -38,6 +39,12 @@ namespace SmartCanteen.models
             UserID = clientId;
             DishID = dishId;
             Extras = extras;
+            Used = false;
+        }
+
+        public override string ToString()
+        {
+            return "ID Reserva: " + ID + " | NIF: " + User.NIF;
         }
     }
 }

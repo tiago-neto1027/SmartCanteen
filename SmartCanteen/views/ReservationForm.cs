@@ -48,7 +48,10 @@ namespace SmartCanteen
 
             selectedClient = clientController.SearchClient(searchNif);
 
-            ChangeClientFields(selectedClient);
+            if (selectedClient != null)
+                ChangeClientFields(selectedClient);
+            else
+                MessageBox.Show("O NIF que escreveu não está associado a um cliente.");
 
             if (selectedClient != null && selectedMenu != null && monthCalendarReservation.SelectionStart != DateTime.MinValue)
             {
