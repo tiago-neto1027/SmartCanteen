@@ -318,10 +318,10 @@
             this.rBtnDinner.AutoSize = true;
             this.rBtnDinner.Location = new System.Drawing.Point(357, 22);
             this.rBtnDinner.Name = "rBtnDinner";
-            this.rBtnDinner.Size = new System.Drawing.Size(62, 19);
+            this.rBtnDinner.Size = new System.Drawing.Size(59, 19);
             this.rBtnDinner.TabIndex = 6;
             this.rBtnDinner.TabStop = true;
-            this.rBtnDinner.Text = "Dinner";
+            this.rBtnDinner.Text = "Jantar";
             this.rBtnDinner.UseVisualStyleBackColor = true;
             // 
             // rBtnLunch
@@ -330,10 +330,10 @@
             this.rBtnLunch.Checked = true;
             this.rBtnLunch.Location = new System.Drawing.Point(285, 22);
             this.rBtnLunch.Name = "rBtnLunch";
-            this.rBtnLunch.Size = new System.Drawing.Size(59, 19);
+            this.rBtnLunch.Size = new System.Drawing.Size(66, 19);
             this.rBtnLunch.TabIndex = 5;
             this.rBtnLunch.TabStop = true;
-            this.rBtnLunch.Text = "Lunch";
+            this.rBtnLunch.Text = "Almoço";
             this.rBtnLunch.UseVisualStyleBackColor = true;
             // 
             // dateTimePickerMenuAdd
