@@ -19,6 +19,12 @@ namespace SmartCanteen
         public DbSet<Invoice> Invoices { get; set; }
         public DbSet<InvoiceItem> InvoicesItems { get; set; }
 
+        public SmartCanteenContext() : base("name=SmartCanteenContext")
+        {
+            this.Configuration.LazyLoadingEnabled = true;
+            this.Configuration.ProxyCreationEnabled = true;
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Menu>()
@@ -47,6 +53,9 @@ namespace SmartCanteen
             modelBuilder.Entity<Reservation>()
                 .HasMany(r => r.Extras)
                 .WithMany(e => e.Reservations);
+
+            modelBuilder.Entity<User>()
+            .Map<Client>(m => m.Requires("UserType").HasValue("Client"));
         }
     }
 }
