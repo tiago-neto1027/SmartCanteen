@@ -89,10 +89,10 @@ namespace SmartCanteen.controllers
         {
             using (var db = new SmartCanteenContext())
             {
-                var existingReservation = db.Reservations.SingleOrDefault(r => r.ID == reservation.ID);
-
-                if (existingReservation != null)
+                if (reservation != null)
                 {
+                    var existingReservation = db.Reservations.SingleOrDefault(r => r.ID == reservation.ID);
+
                     if (existingReservation.Used == true)
                         return false;
 
