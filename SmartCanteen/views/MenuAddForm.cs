@@ -14,9 +14,13 @@ namespace SmartCanteen
 {
     public partial class MenuAddForm : Form
     {
+        private readonly MenuController menuController;
+        private readonly ExtraController extraController;
         private List<Extra> selectedExtras;
         public MenuAddForm()
         {
+            menuController = new MenuController();
+            extraController = new ExtraController();
             InitializeComponent();
             selectedExtras = new List<Extra>();
 
@@ -56,9 +60,20 @@ namespace SmartCanteen
         private void btnMenuAddRegister_Click(object sender, EventArgs e)
         {
             DateTime date = dateTimePickerMenuAdd.Value;
+            MealTime time;
+            if (rBtnDinner.Checked)
+                time = MealTime.Dinner;
+            else
+                time = MealTime.Lunch;
             if (date == DateTimePicker.MinimumDateTime)
             {
                 MessageBox.Show("Por favor, selecione uma data válida.");
+                return;
+            }
+            var searchMenu = menuController.GetMenuByDateTime(date,time);
+            if (searchMenu != null)
+            {
+                MessageBox.Show("Já existe um menu criado para esta data / refeição");
                 return;
             }
 
@@ -95,13 +110,9 @@ namespace SmartCanteen
             }
             List<int> extraIds = selectedExtras.Select(extra => extra.ID).ToList();
 
-            MealTime time;
-            if (rBtnDinner.Checked)
-                time = MealTime.Dinner;
-            else
-                time = MealTime.Lunch;
+            
+            
 
-            MenuController menuController = new MenuController();
             menuController.AddMenu(date, quantity, price, dishIds, extraIds, time);
 
             MessageBox.Show("Menu adicionado com sucesso!");

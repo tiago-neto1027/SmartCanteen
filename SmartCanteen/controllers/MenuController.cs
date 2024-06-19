@@ -31,10 +31,14 @@ namespace SmartCanteen.controllers
         {
             using (var db = new SmartCanteenContext())
             {
-                return db.Menus
+                var menu = db.Menus
                     .Include("Dishes")
                     .Include("Extras")
                     .FirstOrDefault(m => DbFunctions.TruncateTime(m.Date) == selectedDate.Date && m.Time == mealTime);
+                if(menu == null)
+                    return null;
+                else
+                    return menu;
             }
         }
         

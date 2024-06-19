@@ -76,6 +76,18 @@ namespace SmartCanteen.views
         {
             int id = selectedMenu.ID;
             DateTime date = dateTimePickerMenuAdd.Value;
+            MealTime time;
+            if (rBtnDinner.Checked)
+                time = MealTime.Dinner;
+            else
+                time = MealTime.Lunch;
+
+            var searchMenu = menuController.GetMenuByDateTime(date, time);
+            if (searchMenu != null)
+            {
+                MessageBox.Show("Já existe um menu criado para esta data / refeição");
+                return;
+            }
             if (date == DateTimePicker.MinimumDateTime)
             {
                 MessageBox.Show("Por favor, selecione uma data válida.");
@@ -115,11 +127,7 @@ namespace SmartCanteen.views
             }
             List<int> extraIds = selectedExtras.Select(extra => extra.ID).ToList();
 
-            MealTime time;
-            if (rBtnDinner.Checked)
-                time = MealTime.Dinner;
-            else
-                time = MealTime.Lunch;
+           
             menuController.EditMenu(id, date, quantity, price, dishIds, extraIds, time);
 
             MessageBox.Show("Menu editado com sucesso");
