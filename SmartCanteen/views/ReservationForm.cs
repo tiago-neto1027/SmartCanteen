@@ -19,9 +19,14 @@ namespace SmartCanteen
     {
         private readonly ClientController clientController = new ClientController();
         private readonly MenuController menuController = new MenuController();
+
+        Menu selectedMenu = new Menu();
+        List<Extra> selectedExtras;
+
         public ReservationForm()
         {
             InitializeComponent();
+            selectedExtras = new List<Extra>();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -50,6 +55,31 @@ namespace SmartCanteen
             labelReservationResultDate.Text = "Data: " + selectedDate.ToString("dd/MM/yyyy");
 
             SetButtonVisibility(selectedDate);
+            ChangeMenus();
+        }
+
+        private void btnSelectExtras_Click(object sender, EventArgs e)
+        {
+            if (listBoxAvailableExtras.SelectedItem != null)
+            {
+                Extra selectedExtra = (Extra)listBoxAvailableExtras.SelectedItem;
+                selectedExtras.Add(selectedExtra);
+                BindListBox(listBoxSelectedExtras, selectedExtras);
+
+                UpdateExtras(selectedMenu);
+            }
+        }
+
+        private void btnRemoveExtras_Click(object sender, EventArgs e)
+        {
+            if (listBoxSelectedExtras.SelectedItem != null)
+            {
+                Extra selectedExtra = (Extra)listBoxSelectedExtras.SelectedItem;
+                selectedExtras.Remove(selectedExtra);
+                BindListBox(listBoxSelectedExtras, selectedExtras);
+
+                UpdateExtras(selectedMenu);
+            }
         }
 
         private void rBtnLunch_CheckedChanged(object sender, EventArgs e)
@@ -83,6 +113,31 @@ namespace SmartCanteen
             {
                 labelReservationResultMenu.Text = "Menu: " + radioReservationMenuVeggie.Text;
             }
+        }
+
+        private void rBtnAll_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateExtras(selectedMenu);
+        }
+
+        private void rBtnSoup_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateExtras(selectedMenu);
+        }
+
+        private void rBtnDesserts_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateExtras(selectedMenu);
+        }
+
+        private void rBtnDrinks_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateExtras(selectedMenu);
+        }
+
+        private void rBtnOthers_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateExtras(selectedMenu);
         }
 
         //----------------------------------------------------- Form Functions ------------------------------------------------//
@@ -155,20 +210,53 @@ namespace SmartCanteen
             }
 
             Menu menu = menuController.GetMenuByDateTime(selectedDate, mealTime);
+            selectedMenu = menu;
 
             if (menu != null)
             {
-                UpdateRadioButtons(menu);
+                UpdateDishNames(menu);
+                UpdateExtras(menu);
             }
             else
             {
+                listBoxAvailableExtras.DataSource = null;
+                listBoxSelectedExtras.DataSource = null;
                 radioReservationMenuMeat.Text = "Sem menu disponível";
                 radioReservationMenuFish.Text = "Sem menu disponível";
                 radioReservationMenuVeggie.Text = "Sem menu disponível";
             }
         }
 
-        private void UpdateRadioButtons(Menu menu)
+        private void UpdateExtras(Menu menu)
+        {
+            if (menu != null)
+            {
+                if (menu.Extras != null)
+                {
+                    List<Extra> availableExtras = new List<Extra>();
+
+                    if (rBtnAll.Checked)
+                        availableExtras = menu.Extras.ToList();
+                    else if (rBtnSoup.Checked)
+                        availableExtras = menu.Extras.Where(e => e.Type == ExtraType.Soup).ToList();
+                    else if (rBtnDesserts.Checked)
+                        availableExtras = menu.Extras.Where(e => e.Type == ExtraType.Dessert).ToList();
+                    else if (rBtnDrinks.Checked)
+                        availableExtras = menu.Extras.Where(e => e.Type == ExtraType.Drink).ToList();
+                    else if (rBtnOthers.Checked)
+                        availableExtras = menu.Extras.Where(e => e.Type == ExtraType.Other).ToList();
+
+                    //Removes the selected extras from the available extras list
+                    availableExtras = availableExtras
+                        .Where(extra => !selectedExtras.Any(selected => selected.ID == extra.ID))
+                        .ToList();
+
+                    BindListBox(listBoxAvailableExtras, availableExtras);
+                }
+            }
+        }
+
+        private void UpdateDishNames(Menu menu)
         {
             foreach (var dish in menu.Dishes)
             {
@@ -185,6 +273,14 @@ namespace SmartCanteen
                     radioReservationMenuVeggie.Text = dish.Description;
                 }
             }
+        }
+
+        private void BindListBox(ListBox listBox, object dataSource)
+        {
+            listBox.DataSource = null;
+            listBox.DataSource = dataSource;
+            listBox.DisplayMember = "Description";
+            listBox.ValueMember = "ID";
         }
     }
 }

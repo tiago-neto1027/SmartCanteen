@@ -31,6 +31,7 @@ namespace SmartCanteen.controllers
             {
                 return db.Menus
                     .Include("Dishes")
+                    .Include("Extras")
                     .FirstOrDefault(m => DbFunctions.TruncateTime(m.Date) == selectedDate.Date && m.Time == mealTime);
             }
         }
