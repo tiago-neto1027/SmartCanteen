@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,6 +29,8 @@ namespace SmartCanteen
             modelBuilder.Entity<Menu>()
                 .HasMany(t => t.Extras)
                 .WithMany(t => t.Menus);
+
+
         }
     }
 }

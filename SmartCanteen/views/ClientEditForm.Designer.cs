@@ -1,6 +1,6 @@
 ﻿namespace SmartCanteen
 {
-    partial class ClientModifyForm
+    partial class ClientEditForm
     {
         /// <summary>
         /// Required designer variable.
@@ -47,7 +47,7 @@
             this.labelClientNif = new System.Windows.Forms.Label();
             this.labelClientName = new System.Windows.Forms.Label();
             this.btnBalanceLeave = new System.Windows.Forms.Button();
-            this.btnClientModify = new System.Windows.Forms.Button();
+            this.btnClientEdit = new System.Windows.Forms.Button();
             this.listBoxClients = new System.Windows.Forms.ListBox();
             this.labelClients = new System.Windows.Forms.Label();
             this.btnShowAll = new System.Windows.Forms.Button();
@@ -254,16 +254,17 @@
             this.btnBalanceLeave.UseVisualStyleBackColor = true;
             this.btnBalanceLeave.Click += new System.EventHandler(this.btnClientLeave_Click);
             // 
-            // btnClientModify
+            // btnClientEdit
             // 
-            this.btnClientModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientModify.Location = new System.Drawing.Point(32, 396);
-            this.btnClientModify.Name = "btnClientModify";
-            this.btnClientModify.Size = new System.Drawing.Size(100, 30);
-            this.btnClientModify.TabIndex = 11;
-            this.btnClientModify.Text = "Modificar";
-            this.btnClientModify.UseVisualStyleBackColor = true;
-            this.btnClientModify.Click += new System.EventHandler(this.btnClientChange_Click);
+            this.btnClientEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientEdit.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnClientEdit.Location = new System.Drawing.Point(32, 396);
+            this.btnClientEdit.Name = "btnClientEdit";
+            this.btnClientEdit.Size = new System.Drawing.Size(100, 30);
+            this.btnClientEdit.TabIndex = 11;
+            this.btnClientEdit.Text = "Editar";
+            this.btnClientEdit.UseVisualStyleBackColor = true;
+            this.btnClientEdit.Click += new System.EventHandler(this.btnClientEdit_Click);
             // 
             // listBoxClients
             // 
@@ -306,7 +307,7 @@
             this.btnClientDelete.UseVisualStyleBackColor = true;
             this.btnClientDelete.Click += new System.EventHandler(this.btnClientDelete_Click);
             // 
-            // ClientModifyForm
+            // ClientEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -314,12 +315,12 @@
             this.Controls.Add(this.btnClientDelete);
             this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.btnBalanceLeave);
-            this.Controls.Add(this.btnClientModify);
+            this.Controls.Add(this.btnClientEdit);
             this.Controls.Add(this.labelClients);
             this.Controls.Add(this.listBoxClients);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "ClientModifyForm";
+            this.Name = "ClientEditForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "BalanceForm";
             this.groupBox1.ResumeLayout(false);
@@ -342,7 +343,7 @@
         private System.Windows.Forms.Label labelClientNif;
         private System.Windows.Forms.Label labelClientName;
         private System.Windows.Forms.Label labelClientCurrent;
-        private System.Windows.Forms.Button btnClientModify;
+        private System.Windows.Forms.Button btnClientEdit;
         private System.Windows.Forms.Button btnBalanceLeave;
         private System.Windows.Forms.ListBox listBoxClients;
         private System.Windows.Forms.Label labelClients;

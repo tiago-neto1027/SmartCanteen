@@ -139,11 +139,11 @@
     <Compile Include="views\MenuAddForm.Designer.cs">
       <DependentUpon>MenuAddForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\ClientModifyForm.cs">
+    <Compile Include="views\ClientEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\ClientModifyForm.Designer.cs">
-      <DependentUpon>ClientModifyForm.cs</DependentUpon>
+    <Compile Include="views\ClientEditForm.Designer.cs">
+      <DependentUpon>ClientEditForm.cs</DependentUpon>
     </Compile>
     <Compile Include="models\Client.cs" />
     <Compile Include="models\Dish.cs" />
@@ -160,11 +160,17 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SmartCanteenContext.cs" />
-    <Compile Include="views\RegistryForm.cs">
+    <Compile Include="views\MenuEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\RegistryForm.Designer.cs">
-      <DependentUpon>RegistryForm.cs</DependentUpon>
+    <Compile Include="views\MenuEditForm.Designer.cs">
+      <DependentUpon>MenuEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\StaffRegistryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\StaffRegistryForm.Designer.cs">
+      <DependentUpon>StaffRegistryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="views\ReservationForm.cs">
       <SubType>Form</SubType>
@@ -211,8 +217,8 @@
     <EmbeddedResource Include="views\MenuAddForm.resx">
       <DependentUpon>MenuAddForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\ClientModifyForm.resx">
-      <DependentUpon>ClientModifyForm.cs</DependentUpon>
+    <EmbeddedResource Include="views\ClientEditForm.resx">
+      <DependentUpon>ClientEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -224,8 +230,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="views\RegistryForm.resx">
-      <DependentUpon>RegistryForm.cs</DependentUpon>
+    <EmbeddedResource Include="views\MenuEditForm.resx">
+      <DependentUpon>MenuEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\StaffRegistryForm.resx">
+      <DependentUpon>StaffRegistryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\ReservationForm.resx">
       <DependentUpon>ReservationForm.cs</DependentUpon>

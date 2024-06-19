@@ -1,4 +1,5 @@
 ﻿using SmartCanteen;
+using SmartCanteen.views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,7 +51,7 @@ namespace SmartCanteen
 
         private void btnClientChange_Click(object sender, EventArgs e)
         {
-            ClientModifyForm clientModifyForm = new ClientModifyForm();
+            ClientEditForm clientModifyForm = new ClientEditForm();
             clientModifyForm.ShowDialog();
         }
 
@@ -90,9 +91,9 @@ namespace SmartCanteen
             mealEditForm.ShowDialog();
         }
 
-        private void btnClientModify_Click(object sender, EventArgs e)
+        private void btnClientEdit_Click(object sender, EventArgs e)
         {
-            ClientModifyForm clientModifyForm = new ClientModifyForm();
+            ClientEditForm clientModifyForm = new ClientEditForm();
             clientModifyForm.ShowDialog();
         }
 
@@ -112,6 +113,11 @@ namespace SmartCanteen
         {
             ReservationForm reservationForm = new ReservationForm();
             reservationForm.ShowDialog();
+        }
+        private void btnMenuEdit_Click(object sender, EventArgs e)
+        {
+            MenuEditForm menuEditForm = new MenuEditForm();
+            menuEditForm.ShowDialog();
         }
     }
 }

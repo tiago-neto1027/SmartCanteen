@@ -64,7 +64,7 @@ namespace SmartCanteen
         private void btnLoginCreateUser_Click(object sender, EventArgs e)
         {
             this.Hide();
-            RegistryForm registryForm = new RegistryForm();
+            StaffRegistryForm registryForm = new StaffRegistryForm();
             registryForm.ShowDialog();
             this.Close();
         }
