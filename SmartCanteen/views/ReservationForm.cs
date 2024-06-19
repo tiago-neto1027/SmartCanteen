@@ -200,7 +200,7 @@ namespace SmartCanteen
                 if (timeOfDay < TimeSpan.FromHours(12))
                 {
                     rBtnLunch.Visible = true;
-                    rBtnDinner.Visible = false;
+                    rBtnDinner.Visible = true;
                 }
                 else if (timeOfDay < TimeSpan.FromHours(18))
                 {
@@ -309,7 +309,8 @@ namespace SmartCanteen
                 price += selectedMenu.TeacherPrice;
             }
 
-            //Calcular a multa
+            double fineValue = CalculateFine();
+            price += fineValue;
 
             foreach (Extra extra in selectedExtras)
             {
@@ -317,6 +318,46 @@ namespace SmartCanteen
             }
 
             return price;
+        }
+
+        private double CalculateFine()
+        {
+            DateTime now = DateTime.Now;
+            int mealTime;
+            if (selectedMenu.Time == MealTime.Lunch)
+            {
+                mealTime = 12;
+            }
+            else
+            {
+                mealTime = 19;
+            }
+
+            int hoursRemaining = mealTime - now.Hour;
+
+            if (hoursRemaining <= 0)
+            {
+                return 0;
+            }
+
+            using (var db = new SmartCanteenContext())
+            {
+                var fine = db.Fines
+                    .Where(f => f.NumHours >= hoursRemaining)
+                    .OrderBy(f => f.NumHours)
+                    .FirstOrDefault();
+
+                Console.WriteLine("Hours remaining: " + hoursRemaining);
+
+                if (fine != null)
+                {
+                    return fine.Value;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
         }
 
         private void BindListBox(ListBox listBox, object dataSource)
