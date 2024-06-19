@@ -112,6 +112,7 @@ namespace SmartCanteen
         {
             ReservationForm reservationForm = new ReservationForm();
             reservationForm.ShowDialog();
+        }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var confirmResult = MessageBox.Show("Irá fechar a aplicação.",

@@ -221,16 +221,6 @@
             this.labelReservationResultMenu.TabIndex = 4;
             this.labelReservationResultMenu.Text = "Menu:";
             // 
-            // labelReservationResultId
-            // 
-            this.labelReservationResultId.AutoSize = true;
-            this.labelReservationResultId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelReservationResultId.Location = new System.Drawing.Point(28, 161);
-            this.labelReservationResultId.Name = "labelReservationResultId";
-            this.labelReservationResultId.Size = new System.Drawing.Size(25, 15);
-            this.labelReservationResultId.TabIndex = 3;
-            this.labelReservationResultId.Text = "ID:";
-            // 
             // labelReservationResultDate
             // 
             this.labelReservationResultDate.AutoSize = true;
