@@ -1,6 +1,7 @@
 ﻿using SmartCanteen.models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,14 +24,15 @@ namespace SmartCanteen.controllers
                 db.SaveChanges();
             }
         }
-        
-        private bool somerandommethod(int num)
+
+        public Menu GetMenuByDateTime(DateTime selectedDate, MealTime mealTime)
         {
-            if (1 < num)
+            using (var db = new SmartCanteenContext())
             {
-                return false;
+                return db.Menus
+                    .Include("Dishes")
+                    .FirstOrDefault(m => DbFunctions.TruncateTime(m.Date) == selectedDate.Date && m.Time == mealTime);
             }
-            return true;
         }
     }
 }

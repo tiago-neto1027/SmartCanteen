@@ -40,7 +40,7 @@ namespace SmartCanteen.controllers
             }
         }
 
-        public static bool UpdateClientBalance(string nif, decimal addedValue)
+        public bool UpdateClientBalance(string nif, decimal addedValue)
         {
             using (var db = new SmartCanteenContext())
             {
@@ -57,7 +57,7 @@ namespace SmartCanteen.controllers
             }
         }
 
-        public static Client SearchClient(string nif)
+        public Client SearchClient(string nif)
         {
             using (var db = new SmartCanteenContext())
             {
@@ -68,7 +68,7 @@ namespace SmartCanteen.controllers
                     return null;
             }
         }
-        public static bool ModifyClient(string oldNIF, string name, string nif, string extra)
+        public bool ModifyClient(string oldNIF, string name, string nif, string extra)
         {
             using (var db = new SmartCanteenContext())
             {
@@ -94,7 +94,7 @@ namespace SmartCanteen.controllers
             }
         }
 
-        public static bool DeleteClient(string nif)
+        public bool DeleteClient(string nif)
         {
             using (var db = new SmartCanteenContext())
             {

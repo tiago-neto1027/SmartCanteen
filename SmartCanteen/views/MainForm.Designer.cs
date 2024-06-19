@@ -53,6 +53,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnEditFine = new System.Windows.Forms.Button();
             this.btnCreateFine = new System.Windows.Forms.Button();
+            this.btnAddReservation = new System.Windows.Forms.Button();
             this.menuStripMain.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -146,6 +147,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnAddReservation);
             this.groupBox2.Controls.Add(this.btnMealEdit);
             this.groupBox2.Controls.Add(this.btnExtrasEdit);
             this.groupBox2.Controls.Add(this.btnMealRegister);
@@ -155,7 +157,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(632, 258);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(170, 210);
+            this.groupBox2.Size = new System.Drawing.Size(170, 246);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Refeição";
@@ -184,7 +186,7 @@
             // 
             this.btnMealRegister.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.btnMealRegister.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnMealRegister.Location = new System.Drawing.Point(6, 158);
+            this.btnMealRegister.Location = new System.Drawing.Point(6, 200);
             this.btnMealRegister.Name = "btnMealRegister";
             this.btnMealRegister.Size = new System.Drawing.Size(158, 40);
             this.btnMealRegister.TabIndex = 6;
@@ -229,7 +231,7 @@
             this.groupBox3.Controls.Add(this.lbTime);
             this.groupBox3.Location = new System.Drawing.Point(58, 62);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(510, 406);
+            this.groupBox3.Size = new System.Drawing.Size(510, 442);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Semanal";
@@ -301,6 +303,16 @@
             this.btnCreateFine.UseVisualStyleBackColor = true;
             this.btnCreateFine.Click += new System.EventHandler(this.btnCreateFine_Click);
             // 
+            // btnAddReservation
+            // 
+            this.btnAddReservation.Location = new System.Drawing.Point(6, 158);
+            this.btnAddReservation.Name = "btnAddReservation";
+            this.btnAddReservation.Size = new System.Drawing.Size(158, 36);
+            this.btnAddReservation.TabIndex = 9;
+            this.btnAddReservation.Text = "Fazer Reserva";
+            this.btnAddReservation.UseVisualStyleBackColor = true;
+            this.btnAddReservation.Click += new System.EventHandler(this.btnAddReservation_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,5 +368,6 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnEditFine;
         private System.Windows.Forms.Button btnCreateFine;
+        private System.Windows.Forms.Button btnAddReservation;
     }
 }

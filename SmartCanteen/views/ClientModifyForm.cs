@@ -17,12 +17,11 @@ namespace SmartCanteen
     {
         private List<Client> clientList;
         private Client selectedClient = null;
+        private readonly ClientController clientController = new ClientController();
 
         public ClientModifyForm()
         {
             InitializeComponent();
-
-            ClientController clientController = new ClientController();
 
             List<Client> clientList = clientController.GetAllClients();
 
@@ -52,7 +51,7 @@ namespace SmartCanteen
             List<Client> clientSearch;
             clientSearch = new List<Client>
             {
-                ClientController.SearchClient(searchNif)
+                clientController.SearchClient(searchNif)
 
             };
 
@@ -114,7 +113,7 @@ namespace SmartCanteen
                 MessageBox.Show("Peencha o NIF");
                 return;
             }
-            var searchNIF = ClientController.SearchClient(NIF);
+            var searchNIF = clientController.SearchClient(NIF);
             if (searchNIF != null && NIF != selectedClient.NIF)
             {
                 MessageBox.Show("O NIF já esá a ser utilizador por outro cliente.");
@@ -147,7 +146,7 @@ namespace SmartCanteen
 
             if (radiobtnTypeStudent.Checked == true)
             {
-                if(!ClientController.ModifyClient(oldNIF, name, NIF, email))
+                if(!clientController.ModifyClient(oldNIF, name, NIF, email))
                 {
                     MessageBox.Show("Erro ao alterar dados");
                     return;
@@ -156,7 +155,7 @@ namespace SmartCanteen
             }
             else
             {
-                if (!ClientController.ModifyClient(oldNIF, name, NIF, email))
+                if (!clientController.ModifyClient(oldNIF, name, NIF, email))
                 {
                     MessageBox.Show("Erro ao alterar dados");
                     return;
@@ -176,7 +175,7 @@ namespace SmartCanteen
                 MessageBox.Show("Selecione um cliente primeiro");
                 return;
             }
-            ClientController.DeleteClient(selectedClient.NIF);
+            clientController.DeleteClient(selectedClient.NIF);
             updateClientListBox();
         }
 
