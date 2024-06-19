@@ -10,6 +10,7 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "SmartCanteen.SmartCanteenContext";
         }
 
         protected override void Seed(SmartCanteen.SmartCanteenContext context)

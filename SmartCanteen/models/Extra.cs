@@ -24,9 +24,11 @@ namespace SmartCanteen.models
         public bool Active { get; set; }
 
         public virtual ICollection<Menu> Menus { get; set; }
+        public virtual ICollection<Reservation> Reservations { get; set; }
         public Extra()
         {
             Menus = new HashSet<Menu>();
+            Reservations = new HashSet<Reservation>();
         }
 
         public Extra(string description, ExtraType extraType, double price)

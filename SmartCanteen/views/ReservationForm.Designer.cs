@@ -40,6 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tBoxReservationNif = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.labelReservationResultPrice = new System.Windows.Forms.Label();
             this.labelReservationResultMenu = new System.Windows.Forms.Label();
             this.labelReservationResultDate = new System.Windows.Forms.Label();
             this.labelReservationResultNif = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.rBtnDinner = new System.Windows.Forms.RadioButton();
             this.rBtnLunch = new System.Windows.Forms.RadioButton();
-            this.labelReservationResultPrice = new System.Windows.Forms.Label();
             this.groupBoxExtras = new System.Windows.Forms.GroupBox();
             this.groupBoxFilters = new System.Windows.Forms.GroupBox();
             this.rBtnOthers = new System.Windows.Forms.RadioButton();
@@ -95,6 +95,7 @@
             this.btnReservationRegister.TabIndex = 12;
             this.btnReservationRegister.Text = "Registar";
             this.btnReservationRegister.UseVisualStyleBackColor = true;
+            this.btnReservationRegister.Click += new System.EventHandler(this.btnReservationRegister_Click);
             // 
             // groupBox1
             // 
@@ -200,6 +201,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Resultado:";
             // 
+            // labelReservationResultPrice
+            // 
+            this.labelReservationResultPrice.AutoSize = true;
+            this.labelReservationResultPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReservationResultPrice.Location = new System.Drawing.Point(4, 181);
+            this.labelReservationResultPrice.Name = "labelReservationResultPrice";
+            this.labelReservationResultPrice.Size = new System.Drawing.Size(55, 17);
+            this.labelReservationResultPrice.TabIndex = 5;
+            this.labelReservationResultPrice.Text = "Preço:";
+            // 
             // labelReservationResultMenu
             // 
             this.labelReservationResultMenu.AutoSize = true;
@@ -284,16 +295,6 @@
             this.rBtnLunch.Text = "Almoço";
             this.rBtnLunch.UseVisualStyleBackColor = true;
             this.rBtnLunch.CheckedChanged += new System.EventHandler(this.rBtnLunch_CheckedChanged);
-            // 
-            // labelReservationResultPrice
-            // 
-            this.labelReservationResultPrice.AutoSize = true;
-            this.labelReservationResultPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelReservationResultPrice.Location = new System.Drawing.Point(4, 181);
-            this.labelReservationResultPrice.Name = "labelReservationResultPrice";
-            this.labelReservationResultPrice.Size = new System.Drawing.Size(55, 17);
-            this.labelReservationResultPrice.TabIndex = 5;
-            this.labelReservationResultPrice.Text = "Preço:";
             // 
             // groupBoxExtras
             // 

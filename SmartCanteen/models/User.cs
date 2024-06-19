@@ -13,6 +13,7 @@ namespace SmartCanteen.models
         public int ID {  get; set; }
         public string Name { get; set; }
         public string NIF { get; set; }
+        public virtual ICollection<Reservation> Reservations { get; set; }
 
         public User(string name, string nif)
         {
@@ -22,7 +23,7 @@ namespace SmartCanteen.models
 
         public User()
         {
-
+            this.Reservations = new HashSet<Reservation>();
         }
     }
 }

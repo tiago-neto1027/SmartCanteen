@@ -11,7 +11,7 @@ namespace SmartCanteen
     internal class SmartCanteenContext : DbContext
     {
         public DbSet<User> Users { get; set; }
-        //public DbSet<Reservation> Reservations { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Fine> Fines { get; set; }
         public DbSet<Menu> Menus { get; set; }
         public DbSet<Dish> Dishes { get; set; }
@@ -28,6 +28,25 @@ namespace SmartCanteen
             modelBuilder.Entity<Menu>()
                 .HasMany(t => t.Extras)
                 .WithMany(t => t.Menus);
+
+            modelBuilder.Entity<Reservation>()
+                .HasRequired<Menu>(r => r.Menu)
+                .WithMany(m => m.Reservations)
+                .HasForeignKey<int>(r => r.MenuID);
+
+            modelBuilder.Entity<Reservation>()
+                .HasRequired<User>(r => r.User)
+                .WithMany(u => u.Reservations)
+                .HasForeignKey<int>(r => r.UserID);
+
+            modelBuilder.Entity<Reservation>()
+                .HasRequired<Dish>(r => r.Dish)
+                .WithMany(u => u.Reservations)
+                .HasForeignKey<int>(r => r.DishID);
+
+            modelBuilder.Entity<Reservation>()
+                .HasMany(r => r.Extras)
+                .WithMany(e => e.Reservations);
         }
     }
 }
