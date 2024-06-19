@@ -54,7 +54,6 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnEditFine = new System.Windows.Forms.Button();
             this.btnCreateFine = new System.Windows.Forms.Button();
-            this.btnAddReservation = new System.Windows.Forms.Button();
             this.opçõesUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMondayLunch = new System.Windows.Forms.Button();
             this.btnMondayDinner = new System.Windows.Forms.Button();
