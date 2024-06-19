@@ -65,7 +65,7 @@ namespace SmartCanteen
                 return;
             }
 
-            var searchNIF = ClientController.SearchClient(nif);
+            var searchNIF = clientController.SearchClient(nif);
             if (searchNIF != null)
             {
                 MessageBox.Show("O NIF já está a ser usado.");

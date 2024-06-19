@@ -107,6 +107,12 @@ namespace SmartCanteen
             FineEditForm fineEditForm = new FineEditForm();
             fineEditForm.ShowDialog();
         }
+
+        private void btnAddReservation_Click(object sender, EventArgs e)
+        {
+            ReservationForm reservationForm = new ReservationForm();
+            reservationForm.ShowDialog();
+        }
     }
 }
 
