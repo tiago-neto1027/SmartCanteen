@@ -32,7 +32,7 @@ namespace SmartCanteen
             bool success = int.TryParse(nif, out int result);
             if (!success)
             {
-                MessageBox.Show("NIF has to be a numeric value.");
+                MessageBox.Show("NIF tem de ser um valor numérico.");
                 return;
             }
 
@@ -43,62 +43,62 @@ namespace SmartCanteen
                 || string.IsNullOrEmpty(confirmedPassword) 
                 || string.IsNullOrEmpty(managementPassword))
             {
-                MessageBox.Show("All fields are required");
+                MessageBox.Show("Todos os campos são requeridos");
                 return;
             }
 
             if (string.IsNullOrEmpty(name))
             {
-                MessageBox.Show("Name is empty!");
+                MessageBox.Show("Nome está vazio!");
                 return;
             }
             if (string.IsNullOrEmpty(nif))
             {
-                MessageBox.Show("NIF is empty!");
+                MessageBox.Show("NIF está vazio!");
                 return;
             }
             if (string.IsNullOrEmpty(username))
             {
-                MessageBox.Show("Username is empty!");
+                MessageBox.Show("Username está vazio!");
                 return;
             }
             if (string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Password is empty!");
+                MessageBox.Show("Password está vazio!");
                 return;
             }
             if (string.IsNullOrEmpty(confirmedPassword))
             {
-                MessageBox.Show("Confirmation password is empty!");
+                MessageBox.Show("Necessário confirmar Password!");
                 return;
             }
             if (string.IsNullOrEmpty(managementPassword))
             {
-                MessageBox.Show("Management Password password is empty!");
+                MessageBox.Show("Necessário confirmar com Password de Gerência!");
                 return;
             }
 
             if (managementPassword != "Admin2024")
             {
-                MessageBox.Show("Management Password is invalid");
+                MessageBox.Show("Password de Gerência inválida");
                 return;                   
             }
 
             if (password != confirmedPassword)
             {
-                MessageBox.Show("Passwords don't match");
+                MessageBox.Show("Passwords não são idênticas");
                 return;
             }
 
             if (nif.Length!=9)
             {
-                MessageBox.Show("NIF needs to be 9 characters");
+                MessageBox.Show("NIF tem de ser 9 caracteres");
                 return;
             }
             
             UserController userController = new UserController();
             userController.AddStaff(name, nif, username, password);
-            MessageBox.Show("Staff added sucessfully");
+            MessageBox.Show("Staff adicionado com sucesso");
 
             this.Hide();
             LoginForm loginForm = new LoginForm();

@@ -117,7 +117,7 @@ namespace SmartCanteen
             var searchNIF = ClientController.SearchClient(NIF);
             if (searchNIF != null && NIF != selectedClient.NIF)
             {
-                MessageBox.Show("O NIF já esá a ser utilizador por outro cliente.");
+                MessageBox.Show("O NIF já está a ser utilizador por outro cliente.");
                 return;
             }
             if (NIF.Length != 9)
@@ -187,9 +187,6 @@ namespace SmartCanteen
 
         private void btnClientLeave_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            MainForm mainForm = new MainForm();
-            mainForm.ShowDialog();
             this.Close();
         }
 

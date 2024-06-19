@@ -41,7 +41,7 @@ namespace SmartCanteen.controllers
 
                 if (matchingStaff != null)
                 {
-                    Console.WriteLine($"Staff member found: {matchingStaff.Name}");
+                    Console.WriteLine($"User encontrado: {matchingStaff.Name}");
                     return true;
                 }
                 else
@@ -51,7 +51,52 @@ namespace SmartCanteen.controllers
             }
         }
 
-        
-       
+        public List<Staff> GetAllStaff()
+        {
+            using (var db = new SmartCanteenContext())
+            {
+                return db.Users.OfType<Staff>().ToList();
+            }
+        }
+
+        public void UpdateUser(Staff updatedUser)
+        {
+            using (var db = new SmartCanteenContext())
+            {
+                var existingUser = db.Users.OfType<Staff>().SingleOrDefault(e => e.ID == updatedUser.ID);
+
+                if (existingUser != null)
+                {
+                    existingUser.Name = updatedUser.Name;
+                    existingUser.Username = updatedUser.Username;
+                    existingUser.NIF = updatedUser.NIF;
+                    existingUser.Password = updatedUser.Password;
+
+                    db.SaveChanges();
+                }
+                else
+                {
+                    throw new InvalidOperationException("User não encontrado.");
+                }
+            }
+        }
+
+        public void DeleteUser(int userId)
+        {
+            using (var db = new SmartCanteenContext())
+            {
+                var user = db.Users.OfType<Staff>().SingleOrDefault(e => e.ID == userId);
+
+                if (user != null)
+                {
+                    db.Users.Remove(user);
+                    db.SaveChanges();
+                }
+                else
+                {
+                    throw new InvalidOperationException("User não encontrado.");
+                }
+            }
+        }
     }
 }

@@ -46,10 +46,11 @@
             this.btnMealAdd = new System.Windows.Forms.Button();
             this.btnMenuAdd = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbDate = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.opçõesUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -72,6 +73,8 @@
             // 
             // optionsToolStripMenuItem
             // 
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.opçõesUsersToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.optionsToolStripMenuItem.Text = "Opções";
@@ -90,12 +93,14 @@
             this.logoutChangeUserToolStripMenuItem.Name = "logoutChangeUserToolStripMenuItem";
             this.logoutChangeUserToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.logoutChangeUserToolStripMenuItem.Text = "Logout / Mudar User";
+            this.logoutChangeUserToolStripMenuItem.Click += new System.EventHandler(this.logoutChangeUserToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.exitToolStripMenuItem.Text = "Sair";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -230,6 +235,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Semanal";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SmartCanteen.Properties.Resources._603_6035882_clock_transparent_time_icon_png_png_download;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(55, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // lbDate
             // 
             this.lbDate.AutoSize = true;
@@ -255,15 +270,12 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
-            // pictureBox1
+            // opçõesUsersToolStripMenuItem
             // 
-            this.pictureBox1.Image = global::SmartCanteen.Properties.Resources._603_6035882_clock_transparent_time_icon_png_png_download;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 23);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(55, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.opçõesUsersToolStripMenuItem.Name = "opçõesUsersToolStripMenuItem";
+            this.opçõesUsersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.opçõesUsersToolStripMenuItem.Text = "Gerir Users";
+            this.opçõesUsersToolStripMenuItem.Click += new System.EventHandler(this.opçõesUsersToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -315,5 +327,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnExtrasEdit;
         private System.Windows.Forms.Button btnMealEdit;
+        private System.Windows.Forms.ToolStripMenuItem opçõesUsersToolStripMenuItem;
     }
 }

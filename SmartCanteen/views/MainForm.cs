@@ -94,6 +94,37 @@ namespace SmartCanteen
             ClientModifyForm clientModifyForm = new ClientModifyForm();
             clientModifyForm.ShowDialog();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("Irá fechar a aplicação.",
+                                     "Continuar?",
+                                     MessageBoxButtons.OKCancel);
+            if (confirmResult == DialogResult.OK)
+            {
+                this.Close();
+            }
+            else
+            {
+                
+            }
+            
+        }
+
+        private void logoutChangeUserToolStripMenuItem_Click(object sender, EventArgs e)
+        { 
+            this.Hide();
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();
+
+        }
+
+        private void opçõesUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UserModifyForm userModifyForm = new UserModifyForm();
+            userModifyForm.ShowDialog();
+        }
     }
 }
 

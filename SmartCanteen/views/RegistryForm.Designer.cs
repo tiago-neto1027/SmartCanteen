@@ -42,6 +42,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tBoxNIF = new System.Windows.Forms.TextBox();
             this.btnExit = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCreateRegistry
@@ -50,9 +52,9 @@
             this.btnCreateRegistry.Location = new System.Drawing.Point(21, 306);
             this.btnCreateRegistry.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateRegistry.Name = "btnCreateRegistry";
-            this.btnCreateRegistry.Size = new System.Drawing.Size(106, 27);
+            this.btnCreateRegistry.Size = new System.Drawing.Size(106, 32);
             this.btnCreateRegistry.TabIndex = 7;
-            this.btnCreateRegistry.Text = "Create User";
+            this.btnCreateRegistry.Text = "Criar  User";
             this.btnCreateRegistry.UseVisualStyleBackColor = true;
             this.btnCreateRegistry.Click += new System.EventHandler(this.btnCreateRegistry_Click);
             // 
@@ -60,7 +62,7 @@
             // 
             this.labelPasswordRegistry.AutoSize = true;
             this.labelPasswordRegistry.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.861538F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPasswordRegistry.Location = new System.Drawing.Point(213, 32);
+            this.labelPasswordRegistry.Location = new System.Drawing.Point(201, 19);
             this.labelPasswordRegistry.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPasswordRegistry.Name = "labelPasswordRegistry";
             this.labelPasswordRegistry.Size = new System.Drawing.Size(64, 15);
@@ -71,7 +73,7 @@
             // 
             this.labelUserRegistry.AutoSize = true;
             this.labelUserRegistry.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.861538F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserRegistry.Location = new System.Drawing.Point(18, 93);
+            this.labelUserRegistry.Location = new System.Drawing.Point(6, 80);
             this.labelUserRegistry.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelUserRegistry.Name = "labelUserRegistry";
             this.labelUserRegistry.Size = new System.Drawing.Size(70, 15);
@@ -81,7 +83,7 @@
             // tBoxPassword
             // 
             this.tBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.861538F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBoxPassword.Location = new System.Drawing.Point(216, 51);
+            this.tBoxPassword.Location = new System.Drawing.Point(204, 38);
             this.tBoxPassword.Margin = new System.Windows.Forms.Padding(2);
             this.tBoxPassword.Name = "tBoxPassword";
             this.tBoxPassword.PasswordChar = '*';
@@ -91,7 +93,7 @@
             // tBoxUserName
             // 
             this.tBoxUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.861538F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBoxUserName.Location = new System.Drawing.Point(21, 112);
+            this.tBoxUserName.Location = new System.Drawing.Point(9, 99);
             this.tBoxUserName.Margin = new System.Windows.Forms.Padding(2);
             this.tBoxUserName.Name = "tBoxUserName";
             this.tBoxUserName.Size = new System.Drawing.Size(150, 21);
@@ -101,17 +103,17 @@
             // 
             this.labelPasswordConfirmationRegistry.AutoSize = true;
             this.labelPasswordConfirmationRegistry.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.861538F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPasswordConfirmationRegistry.Location = new System.Drawing.Point(213, 93);
+            this.labelPasswordConfirmationRegistry.Location = new System.Drawing.Point(201, 80);
             this.labelPasswordConfirmationRegistry.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPasswordConfirmationRegistry.Name = "labelPasswordConfirmationRegistry";
-            this.labelPasswordConfirmationRegistry.Size = new System.Drawing.Size(110, 15);
+            this.labelPasswordConfirmationRegistry.Size = new System.Drawing.Size(124, 15);
             this.labelPasswordConfirmationRegistry.TabIndex = 11;
-            this.labelPasswordConfirmationRegistry.Text = "Confirm Password:";
+            this.labelPasswordConfirmationRegistry.Text = "Confirmar Password :";
             // 
             // tBoxPasswordConfirmation
             // 
             this.tBoxPasswordConfirmation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.861538F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBoxPasswordConfirmation.Location = new System.Drawing.Point(216, 112);
+            this.tBoxPasswordConfirmation.Location = new System.Drawing.Point(204, 99);
             this.tBoxPasswordConfirmation.Margin = new System.Windows.Forms.Padding(2);
             this.tBoxPasswordConfirmation.Name = "tBoxPasswordConfirmation";
             this.tBoxPasswordConfirmation.PasswordChar = '*';
@@ -125,9 +127,9 @@
             this.labelManagementPasswordRegistry.Location = new System.Drawing.Point(18, 235);
             this.labelManagementPasswordRegistry.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelManagementPasswordRegistry.Name = "labelManagementPasswordRegistry";
-            this.labelManagementPasswordRegistry.Size = new System.Drawing.Size(141, 15);
+            this.labelManagementPasswordRegistry.Size = new System.Drawing.Size(134, 15);
             this.labelManagementPasswordRegistry.TabIndex = 13;
-            this.labelManagementPasswordRegistry.Text = "Management Password:";
+            this.labelManagementPasswordRegistry.Text = "Password de Gerência:";
             // 
             // tBoxManagementPassword
             // 
@@ -136,24 +138,24 @@
             this.tBoxManagementPassword.Margin = new System.Windows.Forms.Padding(2);
             this.tBoxManagementPassword.Name = "tBoxManagementPassword";
             this.tBoxManagementPassword.PasswordChar = '*';
-            this.tBoxManagementPassword.Size = new System.Drawing.Size(106, 21);
+            this.tBoxManagementPassword.Size = new System.Drawing.Size(150, 21);
             this.tBoxManagementPassword.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.861538F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 32);
+            this.label1.Location = new System.Drawing.Point(6, 19);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 15);
             this.label1.TabIndex = 15;
-            this.label1.Text = "Name:";
+            this.label1.Text = "Nome:";
             // 
             // tBoxName
             // 
             this.tBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.861538F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBoxName.Location = new System.Drawing.Point(21, 51);
+            this.tBoxName.Location = new System.Drawing.Point(9, 38);
             this.tBoxName.Margin = new System.Windows.Forms.Padding(2);
             this.tBoxName.Name = "tBoxName";
             this.tBoxName.Size = new System.Drawing.Size(150, 21);
@@ -163,7 +165,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.861538F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 150);
+            this.label2.Location = new System.Drawing.Point(6, 137);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 15);
@@ -173,7 +175,7 @@
             // tBoxNIF
             // 
             this.tBoxNIF.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.861538F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBoxNIF.Location = new System.Drawing.Point(21, 169);
+            this.tBoxNIF.Location = new System.Drawing.Point(9, 156);
             this.tBoxNIF.Margin = new System.Windows.Forms.Padding(2);
             this.tBoxNIF.Name = "tBoxNIF";
             this.tBoxNIF.Size = new System.Drawing.Size(150, 21);
@@ -185,11 +187,30 @@
             this.btnExit.Location = new System.Drawing.Point(260, 306);
             this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(106, 27);
+            this.btnExit.Size = new System.Drawing.Size(106, 32);
             this.btnExit.TabIndex = 18;
-            this.btnExit.Text = "Exit";
+            this.btnExit.Text = "Sair";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.tBoxName);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.tBoxUserName);
+            this.groupBox1.Controls.Add(this.tBoxNIF);
+            this.groupBox1.Controls.Add(this.tBoxPassword);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.labelUserRegistry);
+            this.groupBox1.Controls.Add(this.labelPasswordRegistry);
+            this.groupBox1.Controls.Add(this.tBoxPasswordConfirmation);
+            this.groupBox1.Controls.Add(this.labelPasswordConfirmationRegistry);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(375, 202);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "User:";
             // 
             // RegistryForm
             // 
@@ -197,21 +218,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 366);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.tBoxNIF);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.tBoxName);
             this.Controls.Add(this.labelManagementPasswordRegistry);
             this.Controls.Add(this.tBoxManagementPassword);
-            this.Controls.Add(this.labelPasswordConfirmationRegistry);
-            this.Controls.Add(this.tBoxPasswordConfirmation);
             this.Controls.Add(this.btnCreateRegistry);
-            this.Controls.Add(this.labelPasswordRegistry);
-            this.Controls.Add(this.labelUserRegistry);
-            this.Controls.Add(this.tBoxPassword);
-            this.Controls.Add(this.tBoxUserName);
+            this.Controls.Add(this.groupBox1);
             this.Name = "RegistryForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "RegistryForm";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,5 +248,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tBoxNIF;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

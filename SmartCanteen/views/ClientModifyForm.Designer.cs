@@ -246,7 +246,7 @@
             // btnBalanceLeave
             // 
             this.btnBalanceLeave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBalanceLeave.Location = new System.Drawing.Point(296, 396);
+            this.btnBalanceLeave.Location = new System.Drawing.Point(311, 416);
             this.btnBalanceLeave.Name = "btnBalanceLeave";
             this.btnBalanceLeave.Size = new System.Drawing.Size(75, 30);
             this.btnBalanceLeave.TabIndex = 12;
@@ -257,7 +257,7 @@
             // btnClientModify
             // 
             this.btnClientModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientModify.Location = new System.Drawing.Point(32, 396);
+            this.btnClientModify.Location = new System.Drawing.Point(45, 416);
             this.btnClientModify.Name = "btnClientModify";
             this.btnClientModify.Size = new System.Drawing.Size(100, 30);
             this.btnClientModify.TabIndex = 11;
@@ -298,7 +298,7 @@
             // btnClientDelete
             // 
             this.btnClientDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientDelete.Location = new System.Drawing.Point(138, 396);
+            this.btnClientDelete.Location = new System.Drawing.Point(151, 416);
             this.btnClientDelete.Name = "btnClientDelete";
             this.btnClientDelete.Size = new System.Drawing.Size(100, 30);
             this.btnClientDelete.TabIndex = 13;

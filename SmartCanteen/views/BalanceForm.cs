@@ -31,9 +31,6 @@ namespace SmartCanteen
 
         private void btnBalanceLeave_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            MainForm mainForm = new MainForm(); 
-            mainForm.ShowDialog();
             this.Close();
         }
 

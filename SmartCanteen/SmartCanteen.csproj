@@ -65,6 +65,12 @@
     <Compile Include="Migrations\202406181216445_123.Designer.cs">
       <DependentUpon>202406181216445_123.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\UserModifyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\UserModifyForm.Designer.cs">
+      <DependentUpon>UserModifyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\MealEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\ReservationForm.resx">
       <DependentUpon>ReservationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\UserModifyForm.resx">
+      <DependentUpon>UserModifyForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

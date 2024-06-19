@@ -40,7 +40,7 @@ namespace SmartCanteen.controllers
                 }
                 else
                 {
-                    throw new InvalidOperationException($"Dish with ID {existingDish.ID} not found.");
+                    throw new InvalidOperationException($"Prato com ID {existingDish.ID} não encontrado.");
                 }
             }
         }
@@ -64,7 +64,7 @@ namespace SmartCanteen.controllers
                 }
                 else
                 {
-                    throw new InvalidOperationException($"Dish with ID {dishId} not found.");
+                    throw new InvalidOperationException($"Prato com ID {dishId} não encontrado.");
                 }
             }
         }
