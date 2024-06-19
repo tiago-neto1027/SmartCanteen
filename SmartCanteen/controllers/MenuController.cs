@@ -27,7 +27,7 @@ namespace SmartCanteen.controllers
             }
         }
 
-        public Menu GetMenuByDateTime(DateTime selectedDate, MealTime mealTime)
+        public models.Menu GetMenuByDateTime(DateTime selectedDate, MealTime mealTime)
         {
             using (var db = new SmartCanteenContext())
             {
