@@ -20,7 +20,8 @@ namespace SmartCanteen
         private readonly ClientController clientController = new ClientController();
         private readonly MenuController menuController = new MenuController();
 
-        Menu selectedMenu = new Menu();
+        Client selectedClient = null;
+        Menu selectedMenu = null;
         List<Extra> selectedExtras;
 
         public ReservationForm()
@@ -43,9 +44,14 @@ namespace SmartCanteen
                 return;
             }
 
-            Client client = clientController.SearchClient(searchNif);
+            selectedClient = clientController.SearchClient(searchNif);
 
-            ChangeClientFields(client);
+            ChangeClientFields(selectedClient);
+
+            if (selectedClient != null && selectedMenu != null && monthCalendarReservation.SelectionStart != DateTime.MinValue)
+            {
+                labelReservationResultPrice.Text = "Price: " + CalculatePrice().ToString() + "€";
+            }
         }
 
         private void monthCalendarReservation_DateChanged(object sender, DateRangeEventArgs e)
@@ -67,6 +73,11 @@ namespace SmartCanteen
                 BindListBox(listBoxSelectedExtras, selectedExtras);
 
                 UpdateExtras(selectedMenu);
+
+                if (selectedClient != null && selectedMenu != null && monthCalendarReservation.SelectionStart != DateTime.MinValue)
+                {
+                    labelReservationResultPrice.Text = "Price: " + CalculatePrice().ToString() + "€";
+                }
             }
         }
 
@@ -79,6 +90,11 @@ namespace SmartCanteen
                 BindListBox(listBoxSelectedExtras, selectedExtras);
 
                 UpdateExtras(selectedMenu);
+
+                if (selectedClient != null && selectedMenu != null && monthCalendarReservation.SelectionStart != DateTime.MinValue)
+                {
+                    labelReservationResultPrice.Text = "Price: " + CalculatePrice().ToString() + "€";
+                }
             }
         }
 
@@ -216,6 +232,10 @@ namespace SmartCanteen
             {
                 UpdateDishNames(menu);
                 UpdateExtras(menu);
+                if(selectedClient != null && selectedMenu != null && monthCalendarReservation.SelectionStart != DateTime.MinValue)
+                {
+                    labelReservationResultPrice.Text = "Price: " + CalculatePrice().ToString() + "€";
+                }
             }
             else
             {
@@ -252,6 +272,7 @@ namespace SmartCanteen
                         .ToList();
 
                     BindListBox(listBoxAvailableExtras, availableExtras);
+                    BindListBox(listBoxSelectedExtras, selectedExtras);
                 }
             }
         }
@@ -273,6 +294,29 @@ namespace SmartCanteen
                     radioReservationMenuVeggie.Text = dish.Description;
                 }
             }
+        }
+
+        private double CalculatePrice()
+        {
+            double price = 0;
+
+            if(selectedClient is Student)
+            {
+                price += selectedMenu.StudentPrice;
+            }
+            else if(selectedClient is Professor)
+            {
+                price += selectedMenu.TeacherPrice;
+            }
+
+            //Calcular a multa
+
+            foreach (Extra extra in selectedExtras)
+            {
+                price += extra.Price;
+            }
+
+            return price;
         }
 
         private void BindListBox(ListBox listBox, object dataSource)
