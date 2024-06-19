@@ -53,4 +53,4 @@ SmartCanteen é uma aplicação desenvolvida em WinForms que utiliza o Entity Fr
 
 ## Utilização
 
-- ### [Manual do Utilizador](path/to/your/file.pdf)
+- ### [Manual do Utilizador](Manual_do_Utilizador.pdf)
