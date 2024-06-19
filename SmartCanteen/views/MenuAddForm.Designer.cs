@@ -51,6 +51,8 @@
             this.cBoxMenuAddFish = new System.Windows.Forms.ComboBox();
             this.cBoxMenuAddMeat = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rBtnDinner = new System.Windows.Forms.RadioButton();
+            this.rBtnLunch = new System.Windows.Forms.RadioButton();
             this.dateTimePickerMenuAdd = new System.Windows.Forms.DateTimePicker();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnLeaveForm = new System.Windows.Forms.Button();
@@ -60,8 +62,6 @@
             this.nrQuantity = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.rBtnLunch = new System.Windows.Forms.RadioButton();
-            this.rBtnDinner = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBoxExtras.SuspendLayout();
             this.groupBoxFilters.SuspendLayout();
@@ -78,7 +78,7 @@
             this.groupBox1.Controls.Add(this.groupBoxExtras);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(33, 88);
+            this.groupBox1.Location = new System.Drawing.Point(24, 88);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(598, 485);
             this.groupBox1.TabIndex = 2;
@@ -120,7 +120,7 @@
             this.rBtnOthers.AutoSize = true;
             this.rBtnOthers.Location = new System.Drawing.Point(378, 22);
             this.rBtnOthers.Name = "rBtnOthers";
-            this.rBtnOthers.Size = new System.Drawing.Size(69, 21);
+            this.rBtnOthers.Size = new System.Drawing.Size(61, 19);
             this.rBtnOthers.TabIndex = 4;
             this.rBtnOthers.TabStop = true;
             this.rBtnOthers.Text = "Outros";
@@ -132,7 +132,7 @@
             this.rBtnDrinks.AutoSize = true;
             this.rBtnDrinks.Location = new System.Drawing.Point(295, 22);
             this.rBtnDrinks.Name = "rBtnDrinks";
-            this.rBtnDrinks.Size = new System.Drawing.Size(77, 21);
+            this.rBtnDrinks.Size = new System.Drawing.Size(70, 19);
             this.rBtnDrinks.TabIndex = 3;
             this.rBtnDrinks.TabStop = true;
             this.rBtnDrinks.Text = "Bebidas";
@@ -144,7 +144,7 @@
             this.rBtnDesserts.AutoSize = true;
             this.rBtnDesserts.Location = new System.Drawing.Point(184, 22);
             this.rBtnDesserts.Name = "rBtnDesserts";
-            this.rBtnDesserts.Size = new System.Drawing.Size(105, 21);
+            this.rBtnDesserts.Size = new System.Drawing.Size(95, 19);
             this.rBtnDesserts.TabIndex = 2;
             this.rBtnDesserts.TabStop = true;
             this.rBtnDesserts.Text = "Sobremesas";
@@ -156,7 +156,7 @@
             this.rBtnSoup.AutoSize = true;
             this.rBtnSoup.Location = new System.Drawing.Point(112, 22);
             this.rBtnSoup.Name = "rBtnSoup";
-            this.rBtnSoup.Size = new System.Drawing.Size(66, 21);
+            this.rBtnSoup.Size = new System.Drawing.Size(60, 19);
             this.rBtnSoup.TabIndex = 1;
             this.rBtnSoup.TabStop = true;
             this.rBtnSoup.Text = "Sopas";
@@ -169,7 +169,7 @@
             this.rBtnAll.Checked = true;
             this.rBtnAll.Location = new System.Drawing.Point(40, 22);
             this.rBtnAll.Name = "rBtnAll";
-            this.rBtnAll.Size = new System.Drawing.Size(66, 21);
+            this.rBtnAll.Size = new System.Drawing.Size(59, 19);
             this.rBtnAll.TabIndex = 0;
             this.rBtnAll.TabStop = true;
             this.rBtnAll.Text = "Todos";
@@ -179,10 +179,10 @@
             // listBoxAvailableExtras
             // 
             this.listBoxAvailableExtras.FormattingEnabled = true;
-            this.listBoxAvailableExtras.ItemHeight = 17;
+            this.listBoxAvailableExtras.ItemHeight = 15;
             this.listBoxAvailableExtras.Location = new System.Drawing.Point(6, 132);
             this.listBoxAvailableExtras.Name = "listBoxAvailableExtras";
-            this.listBoxAvailableExtras.Size = new System.Drawing.Size(206, 140);
+            this.listBoxAvailableExtras.Size = new System.Drawing.Size(206, 139);
             this.listBoxAvailableExtras.TabIndex = 1;
             // 
             // btnRemoveExtras
@@ -200,7 +200,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 105);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 17);
+            this.label4.Size = new System.Drawing.Size(110, 15);
             this.label4.TabIndex = 2;
             this.label4.Text = "Extras Disponíveis:";
             // 
@@ -209,7 +209,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(325, 105);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(140, 17);
+            this.label5.Size = new System.Drawing.Size(122, 15);
             this.label5.TabIndex = 3;
             this.label5.Text = "Extras Selecionados:";
             // 
@@ -226,10 +226,10 @@
             // listBoxSelectedExtras
             // 
             this.listBoxSelectedExtras.FormattingEnabled = true;
-            this.listBoxSelectedExtras.ItemHeight = 17;
+            this.listBoxSelectedExtras.ItemHeight = 15;
             this.listBoxSelectedExtras.Location = new System.Drawing.Point(328, 132);
             this.listBoxSelectedExtras.Name = "listBoxSelectedExtras";
-            this.listBoxSelectedExtras.Size = new System.Drawing.Size(206, 140);
+            this.listBoxSelectedExtras.Size = new System.Drawing.Size(206, 139);
             this.listBoxSelectedExtras.TabIndex = 4;
             // 
             // groupBox3
@@ -253,7 +253,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(-1, 82);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 17);
+            this.label3.Size = new System.Drawing.Size(76, 15);
             this.label3.TabIndex = 5;
             this.label3.Text = "Vegetariano:";
             // 
@@ -262,7 +262,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(42, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 17);
+            this.label2.Size = new System.Drawing.Size(41, 15);
             this.label2.TabIndex = 4;
             this.label2.Text = "Peixe:";
             // 
@@ -272,7 +272,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(38, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 17);
+            this.label1.Size = new System.Drawing.Size(43, 15);
             this.label1.TabIndex = 3;
             this.label1.Text = "Carne:";
             // 
@@ -281,7 +281,7 @@
             this.cBoxMenuAddVeggie.FormattingEnabled = true;
             this.cBoxMenuAddVeggie.Location = new System.Drawing.Point(89, 79);
             this.cBoxMenuAddVeggie.Name = "cBoxMenuAddVeggie";
-            this.cBoxMenuAddVeggie.Size = new System.Drawing.Size(432, 25);
+            this.cBoxMenuAddVeggie.Size = new System.Drawing.Size(432, 23);
             this.cBoxMenuAddVeggie.TabIndex = 2;
             // 
             // cBoxMenuAddFish
@@ -289,7 +289,7 @@
             this.cBoxMenuAddFish.FormattingEnabled = true;
             this.cBoxMenuAddFish.Location = new System.Drawing.Point(89, 50);
             this.cBoxMenuAddFish.Name = "cBoxMenuAddFish";
-            this.cBoxMenuAddFish.Size = new System.Drawing.Size(432, 25);
+            this.cBoxMenuAddFish.Size = new System.Drawing.Size(432, 23);
             this.cBoxMenuAddFish.TabIndex = 1;
             // 
             // cBoxMenuAddMeat
@@ -297,7 +297,7 @@
             this.cBoxMenuAddMeat.FormattingEnabled = true;
             this.cBoxMenuAddMeat.Location = new System.Drawing.Point(89, 21);
             this.cBoxMenuAddMeat.Name = "cBoxMenuAddMeat";
-            this.cBoxMenuAddMeat.Size = new System.Drawing.Size(432, 25);
+            this.cBoxMenuAddMeat.Size = new System.Drawing.Size(432, 23);
             this.cBoxMenuAddMeat.TabIndex = 0;
             // 
             // groupBox2
@@ -306,23 +306,46 @@
             this.groupBox2.Controls.Add(this.rBtnLunch);
             this.groupBox2.Controls.Add(this.dateTimePickerMenuAdd);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(33, 25);
+            this.groupBox2.Location = new System.Drawing.Point(24, 25);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(598, 57);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data:";
             // 
+            // rBtnDinner
+            // 
+            this.rBtnDinner.AutoSize = true;
+            this.rBtnDinner.Location = new System.Drawing.Point(357, 22);
+            this.rBtnDinner.Name = "rBtnDinner";
+            this.rBtnDinner.Size = new System.Drawing.Size(59, 19);
+            this.rBtnDinner.TabIndex = 6;
+            this.rBtnDinner.TabStop = true;
+            this.rBtnDinner.Text = "Jantar";
+            this.rBtnDinner.UseVisualStyleBackColor = true;
+            // 
+            // rBtnLunch
+            // 
+            this.rBtnLunch.AutoSize = true;
+            this.rBtnLunch.Checked = true;
+            this.rBtnLunch.Location = new System.Drawing.Point(285, 22);
+            this.rBtnLunch.Name = "rBtnLunch";
+            this.rBtnLunch.Size = new System.Drawing.Size(66, 19);
+            this.rBtnLunch.TabIndex = 5;
+            this.rBtnLunch.TabStop = true;
+            this.rBtnLunch.Text = "Almoço";
+            this.rBtnLunch.UseVisualStyleBackColor = true;
+            // 
             // dateTimePickerMenuAdd
             // 
             this.dateTimePickerMenuAdd.Location = new System.Drawing.Point(65, 20);
             this.dateTimePickerMenuAdd.Name = "dateTimePickerMenuAdd";
-            this.dateTimePickerMenuAdd.Size = new System.Drawing.Size(194, 23);
+            this.dateTimePickerMenuAdd.Size = new System.Drawing.Size(194, 21);
             this.dateTimePickerMenuAdd.TabIndex = 4;
             // 
             // btnLeaveForm
             // 
-            this.btnLeaveForm.Location = new System.Drawing.Point(565, 696);
+            this.btnLeaveForm.Location = new System.Drawing.Point(556, 696);
             this.btnLeaveForm.Name = "btnLeaveForm";
             this.btnLeaveForm.Size = new System.Drawing.Size(66, 32);
             this.btnLeaveForm.TabIndex = 20;
@@ -332,7 +355,7 @@
             // 
             // btnMenuAddRegister
             // 
-            this.btnMenuAddRegister.Location = new System.Drawing.Point(485, 696);
+            this.btnMenuAddRegister.Location = new System.Drawing.Point(476, 696);
             this.btnMenuAddRegister.Name = "btnMenuAddRegister";
             this.btnMenuAddRegister.Size = new System.Drawing.Size(66, 32);
             this.btnMenuAddRegister.TabIndex = 19;
@@ -346,7 +369,7 @@
             this.groupBoxOthers.Controls.Add(this.nrQuantity);
             this.groupBoxOthers.Controls.Add(this.label7);
             this.groupBoxOthers.Controls.Add(this.label6);
-            this.groupBoxOthers.Location = new System.Drawing.Point(33, 600);
+            this.groupBoxOthers.Location = new System.Drawing.Point(24, 600);
             this.groupBoxOthers.Name = "groupBoxOthers";
             this.groupBoxOthers.Size = new System.Drawing.Size(598, 73);
             this.groupBoxOthers.TabIndex = 21;
@@ -390,29 +413,6 @@
             this.label6.Size = new System.Drawing.Size(65, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "Quantidade:";
-            // 
-            // rBtnLunch
-            // 
-            this.rBtnLunch.AutoSize = true;
-            this.rBtnLunch.Checked = true;
-            this.rBtnLunch.Location = new System.Drawing.Point(285, 22);
-            this.rBtnLunch.Name = "rBtnLunch";
-            this.rBtnLunch.Size = new System.Drawing.Size(65, 21);
-            this.rBtnLunch.TabIndex = 5;
-            this.rBtnLunch.TabStop = true;
-            this.rBtnLunch.Text = "Lunch";
-            this.rBtnLunch.UseVisualStyleBackColor = true;
-            // 
-            // rBtnDinner
-            // 
-            this.rBtnDinner.AutoSize = true;
-            this.rBtnDinner.Location = new System.Drawing.Point(357, 22);
-            this.rBtnDinner.Name = "rBtnDinner";
-            this.rBtnDinner.Size = new System.Drawing.Size(68, 21);
-            this.rBtnDinner.TabIndex = 6;
-            this.rBtnDinner.TabStop = true;
-            this.rBtnDinner.Text = "Dinner";
-            this.rBtnDinner.UseVisualStyleBackColor = true;
             // 
             // MenuAddForm
             // 

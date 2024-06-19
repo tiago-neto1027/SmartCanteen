@@ -105,7 +105,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(37, 341);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(248, 100);
+            this.groupBox1.Size = new System.Drawing.Size(227, 100);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Menu:";
@@ -115,7 +115,7 @@
             this.radioReservationMenuMeat.AutoSize = true;
             this.radioReservationMenuMeat.Location = new System.Drawing.Point(6, 24);
             this.radioReservationMenuMeat.Name = "radioReservationMenuMeat";
-            this.radioReservationMenuMeat.Size = new System.Drawing.Size(64, 21);
+            this.radioReservationMenuMeat.Size = new System.Drawing.Size(58, 19);
             this.radioReservationMenuMeat.TabIndex = 2;
             this.radioReservationMenuMeat.TabStop = true;
             this.radioReservationMenuMeat.Text = "Carne";
@@ -127,7 +127,7 @@
             this.radioReservationMenuVeggie.AutoSize = true;
             this.radioReservationMenuVeggie.Location = new System.Drawing.Point(6, 72);
             this.radioReservationMenuVeggie.Name = "radioReservationMenuVeggie";
-            this.radioReservationMenuVeggie.Size = new System.Drawing.Size(103, 21);
+            this.radioReservationMenuVeggie.Size = new System.Drawing.Size(91, 19);
             this.radioReservationMenuVeggie.TabIndex = 1;
             this.radioReservationMenuVeggie.TabStop = true;
             this.radioReservationMenuVeggie.Text = "Vegetariano";
@@ -139,7 +139,7 @@
             this.radioReservationMenuFish.AutoSize = true;
             this.radioReservationMenuFish.Location = new System.Drawing.Point(6, 47);
             this.radioReservationMenuFish.Name = "radioReservationMenuFish";
-            this.radioReservationMenuFish.Size = new System.Drawing.Size(60, 21);
+            this.radioReservationMenuFish.Size = new System.Drawing.Size(56, 19);
             this.radioReservationMenuFish.TabIndex = 0;
             this.radioReservationMenuFish.TabStop = true;
             this.radioReservationMenuFish.Text = "Peixe";
@@ -175,7 +175,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(22, 29);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 17);
+            this.label4.Size = new System.Drawing.Size(29, 15);
             this.label4.TabIndex = 9;
             this.label4.Text = "NIF:";
             // 
@@ -184,7 +184,7 @@
             this.tBoxReservationNif.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tBoxReservationNif.Location = new System.Drawing.Point(70, 29);
             this.tBoxReservationNif.Name = "tBoxReservationNif";
-            this.tBoxReservationNif.Size = new System.Drawing.Size(160, 23);
+            this.tBoxReservationNif.Size = new System.Drawing.Size(160, 21);
             this.tBoxReservationNif.TabIndex = 8;
             // 
             // groupBox3
@@ -217,9 +217,19 @@
             this.labelReservationResultMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelReservationResultMenu.Location = new System.Drawing.Point(6, 151);
             this.labelReservationResultMenu.Name = "labelReservationResultMenu";
-            this.labelReservationResultMenu.Size = new System.Drawing.Size(52, 17);
+            this.labelReservationResultMenu.Size = new System.Drawing.Size(47, 15);
             this.labelReservationResultMenu.TabIndex = 4;
             this.labelReservationResultMenu.Text = "Menu:";
+            // 
+            // labelReservationResultId
+            // 
+            this.labelReservationResultId.AutoSize = true;
+            this.labelReservationResultId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReservationResultId.Location = new System.Drawing.Point(28, 161);
+            this.labelReservationResultId.Name = "labelReservationResultId";
+            this.labelReservationResultId.Size = new System.Drawing.Size(25, 15);
+            this.labelReservationResultId.TabIndex = 3;
+            this.labelReservationResultId.Text = "ID:";
             // 
             // labelReservationResultDate
             // 
@@ -227,7 +237,7 @@
             this.labelReservationResultDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelReservationResultDate.Location = new System.Drawing.Point(12, 119);
             this.labelReservationResultDate.Name = "labelReservationResultDate";
-            this.labelReservationResultDate.Size = new System.Drawing.Size(47, 17);
+            this.labelReservationResultDate.Size = new System.Drawing.Size(41, 15);
             this.labelReservationResultDate.TabIndex = 2;
             this.labelReservationResultDate.Text = "Data:";
             // 
@@ -237,7 +247,7 @@
             this.labelReservationResultNif.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelReservationResultNif.Location = new System.Drawing.Point(20, 83);
             this.labelReservationResultNif.Name = "labelReservationResultNif";
-            this.labelReservationResultNif.Size = new System.Drawing.Size(37, 17);
+            this.labelReservationResultNif.Size = new System.Drawing.Size(33, 15);
             this.labelReservationResultNif.TabIndex = 1;
             this.labelReservationResultNif.Text = "NIF:";
             // 
@@ -247,7 +257,7 @@
             this.labelReservationResultName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelReservationResultName.Location = new System.Drawing.Point(4, 43);
             this.labelReservationResultName.Name = "labelReservationResultName";
-            this.labelReservationResultName.Size = new System.Drawing.Size(54, 17);
+            this.labelReservationResultName.Size = new System.Drawing.Size(49, 15);
             this.labelReservationResultName.TabIndex = 0;
             this.labelReservationResultName.Text = "Nome:";
             // 

@@ -64,6 +64,11 @@ namespace SmartCanteen
 
         private void btnMealEditRegister_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(tBoxMealEditDescription.Text))
+            {
+                MessageBox.Show("A descrição não pode estar vazia.");
+                return;
+            }
             try
             {
                 var updatedDish = new Dish

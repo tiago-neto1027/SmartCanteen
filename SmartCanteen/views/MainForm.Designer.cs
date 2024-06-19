@@ -54,6 +54,7 @@
             this.btnEditFine = new System.Windows.Forms.Button();
             this.btnCreateFine = new System.Windows.Forms.Button();
             this.btnAddReservation = new System.Windows.Forms.Button();
+            this.opçõesUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -77,6 +78,8 @@
             // 
             // optionsToolStripMenuItem
             // 
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.opçõesUsersToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(69, 23);
             this.optionsToolStripMenuItem.Text = "Opções";
@@ -95,12 +98,14 @@
             this.logoutChangeUserToolStripMenuItem.Name = "logoutChangeUserToolStripMenuItem";
             this.logoutChangeUserToolStripMenuItem.Size = new System.Drawing.Size(216, 24);
             this.logoutChangeUserToolStripMenuItem.Text = "Logout / Mudar User";
+            this.logoutChangeUserToolStripMenuItem.Click += new System.EventHandler(this.logoutChangeUserToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(216, 24);
             this.exitToolStripMenuItem.Text = "Sair";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -252,6 +257,38 @@
             this.lbDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDate.Location = new System.Drawing.Point(67, 57);
             this.lbDate.Name = "lbDate";
+            this.lbDate.Size = new System.Drawing.Size(36, 16);
+            this.lbDate.TabIndex = 1;
+            this.lbDate.Text = "Data";
+            // 
+            // lbTime
+            // 
+            this.lbTime.AutoSize = true;
+            this.lbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.Location = new System.Drawing.Point(67, 30);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(37, 16);
+            this.lbTime.TabIndex = 0;
+            this.lbTime.Text = "Hora";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            // 
+            // opçõesUsersToolStripMenuItem
+            // 
+            this.opçõesUsersToolStripMenuItem.Name = "opçõesUsersToolStripMenuItem";
+            this.opçõesUsersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.opçõesUsersToolStripMenuItem.Text = "Gerir Users";
+            this.opçõesUsersToolStripMenuItem.Click += new System.EventHandler(this.opçõesUsersToolStripMenuItem_Click);
+            // 
+            // lbDate
+            // 
+            this.lbDate.AutoSize = true;
+            this.lbDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.Location = new System.Drawing.Point(67, 57);
+            this.lbDate.Name = "lbDate";
             this.lbDate.Size = new System.Drawing.Size(39, 18);
             this.lbDate.TabIndex = 1;
             this.lbDate.Text = "Data";
@@ -369,5 +406,6 @@
         private System.Windows.Forms.Button btnEditFine;
         private System.Windows.Forms.Button btnCreateFine;
         private System.Windows.Forms.Button btnAddReservation;
+        private System.Windows.Forms.ToolStripMenuItem opçõesUsersToolStripMenuItem;
     }
 }

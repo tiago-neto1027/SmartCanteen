@@ -66,6 +66,17 @@ namespace SmartCanteen
 
         private void btnExtrasEditRegister_Click(object sender, EventArgs e)
         {
+            //Verify if fields are empty
+            if (string.IsNullOrEmpty(tBoxExtrasEditDescription.Text))
+            {
+                MessageBox.Show("A descrição não pode estar vazia.");
+                return;
+            }
+            if (numericExtrasEditStudentPrice.Value == 0)
+            {
+                MessageBox.Show("O preço do produto não pode ser 0.");
+                return;
+            }
             try
             {
                 Extra updatedExtra = new Extra

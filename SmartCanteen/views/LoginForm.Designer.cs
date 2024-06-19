@@ -84,7 +84,7 @@
             this.btnLogin.Location = new System.Drawing.Point(81, 198);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(150, 27);
+            this.btnLogin.Size = new System.Drawing.Size(150, 32);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -93,24 +93,24 @@
             // btnLoginCreateUser
             // 
             this.btnLoginCreateUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.861538F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoginCreateUser.Location = new System.Drawing.Point(81, 302);
+            this.btnLoginCreateUser.Location = new System.Drawing.Point(81, 287);
             this.btnLoginCreateUser.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoginCreateUser.Name = "btnLoginCreateUser";
-            this.btnLoginCreateUser.Size = new System.Drawing.Size(150, 24);
+            this.btnLoginCreateUser.Size = new System.Drawing.Size(150, 32);
             this.btnLoginCreateUser.TabIndex = 5;
-            this.btnLoginCreateUser.Text = "Create User";
+            this.btnLoginCreateUser.Text = "Criar User";
             this.btnLoginCreateUser.UseVisualStyleBackColor = true;
             this.btnLoginCreateUser.Click += new System.EventHandler(this.btnLoginCreateUser_Click);
             // 
             // btnLoginExit
             // 
             this.btnLoginExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.861538F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoginExit.Location = new System.Drawing.Point(118, 332);
+            this.btnLoginExit.Location = new System.Drawing.Point(119, 323);
             this.btnLoginExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoginExit.Name = "btnLoginExit";
-            this.btnLoginExit.Size = new System.Drawing.Size(75, 24);
+            this.btnLoginExit.Size = new System.Drawing.Size(75, 32);
             this.btnLoginExit.TabIndex = 6;
-            this.btnLoginExit.Text = "Exit";
+            this.btnLoginExit.Text = "Sair";
             this.btnLoginExit.UseVisualStyleBackColor = true;
             this.btnLoginExit.Click += new System.EventHandler(this.btnExitLogin_Click);
             // 

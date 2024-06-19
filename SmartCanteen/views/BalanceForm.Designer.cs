@@ -38,11 +38,11 @@
             this.labelBalanceNif = new System.Windows.Forms.Label();
             this.labelBalancelName = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.AddValue = new System.Windows.Forms.NumericUpDown();
             this.btnBalanceLeave = new System.Windows.Forms.Button();
             this.btnBalanceAddValue = new System.Windows.Forms.Button();
             this.listBoxClients = new System.Windows.Forms.ListBox();
             this.labelClients = new System.Windows.Forms.Label();
-            this.AddValue = new System.Windows.Forms.NumericUpDown();
             this.btnShowAll = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -156,6 +156,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Saldo:";
             // 
+            // AddValue
+            // 
+            this.AddValue.DecimalPlaces = 2;
+            this.AddValue.Location = new System.Drawing.Point(50, 41);
+            this.AddValue.Name = "AddValue";
+            this.AddValue.Size = new System.Drawing.Size(120, 20);
+            this.AddValue.TabIndex = 13;
+            // 
             // btnBalanceLeave
             // 
             this.btnBalanceLeave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -196,13 +204,6 @@
             this.labelClients.Size = new System.Drawing.Size(54, 15);
             this.labelClients.TabIndex = 11;
             this.labelClients.Text = "Clientes:";
-            // 
-            // AddValue
-            // 
-            this.AddValue.Location = new System.Drawing.Point(50, 41);
-            this.AddValue.Name = "AddValue";
-            this.AddValue.Size = new System.Drawing.Size(120, 20);
-            this.AddValue.TabIndex = 13;
             // 
             // btnShowAll
             // 
