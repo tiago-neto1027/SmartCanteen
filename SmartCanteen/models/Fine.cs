@@ -12,19 +12,18 @@ namespace SmartCanteen.models
     {
         [Key]
         public int ID { get; set; }
-        public float NumHours {  get; set; }
-        public double Value {
-            get
-            {
-                double value;
-                value = NumHours * 0.8;
-                return value;
-            }
-        }
+        public int NumHours {  get; set; }
+        public double Value { get; set; }
 
         public Fine()
         {
             
+        }
+
+        public Fine(int numHours, double value)
+        {
+            NumHours = numHours;
+            Value = value;
         }
     }
 }

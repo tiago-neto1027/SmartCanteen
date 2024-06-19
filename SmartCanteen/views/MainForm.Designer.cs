@@ -46,15 +46,19 @@
             this.btnMealAdd = new System.Windows.Forms.Button();
             this.btnMenuAdd = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbDate = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnEditFine = new System.Windows.Forms.Button();
+            this.btnCreateFine = new System.Windows.Forms.Button();
             this.menuStripMain.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStripMain
@@ -66,14 +70,14 @@
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
             this.menuStripMain.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStripMain.Size = new System.Drawing.Size(884, 24);
+            this.menuStripMain.Size = new System.Drawing.Size(884, 27);
             this.menuStripMain.TabIndex = 1;
             this.menuStripMain.Text = "menuStrip1";
             // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(69, 23);
             this.optionsToolStripMenuItem.Text = "Opções";
             // 
             // userToolStripMenuItem
@@ -82,19 +86,19 @@
             this.logoutChangeUserToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.userToolStripMenuItem.Name = "userToolStripMenuItem";
-            this.userToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
+            this.userToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
             this.userToolStripMenuItem.Text = "User";
             // 
             // logoutChangeUserToolStripMenuItem
             // 
             this.logoutChangeUserToolStripMenuItem.Name = "logoutChangeUserToolStripMenuItem";
-            this.logoutChangeUserToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.logoutChangeUserToolStripMenuItem.Size = new System.Drawing.Size(216, 24);
             this.logoutChangeUserToolStripMenuItem.Text = "Logout / Mudar User";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(216, 24);
             this.exitToolStripMenuItem.Text = "Sair";
             // 
             // groupBox1
@@ -105,18 +109,18 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(632, 62);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(208, 117);
+            this.groupBox1.Size = new System.Drawing.Size(170, 117);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
             // 
             // btnClientModify
             // 
-            this.btnClientModify.Location = new System.Drawing.Point(107, 23);
+            this.btnClientModify.Location = new System.Drawing.Point(101, 23);
             this.btnClientModify.Name = "btnClientModify";
-            this.btnClientModify.Size = new System.Drawing.Size(95, 40);
+            this.btnClientModify.Size = new System.Drawing.Size(63, 40);
             this.btnClientModify.TabIndex = 2;
-            this.btnClientModify.Text = "Modificar";
+            this.btnClientModify.Text = "Editar";
             this.btnClientModify.UseVisualStyleBackColor = true;
             this.btnClientModify.Click += new System.EventHandler(this.btnClientModify_Click);
             // 
@@ -124,7 +128,7 @@
             // 
             this.btnBalance.Location = new System.Drawing.Point(6, 69);
             this.btnBalance.Name = "btnBalance";
-            this.btnBalance.Size = new System.Drawing.Size(95, 40);
+            this.btnBalance.Size = new System.Drawing.Size(158, 40);
             this.btnBalance.TabIndex = 1;
             this.btnBalance.Text = "Carregamento";
             this.btnBalance.UseVisualStyleBackColor = true;
@@ -134,7 +138,7 @@
             // 
             this.btnClientAdd.Location = new System.Drawing.Point(6, 23);
             this.btnClientAdd.Name = "btnClientAdd";
-            this.btnClientAdd.Size = new System.Drawing.Size(95, 40);
+            this.btnClientAdd.Size = new System.Drawing.Size(89, 40);
             this.btnClientAdd.TabIndex = 0;
             this.btnClientAdd.Text = "Adicionar";
             this.btnClientAdd.UseVisualStyleBackColor = true;
@@ -230,31 +234,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Semanal";
             // 
-            // lbDate
-            // 
-            this.lbDate.AutoSize = true;
-            this.lbDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDate.Location = new System.Drawing.Point(67, 57);
-            this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(36, 16);
-            this.lbDate.TabIndex = 1;
-            this.lbDate.Text = "Data";
-            // 
-            // lbTime
-            // 
-            this.lbTime.AutoSize = true;
-            this.lbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTime.Location = new System.Drawing.Point(67, 30);
-            this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(37, 16);
-            this.lbTime.TabIndex = 0;
-            this.lbTime.Text = "Hora";
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SmartCanteen.Properties.Resources._603_6035882_clock_transparent_time_icon_png_png_download;
@@ -265,11 +244,69 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // lbDate
+            // 
+            this.lbDate.AutoSize = true;
+            this.lbDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.Location = new System.Drawing.Point(67, 57);
+            this.lbDate.Name = "lbDate";
+            this.lbDate.Size = new System.Drawing.Size(39, 18);
+            this.lbDate.TabIndex = 1;
+            this.lbDate.Text = "Data";
+            // 
+            // lbTime
+            // 
+            this.lbTime.AutoSize = true;
+            this.lbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.Location = new System.Drawing.Point(67, 30);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(41, 18);
+            this.lbTime.TabIndex = 0;
+            this.lbTime.Text = "Hora";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btnEditFine);
+            this.groupBox4.Controls.Add(this.btnCreateFine);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(632, 185);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(170, 75);
+            this.groupBox4.TabIndex = 5;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Multas";
+            // 
+            // btnEditFine
+            // 
+            this.btnEditFine.Location = new System.Drawing.Point(101, 23);
+            this.btnEditFine.Name = "btnEditFine";
+            this.btnEditFine.Size = new System.Drawing.Size(63, 40);
+            this.btnEditFine.TabIndex = 2;
+            this.btnEditFine.Text = "Editar";
+            this.btnEditFine.UseVisualStyleBackColor = true;
+            this.btnEditFine.Click += new System.EventHandler(this.btnEditFine_Click);
+            // 
+            // btnCreateFine
+            // 
+            this.btnCreateFine.Location = new System.Drawing.Point(6, 23);
+            this.btnCreateFine.Name = "btnCreateFine";
+            this.btnCreateFine.Size = new System.Drawing.Size(89, 40);
+            this.btnCreateFine.TabIndex = 0;
+            this.btnCreateFine.Text = "Criar Multa";
+            this.btnCreateFine.UseVisualStyleBackColor = true;
+            this.btnCreateFine.Click += new System.EventHandler(this.btnCreateFine_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -287,6 +324,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,5 +353,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnExtrasEdit;
         private System.Windows.Forms.Button btnMealEdit;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btnEditFine;
+        private System.Windows.Forms.Button btnCreateFine;
     }
 }
