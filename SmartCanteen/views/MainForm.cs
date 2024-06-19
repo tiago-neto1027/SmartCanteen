@@ -132,11 +132,6 @@ namespace SmartCanteen
             {
                 this.Close();
             }
-            else
-            {
-                
-            }
-            
         }
 
         private void logoutChangeUserToolStripMenuItem_Click(object sender, EventArgs e)
@@ -145,7 +140,6 @@ namespace SmartCanteen
             this.Close();
             LoginForm loginForm = new LoginForm();
             loginForm.ShowDialog();
-
         }
 
         private void opçõesUsersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -211,11 +205,6 @@ namespace SmartCanteen
 
         private void OpenMenuDisplayForm(DateTime selectedDate, MealTime selectedMealTime)
         {
-            if (menuController == null)
-            {
-                MessageBox.Show("MenuController is not initialized.");
-                return;
-            }
             var menu  = menuController.GetMenuByDateTime(selectedDate,selectedMealTime);
             if (menu == null)
             {
