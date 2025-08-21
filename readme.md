@@ -24,23 +24,18 @@
 ## 🚀 Instalação
 
 ### 1. Clonar o repositório
-
-    ```sh
     git clone https://github.com/tiago-neto1027/SmartCanteen.git
-    ```
     
 ### 2. Abrir o projeto
 Abra a solução SmartCanteen.sln no Visual Studio 2019 ou superior.
 
 ### 3. Instalar o EntityFramework
     
-    ```sh
     Install-Package EntityFramework -Version 6.4.4
-    ```
-    - .NET CLI
-    ```sh
+
+    ou
+
     dotnet add package EntityFramework --version 6.4.4
-    ```
 
 ### 4. Compilar e executar a aplicação através do Visual Studio
 Compile e execute a aplicação diretamente no Visual Studio.
